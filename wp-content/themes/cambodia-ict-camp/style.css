@@ -40,6 +40,10 @@ span {
 	margin: auto;
 }
 
+.inner-main-title {
+	background-color: #06323d;
+}
+
 .text-center {
 	text-align: center;
 }
