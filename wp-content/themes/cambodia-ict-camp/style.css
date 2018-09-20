@@ -13,6 +13,10 @@
  */
 
 /* General */
+.at-event-count-down .feature-col {
+	text-align: center;
+}
+
 body,
 h1, 
 h1 a, 
