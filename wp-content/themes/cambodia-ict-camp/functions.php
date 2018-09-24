@@ -9,6 +9,16 @@ function camp_theme_enqueue_styles()
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', ['parent-style'] );
 }
 
+// Include custom script
+add_action( 'wp_enqueue_scripts', 'camp_theme_enqueue_scripts' );
+add_action( 'admin_enqueue_scripts', 'camp_theme_enqueue_scripts' );
+
+function camp_theme_enqueue_scripts()
+{
+    wp_enqueue_media();
+    wp_enqueue_script( 'child-custom-script', get_stylesheet_directory_uri() . '/js/custom-script.js', ['jquery'], '1.0', true );
+}
+
 // Add Google Font
 add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
 
@@ -45,3 +55,4 @@ require_once( __DIR__ . '/inc/template-tags.php' );
 
 // Register Custom Form Fields for Taxonomy
 require_once( __DIR__ . '/inc/taxonomy-form-fields/categories/colors.php' );
+require_once( __DIR__ . '/inc/taxonomy-form-fields/categories/images.php' );
