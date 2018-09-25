@@ -78,7 +78,9 @@ global $event_star_customizer_all_values;
 							  				<div class="col-xs-12 col-md-8">
 							  					<p>
 							  						<b>
-							  							<a href="<?php echo $speaker_linked_in_link; ?>"><?php _e( get_the_title() ); ?></a>
+							  							<a target="_blank" href="<?php echo $speaker_linked_in_link; ?>">
+							  								<?php _e( get_the_title() ); ?>
+							  							</a>
 							  						</b>
 							  						<br>
 							  						<i><?php echo $speaker_expertise; ?></i>
