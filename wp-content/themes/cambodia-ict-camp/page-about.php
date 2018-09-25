@@ -143,21 +143,21 @@ if(
 
 			<!-- Supporter Section -->
 			<?php 
-			$supporters = new WP_Query( ['post_type' => 'supporters'] );
+			$donors = new WP_Query( ['post_type' => 'donors'] );
 
-			if( $supporters->have_posts() ) { 
+			if( $donors->have_posts() ) { 
 				$counter = 0;
 				$wrap_count = 4;
 			?>
-				<div class="section" id="supporters">
+				<div class="section" id="donors">
 					<div class="section-title">
-						<h2>Supporters</h2>
+						<h2>Donors</h2>
 					</div>
 
 					<div class="setcion-body">
 						<?php
-						while ( $supporters->have_posts() ) {
-							$supporters->the_post();
+						while ( $donors->have_posts() ) {
+							$donors->the_post();
 							
 							if( $counter%$wrap_count == 1 ) {
 								echo '<div class="row">';
