@@ -4,7 +4,7 @@ add_action( 'save_post', 'save_speakers_social_media_links_data' );
 
 function create_speakers_social_media_links_meta_box()
 {
-	add_meta_box( 'speakers_social_media_links', 'Social Media Links', 'add_speakers_social_media_links_callback', 'speakers', 'side' );
+	add_meta_box( 'speakers_social_media_links', __( 'Social Media Links' ), 'add_speakers_social_media_links_callback', 'speakers', 'side' );
 }
 
 function add_speakers_social_media_links_callback( $post )

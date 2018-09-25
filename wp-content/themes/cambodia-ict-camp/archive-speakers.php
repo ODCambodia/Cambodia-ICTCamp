@@ -44,6 +44,9 @@ global $event_star_customizer_all_values;
 
 						$profile = get_the_post_thumbnail( $post->ID, [200, 200], $attributes );
 						$responsive_profile = preg_replace( '/(width|height)="\d*"\s/', '', $profile );
+						$speaker_linked_in_link = get_post_meta( $post->ID, '_speakers_social_media_links_value_key', true );
+						$speaker_expertise = get_post_meta( $post->ID, '_speakers_expertise_value_key', true );
+						$speaker_organization = get_post_meta( $post->ID, '_speakers_organization_value_key', true );
 						?>
 
 						<a href="#" data-toggle="modal" data-target="<?php echo '#' . $post->ID ?>">
@@ -53,11 +56,13 @@ global $event_star_customizer_all_values;
 						<p class="text-center">
 							<b><?php echo get_the_title(); ?></b>
 							<br/>
-							<?php echo get_post_meta( $post->ID, '_speakers_expertise_value_key', true ) ?>
+							<?php _e( $speaker_expertise ); ?>
+							<br/>
+							<?php _e( $speaker_organization ); ?>
 						</p>
-						<br>
-							
+						<br>	
 
+						<!-- Bio Modal -->
 						<div class="modal fade" id="<?php echo $post->ID ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
@@ -69,18 +74,16 @@ global $event_star_customizer_all_values;
 							  			<div class="row">
 							  				<div class="col-xs-12 col-md-4">
 							  					<?php echo $responsive_profile; ?>
-							  					<div class=""></div>
-							  					<div class="speaker-social-link text-center">
-							  						<a href="<?php echo get_post_meta( $post->ID, '_speakers_social_media_links_value_key', true ); ?>" target="_blank">
-							  							<i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
-							  						</a>
-							  					</div>
 							  				</div>
 							  				<div class="col-xs-12 col-md-8">
 							  					<p>
-							  						<b><?php _e( get_the_title() ); ?></b>
+							  						<b>
+							  							<a href="<?php echo $speaker_linked_in_link; ?>"><?php _e( get_the_title() ); ?></a>
+							  						</b>
 							  						<br>
-							  						<i><?php echo get_post_meta( $post->ID, '_speakers_expertise_value_key', true ); ?></i>
+							  						<i><?php echo $speaker_expertise; ?></i>
+							  						<br/>
+							  						<span><?php _e( $speaker_organization ); ?></span>
 							  					</p>
 							  					<p><?php _e( get_the_content() ); ?></p>
 							  				</div>
@@ -89,6 +92,7 @@ global $event_star_customizer_all_values;
 								</div>
 							</div>
 						</div>
+						<!-- END Bio Modal -->
 					</div>
 
 					<?php
