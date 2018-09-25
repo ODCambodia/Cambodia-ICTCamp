@@ -37,7 +37,7 @@ require_once( __DIR__ . '/inc/custom-post-types/organizers.php' );
 require_once( __DIR__ . '/inc/custom-post-types/partners.php' );
 require_once( __DIR__ . '/inc/custom-post-types/sessions.php' );
 require_once( __DIR__ . '/inc/custom-post-types/speakers.php' );
-require_once( __DIR__ . '/inc/custom-post-types/supporters.php' );
+require_once( __DIR__ . '/inc/custom-post-types/donors.php' );
 
 // Register Custom Meta Boxes for Speaker post type
 require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/expertise.php' );
