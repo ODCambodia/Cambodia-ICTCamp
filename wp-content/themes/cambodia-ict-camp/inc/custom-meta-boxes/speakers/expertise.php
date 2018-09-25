@@ -4,7 +4,7 @@ add_action( 'save_post', 'save_speakers_expertise_data' );
 
 function create_speakers_expertise_meta_box()
 {
-	add_meta_box( 'speakers_expertise', 'Expertise', 'add_speakers_expertise_callback', 'speakers', 'side' );
+	add_meta_box( 'speakers_expertise', __( 'Expertise' ), 'add_speakers_expertise_callback', 'speakers', 'side' );
 }
 
 function add_speakers_expertise_callback( $post )

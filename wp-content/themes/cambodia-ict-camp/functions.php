@@ -40,8 +40,9 @@ require_once( __DIR__ . '/inc/custom-post-types/speakers.php' );
 require_once( __DIR__ . '/inc/custom-post-types/supporters.php' );
 
 // Register Custom Meta Boxes for Speaker post type
-require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/social-media-links.php' );
 require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/expertise.php' );
+require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/organization.php' );
+require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/social-media-links.php' );
 
 // Register Custom Meta Boxes for Session post type
 require_once( __DIR__ . '/inc/custom-meta-boxes/sessions/hall.php' );
