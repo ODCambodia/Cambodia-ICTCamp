@@ -48,7 +48,15 @@ require_once( __DIR__ . '/inc/custom-meta-boxes/sessions/hall.php' );
 require_once( __DIR__ . '/inc/custom-meta-boxes/sessions/time.php' );
 
 // Widget
+add_action( 'widgets_init', 'register_camp_widgets' );
+
+function register_camp_widgets()
+{
+	register_widget( 'Camp_Themes_Widget' );
+}
+
 require_once( __DIR__ . '/widgets/camp-posts-no-img.php' );
+require_once( __DIR__ . '/widgets/camp-themes.php' );
 
 // Template tags
 require_once( __DIR__ . '/inc/template-tags.php' );

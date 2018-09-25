@@ -49,9 +49,12 @@ if(
 
 			$themes = get_categories( $args );
 			foreach( $themes as $theme ) {
+				$theme_color = get_term_meta( $theme->term_id, '_category_color_value_key', true );
 			?>
-				<div class="col-xs-12 col-sm-12 col-md-3">
-					<a href="#"><h5 class="theme-box text-center"><?php echo $theme->name; ?></h5></a>
+				<div class="col-xs-12" id="<?php echo $theme->slug; ?>">
+					<h2 style="color: <?php echo esc_attr( $theme_color ); ?>"><?php _e( $theme->name . ' #' ); ?></h2>
+					<hr>
+					<p><?php _e( $theme->description ); ?></p>
 				</div>
 			<?php
 			}
