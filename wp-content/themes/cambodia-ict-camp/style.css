@@ -109,3 +109,20 @@ span {
 	padding: 30px 30px;
 }
 /* END Theme Page 
+
+/* Widget: Feature Info Box */
+
+.countdown-time-small {
+	color: #fafafa;
+	font-size: 15px;
+	font-weight: 700;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.countdown-label-small {
+	font-size: 15px;
+	margin-bottom: 0px;
+	text-align: center;
+}
+/* END Widget: Feature Info Box */
