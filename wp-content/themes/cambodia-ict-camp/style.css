@@ -40,6 +40,10 @@ span {
 	font-family: Battambang;
 }
 
+.align-center {
+	margin: 0, auto;
+}
+
 .img-responsive {
 	margin: auto;
 }

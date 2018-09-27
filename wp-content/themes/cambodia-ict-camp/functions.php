@@ -54,10 +54,12 @@ add_action( 'widgets_init', 'register_camp_widgets' );
 function register_camp_widgets()
 {
 	register_widget( 'Camp_Themes_Widget' );
+	register_widget( 'Camp_Organizers_Widget' );
 }
 
 require_once( __DIR__ . '/widgets/camp-posts-no-img.php' );
 require_once( __DIR__ . '/widgets/camp-themes.php' );
+require_once( __DIR__ . '/widgets/camp-organizers.php' );
 
 // Template tags
 require_once( __DIR__ . '/inc/template-tags.php' );
