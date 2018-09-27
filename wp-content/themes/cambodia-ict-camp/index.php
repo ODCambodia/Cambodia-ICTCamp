@@ -7,8 +7,8 @@ global $event_star_customizer_all_values;
 <div class="wrapper inner-main-title">
 	<div class="container">
 		<header class="entry-header init-animate">
+			<h1 class="page-title"><?php _e( 'Blog' ) ?></h1>
 			<?php
-			the_archive_title( '<h1 class="page-title">', '</h1>' );
 			the_archive_description( '<div class="taxonomy-description">', '</div>' );
 			if( 1 == $event_star_customizer_all_values['event-star-show-breadcrumb'] ){
 				event_star_breadcrumbs();

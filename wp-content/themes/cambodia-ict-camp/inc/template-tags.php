@@ -25,7 +25,6 @@ function cambodia_ict_camp_entry_footer() {
 			esc_attr( get_the_modified_date( 'c' ) ),
 			esc_html( get_the_modified_date() )
 		);
-
 		$posted_on = sprintf(
 			'%s',
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
