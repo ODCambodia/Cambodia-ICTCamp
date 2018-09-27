@@ -43,7 +43,7 @@ if(
 				$counter = 0;
 				$wrap_count = 4;
 			?>
-				<div class="section" id="organizers">
+				<div class="section padding-top-1-em" id="organizers">
 					<div class="section-title">
 						<h2>Organizers</h2>
 					</div>
@@ -53,7 +53,7 @@ if(
 						while ( $organizers->have_posts() ) {
 							$organizers->the_post();
 							
-							if( $counter%$wrap_count == 1 ) {
+							if( $counter%$wrap_count == 0 ) {
 								echo '<div class="row">';
 							}
 							?>
@@ -74,7 +74,7 @@ if(
 							</div><!-- col-xs-12 col-sm-12 col-md-3 -->
 
 							<?php
-							if( $counter%$wrap_count == 0 ) {
+							if( $counter%$wrap_count == 3 ) {
 								echo '</div>';
 							}
 							
@@ -96,7 +96,7 @@ if(
 				$counter = 0;
 				$wrap_count = 4;
 			?>
-				<div class="section" id="partners">
+				<div class="section padding-top-1-em" id="partners">
 					<div class="section-title">
 						<h2>Partners</h2>
 					</div>
@@ -106,7 +106,7 @@ if(
 						while ( $partners->have_posts() ) {
 							$partners->the_post();
 							
-							if( $counter%$wrap_count == 1 ) {
+							if( $counter%$wrap_count == 0 ) {
 								echo '<div class="row">';
 							}
 							?>
@@ -127,7 +127,7 @@ if(
 							</div><!-- col-xs-12 col-sm-12 col-md-3 -->
 
 							<?php
-							if( $counter%$wrap_count == 0 ) {
+							if( $counter%$wrap_count == 3 ) {
 								echo '</div>';
 							}
 							
@@ -149,7 +149,7 @@ if(
 				$counter = 0;
 				$wrap_count = 4;
 			?>
-				<div class="section" id="donors">
+				<div class="section padding-top-1-em" id="donors">
 					<div class="section-title">
 						<h2>Donors</h2>
 					</div>
@@ -159,7 +159,7 @@ if(
 						while ( $donors->have_posts() ) {
 							$donors->the_post();
 							
-							if( $counter%$wrap_count == 1 ) {
+							if( $counter%$wrap_count == 0 ) {
 								echo '<div class="row">';
 							}
 							?>
@@ -180,7 +180,7 @@ if(
 							</div><!-- col-xs-12 col-sm-12 col-md-3 -->
 
 							<?php
-							if( $counter%$wrap_count == 0 ) {
+							if( $counter%$wrap_count == 3 ) {
 								echo '</div>';
 							}
 							

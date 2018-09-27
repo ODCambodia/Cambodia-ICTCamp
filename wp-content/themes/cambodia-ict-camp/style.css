@@ -52,6 +52,10 @@ span {
 	background-color: #06323d;
 }
 
+.padding-top-1-em {
+	padding-top: 1em;
+}
+
 .text-center {
 	text-align: center;
 }
