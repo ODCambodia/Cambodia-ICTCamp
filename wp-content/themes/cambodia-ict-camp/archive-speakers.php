@@ -7,7 +7,7 @@ global $event_star_customizer_all_values;
 <div class="wrapper inner-main-title">
 	<div class="container">
 		<header class="entry-header init-animate">
-			<h1 class="page-title"><?php echo post_type_archive_title(); ?></h1>
+			<h1 class="page-title"><?php _e( post_type_archive_title() ); ?></h1>
 			<?php
 			// the_archive_title( '<h1 class="page-title">', '</h1>' );
 			// the_archive_description( '<div class="taxonomy-description">', '</div>' );
