@@ -32,7 +32,7 @@ class Camp_Organizers_Widget extends WP_Widget
 		$organizers = new WP_Query( [ 'post_type' => 'organizers' ] );
 
 		if( $organizers->have_posts() ) {
-			$number = count( $organizers );
+			$number = wp_count_posts( 'organizers' )->publish;
 
 			switch ( $number ) {
 				case 1:
