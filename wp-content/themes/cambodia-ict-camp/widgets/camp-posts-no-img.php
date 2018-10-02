@@ -418,6 +418,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                                             <!-- <div class="image-wrap"> -->
                                                 <?php
                                                 // $no_blog_image ='';
+                                                $no_blog_image = 'no-image';
                                                 // if ( has_post_thumbnail() ) {
                                                     ?>
                                                     <!--post thumbnal options-->

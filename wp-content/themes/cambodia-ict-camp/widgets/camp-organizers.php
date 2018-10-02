@@ -61,7 +61,7 @@ class Camp_Organizers_Widget extends WP_Widget
 							'class' => 'img-responsive',
 						];
 
-						$logo = get_the_post_thumbnail( $post->ID, 'medium', $attributes );
+						$logo = get_the_post_thumbnail( get_the_ID(), 'medium', $attributes );
 						$responsive_logo = preg_replace( '/(width|height)="\d*"\s/', "", $logo );
 						?>
 						<a href="<?php echo get_the_excerpt(); ?>">
