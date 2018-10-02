@@ -12,8 +12,8 @@
 	Text Domain:  cambodia-ict-camp
  */
 
-/* General en-US */
-.km-KM {
+/* General */
+.km-KH {
 	font-family: "Battambang", "Open Sans", "Helvetica", "Arial", sans-serif;
 }
 
@@ -21,11 +21,12 @@ h1, h2, h3, h4, h5, h6, p, a, li, td, th, div, input, text {
 	font-family: inherit !important;
 }
 
-.km-KM input, .km-KM select {
+.km-KH input, 
+.km-KH select {
     font-family: inherit !important;
 }
 
-.km-KM .post-grid-item .grid-content-wrapper .item-title {
+.km-KH .post-grid-item .grid-content-wrapper .item-title {
 	font-family: inherit !important;
 }
 
