@@ -68,7 +68,7 @@ if(
 								$logo = get_the_post_thumbnail( $post->ID, 'large', $attributes );
 								$responsive_logo = preg_replace( '/(width|height)="\d*"\s/', "", $logo );
 								?>
-								<a href="<?php echo get_the_excerpt(); ?>">
+								<a href="<?php echo get_the_excerpt(); ?>" target="_blank">
 									<?php echo $responsive_logo  ?>
 								</a>
 							</div><!-- col-xs-12 col-sm-12 col-md-3 -->
@@ -121,7 +121,7 @@ if(
 								$logo = get_the_post_thumbnail( $post->ID, 'large', $attributes );
 								$responsive_logo = preg_replace( '/(width|height)="\d*"\s/', "", $logo );
 								?>
-								<a href="<?php echo get_the_excerpt(); ?>">
+								<a href="<?php echo get_the_excerpt(); ?>" target="_blank">
 									<?php echo $responsive_logo  ?>
 								</a>
 							</div><!-- col-xs-12 col-sm-12 col-md-3 -->
@@ -174,7 +174,7 @@ if(
 								$logo = get_the_post_thumbnail( $post->ID, 'large', $attributes );
 								$responsive_logo = preg_replace( '/(width|height)="\d*"\s/', "", $logo );
 								?>
-								<a href="<?php echo get_the_excerpt(); ?>">
+								<a href="<?php echo get_the_excerpt(); ?>" target="_blank">
 									<?php echo $responsive_logo  ?>
 								</a>
 							</div><!-- col-xs-12 col-sm-12 col-md-3 -->
