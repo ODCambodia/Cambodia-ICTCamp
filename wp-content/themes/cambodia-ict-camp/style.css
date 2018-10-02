@@ -1,4 +1,4 @@
-
+/*
 	Theme Name:   Cambodia ICT Camp
 	Theme URI:    
 	Description:  Event Star Child Theme
@@ -12,32 +12,25 @@
 	Text Domain:  cambodia-ict-camp
  */
 
-/* General */
-.at-event-count-down .feature-col {
-	text-align: center;
+/* General en-US */
+.km-KM {
+	font-family: "Battambang", "Open Sans", "Helvetica", "Arial", sans-serif;
 }
 
-body,
-h1, 
-h1 a, 
-h2, 
-h2 a, 
-h3, 
-h3 a, 
-h4, 
-h4 a, 
-h5, 
-h5 a, 
-h6, 
-h6 a, 
-.main-navigation a, 
-.slider-content 
-.banner-title, 
-.site-title, 
-.site-title a, 
-.feature-event 
-span {
-	font-family: Battambang;
+h1, h2, h3, h4, h5, h6, p, a, li, td, th, div, input, text {
+	font-family: inherit !important;
+}
+
+.km-KM input, .km-KM select {
+    font-family: inherit !important;
+}
+
+.km-KM .post-grid-item .grid-content-wrapper .item-title {
+	font-family: inherit !important;
+}
+
+.at-event-count-down .feature-col {
+	text-align: center;
 }
 
 .align-center {
