@@ -48,7 +48,7 @@ class Camp_Themes_Widget extends WP_Widget
 				<a href="<?php echo get_site_url() . '/themes#' . $theme->slug; ?>">
 					<div class="theme-box" style="background-image: url( <?php echo $theme_image; ?>);">
 						<h5 class="text-center">
-							<?php echo $theme->name; ?>
+							<?php _e( $theme->name ); ?>
 						</h5>
 					</div>
 				</a>
