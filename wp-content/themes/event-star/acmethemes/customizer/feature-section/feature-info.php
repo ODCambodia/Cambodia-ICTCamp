@@ -95,7 +95,7 @@ $wp_customize->add_control( 'event_star_theme_options[event-star-first-info-desc
 	'label'		            => esc_html__( 'Very Short Description', 'event-star' ),
 	'section'               => 'event-star-feature-info',
 	'settings'              => 'event_star_theme_options[event-star-first-info-desc]',
-	'type'	  	            => 'date'
+	'type'	  	            => 'text'
 ) );
 
 /*Second Info*/
