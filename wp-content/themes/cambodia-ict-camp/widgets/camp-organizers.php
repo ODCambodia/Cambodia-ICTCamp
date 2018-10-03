@@ -55,18 +55,20 @@ class Camp_Organizers_Widget extends WP_Widget
 					$organizers->the_post();
 				?>
 					<div class="align-center col-xs-12 col-sm-12 <?php echo $col; ?>">
-						<?php
-						$attributes = [
-							'title' => __( get_the_title() ),
-							'class' => 'img-responsive',
-						];
+						<div>
+							<?php
+							$attributes = [
+								'title' => __( get_the_title() ),
+								'class' => 'img-responsive',
+							];
 
-						$logo = get_the_post_thumbnail( get_the_ID(), 'medium', $attributes );
-						$responsive_logo = preg_replace( '/(width|height)="\d*"\s/', "", $logo );
-						?>
-						<a href="<?php echo get_the_excerpt(); ?>">
-							<?php echo $responsive_logo  ?>
-						</a>
+							$logo = get_the_post_thumbnail( get_the_ID(), 'medium', $attributes );
+							$responsive_logo = preg_replace( '/(width|height)="\d*"\s/', "", $logo );
+							?>
+							<a href="<?php echo get_the_excerpt(); ?>">
+								<?php echo $responsive_logo  ?>
+							</a>
+						</div>
 					</div><!-- col-xs-12 col-sm-12 col-md-3 -->
 				<?php
 				}

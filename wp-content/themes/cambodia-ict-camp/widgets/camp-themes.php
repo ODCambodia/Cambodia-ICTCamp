@@ -39,14 +39,18 @@ class Camp_Themes_Widget extends WP_Widget
 		$themes = get_categories( $attr );
 		?>
 
-		<div class="container-fluid">
+		<div class="container">
 		<?php
 		foreach( $themes as $theme ) {
 			$theme_image = get_term_meta( $theme->term_id, '_category_image_value_key', true );
 		?>
-			<div class="col-xs-12 col-sm-12 col-md-3">
+			<div class="aling-center col-xs-12 col-sm-12 col-md-3">
 				<a href="<?php echo get_site_url() . '/themes#' . $theme->slug; ?>">
-					<h5 class="theme-box text-center" style="background-image: url( <?php echo $theme_image; ?>;);"><?php echo $theme->name; ?></h5>
+					<div class="theme-box" style="background-image: url( <?php echo $theme_image; ?>);">
+						<h5 class="text-center">
+							<?php echo $theme->name; ?>
+						</h5>
+					</div>
 				</a>
 			</div>
 		<?php
@@ -68,7 +72,11 @@ class Camp_Themes_Widget extends WP_Widget
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title: ' ) ?></label>
-			<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ) ?>" value="<?php echo esc_attr( $title ) ?>">
+			<input type="text" class="widefat" 
+				id="<?php echo $this->get_field_id( 'title' ); ?>" 
+				name="<?php echo $this->get_field_name( 'title' ) ?>" 
+				value="<?php echo esc_attr( $title ) ?>"
+			>
 		</p>
 	<?php
 	}
