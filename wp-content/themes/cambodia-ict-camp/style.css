@@ -46,6 +46,10 @@ h1, h2, h3, h4, h5, h6, p, a, li, td, th, div, input, text {
 	background-color: #06323d;
 }
 
+.no-margin {
+	margin: 0;
+}
+
 .padding-top-1-em {
 	padding-top: 1em;
 }
