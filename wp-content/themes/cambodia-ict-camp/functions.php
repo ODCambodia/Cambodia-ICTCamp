@@ -27,6 +27,13 @@ function add_google_fonts()
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Battambang', false );
 }
 
+// Load Theme's Translated Link
+add_action( 'after_setup_theme', 'ictcamp_theme_setup' );
+function ictcamp_theme_setup() 
+{
+	load_theme_textdomain( 'ict_camp', get_template_directory() . '/languages' );
+}
+
 // Register Custom Taxonomies
 require_once( __DIR__ . '/inc/custom-taxonomies/years.php' );
 require_once( __DIR__ . '/inc/custom-taxonomies/session-types.php' );

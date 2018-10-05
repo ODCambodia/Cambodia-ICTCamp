@@ -12,9 +12,9 @@ class Camp_Organizers_Widget extends WP_Widget
 	{
 		parent::__construct(
 			'camp_organizers',
-			esc_html__( 'CICT Organizer Widget', 'cambodiaictcamp' ),
+			esc_html__( 'CICT Organizer Widget', 'ict_camp' ),
 			[
-				'description' => esc_html__( 'Display a list of all organizers of the camp', 'cambodiaictcamp' ),
+				'description' => esc_html__( 'Display a list of all organizers of the camp', 'ict_camp' ),
 			]
 		);
 	}
@@ -85,7 +85,7 @@ class Camp_Organizers_Widget extends WP_Widget
 		if( isset( $instance['title'] ) ) {
 			$title = $instance['title'];
 		} else {
-			$title = __( 'New Title', 'cambodiaictcamp' );
+			$title = __( 'New Title', 'ict_camp' );
 		}
 		?>
 

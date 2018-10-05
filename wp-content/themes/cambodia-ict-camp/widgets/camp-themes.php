@@ -12,9 +12,9 @@ class Camp_Themes_Widget extends WP_Widget
 	{
 		parent::__construct(
 			'camp_themes',
-			esc_html__( 'CICT Theme Widget', 'cambodiaictcamp' ),
+			esc_html__( 'CICT Theme Widget', 'ict_camp' ),
 			[
-				'description' => esc_html__( 'Display a list of all themes of the camp', 'cambodiaictcamp' ),
+				'description' => esc_html__( 'Display a list of all themes of the camp', 'ict_camp' ),
 			]
 		);
 	}
@@ -66,7 +66,7 @@ class Camp_Themes_Widget extends WP_Widget
 		if( isset( $instance['title'] ) ) {
 			$title = $instance['title'];
 		} else {
-			$title = __( 'New Title', 'cambodiaictcamp' );
+			$title = __( 'New Title', 'ict_camp' );
 		}
 		?>
 
