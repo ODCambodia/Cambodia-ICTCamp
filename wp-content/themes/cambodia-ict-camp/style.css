@@ -19,6 +19,11 @@
 
 h1, h2, h3, h4, h5, h6, p, a, li, td, th, div, input, text {
 	font-family: inherit !important;
+	line-height: 2em;
+}
+
+li {
+	line-height: 2em;
 }
 
 .km-KH input, 
