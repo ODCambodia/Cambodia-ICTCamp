@@ -1076,7 +1076,7 @@ object {
 	opacity: 1;
     padding: 10px 0;
     position: relative;
-	z-index: 999999999999999999;
+	/*z-index: 999999999999999999;*/
 }
 .info-icon-box .info-icon {
     margin-left: 15px;
