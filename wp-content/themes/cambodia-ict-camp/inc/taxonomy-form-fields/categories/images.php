@@ -10,11 +10,11 @@ function add_category_image_create_form_field( $theme )
     wp_nonce_field( 'save_category_image_form_field_data', 'category_image_form_field_nonce' );
 ?>
     <div class="form-field">
-        <label for="category_image_edit_form_field"><?php _e( 'Theme Image', 'cambodiaictcamp' ); ?></label>
+        <label for="category_image_edit_form_field"><?php _e( 'Theme Image', 'ict_camp' ); ?></label>
         <input type="text" name="category_image_edit_form_field" id="category_image_edit_form_field" class="meta-image regular-text" value="<?php echo $theme_image; ?>" readonly>
         <input type="button" class="button-primary" value="Browse" id="image-upload">
         <br/>
-        <span class="description"><?php _e( 'Select a image for the theme.', 'cambodiaictcamp' ); ?></span>
+        <span class="description"><?php _e( 'Select a image for the theme.', 'ict_camp' ); ?></span>
     </div>
 <?php
 }
@@ -28,13 +28,13 @@ function add_category_image_edit_form_field( $theme )
     ?>
 
     <tr class="form-field">
-        <th><label for="category_image_edit_form_field"><?php _e( 'Theme Image', 'cambodiaictcamp' ); ?></label></th>
+        <th><label for="category_image_edit_form_field"><?php _e( 'Theme Image', 'ict_camp' ); ?></label></th>
         <td>
             <input type="text" name="category_image_edit_form_field" id="category_image_edit_form_field" class="meta-image regular-text" value="<?php echo $theme_image; ?>" style="width: 83%" readonly>
             <input type="button" class="button-primary" value="Browse" id="image-upload">
             <br/>
             <img class="image-preview" src="<?php echo $theme_image; ?>" style="max-width: 250px;">
-            <p class="description"><?php _e( 'Select a color for the theme.', 'cambodiaictcamp' ); ?></p>
+            <p class="description"><?php _e( 'Select a color for the theme.', 'ict_camp' ); ?></p>
         </td>
     </tr>
 <?php

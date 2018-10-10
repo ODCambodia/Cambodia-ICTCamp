@@ -7,7 +7,7 @@ global $event_star_customizer_all_values;
 <div class="wrapper inner-main-title">
 	<div class="container">
 		<header class="entry-header init-animate">
-			<h1 class="page-title"><?php _e( post_type_archive_title() ); ?></h1>
+			<h1 class="page-title"><?php _e( 'Speakers', 'ict_camp' ); ?></h1>
 			<?php
 			// the_archive_title( '<h1 class="page-title">', '</h1>' );
 			// the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -36,7 +36,7 @@ global $event_star_customizer_all_values;
 					?>
 
 					<div class="col-xs-12 col-sm-12 col-md-3">
-						<?php 
+						<?php
 						$attributes = [
 							'title' => get_the_title(),
 							'class' => 'aligncenter img-circle',
@@ -60,7 +60,7 @@ global $event_star_customizer_all_values;
 							<br/>
 							<?php _e( $speaker_organization ); ?>
 						</p>
-						<br>	
+						<br>
 
 						<!-- Bio Modal -->
 						<div class="modal fade" id="<?php echo $post->ID ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -102,7 +102,7 @@ global $event_star_customizer_all_values;
 						echo '</div>';
 					}
 					?>
-					
+
 				<?php
 				endwhile;
 				/**
@@ -119,9 +119,9 @@ global $event_star_customizer_all_values;
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<?php 
+	<?php
 	get_sidebar( 'left' );
-	get_sidebar(); 
+	get_sidebar();
 	?>
 </div><!-- #content -->
 <?php get_footer();

@@ -10,11 +10,11 @@ function add_category_color_create_form_field( $theme )
 	wp_nonce_field( 'save_category_color_form_field_data', 'category_color_form_field_nonce' );
 ?>
 	<div class="form-field">
-		<label for="category_color_edit_form_field"><?php _e( 'Theme Color', 'cambodiaictcamp' ); ?></label> 
+		<label for="category_color_edit_form_field"><?php _e( 'Theme Color', 'ict_camp' ); ?></label> 
 			 
 		<input type="color" name="category_color_edit_form_field" id="category_color_edit_form_field" value="">
 		<br/>
-		<span class="description"><?php _e( 'Select a color for the theme.', 'cambodiaictcamp' ); ?></span>
+		<span class="description"><?php _e( 'Select a color for the theme.', 'ict_camp' ); ?></span>
 	</div>
 <?php
 }
@@ -28,11 +28,11 @@ function add_category_color_edit_form_field( $theme )
 	?>
 
 	<tr class="form-field">
-		<th><label for="category_color_edit_form_field"><?php _e( 'Theme Color', 'cambodiaictcamp' ); ?></label></th>	 
+		<th><label for="category_color_edit_form_field"><?php _e( 'Theme Color', 'ict_camp' ); ?></label></th>	 
 		<td>	 
 			<input type="color" name="category_color_edit_form_field" id="category_color_edit_form_field" value="<?php echo esc_attr( $theme_color ); ?>">
 			<br/>
-			<p class="description"><?php _e( 'Select a color for the theme.', 'cambodiaictcamp' ); ?></p>
+			<p class="description"><?php _e( 'Select a color for the theme.', 'ict_camp' ); ?></p>
 		</td>
 	</tr>
 <?php	

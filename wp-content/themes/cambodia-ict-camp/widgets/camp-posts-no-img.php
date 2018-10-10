@@ -39,10 +39,10 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                 /*Base ID of your widget*/
                 'event_star_posts_col',
                 /*Widget name will appear in UI*/
-                esc_html__('CICT Posts Column', 'cambodiaictcamp'),
+                esc_html__('CICT Posts Column', 'ict_camp'),
                 /*Widget description*/
                 [
-                    'description' => esc_html__( 'Show posts from selected category with advanced options', 'cambodiaictcamp' )
+                    'description' => esc_html__( 'Show posts from selected category with advanced options', 'ict_camp' )
                 ]
             );
         }
@@ -68,7 +68,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
 
             <p>
                 <label for="<?php echo $this->get_field_id( 'unique_id' ); ?>">
-                    <?php esc_html_e( 'Section ID', 'cambodiaictcamp' ); ?>:
+                    <?php esc_html_e( 'Section ID', 'ict_camp' ); ?>:
                 </label>
                 <input class="widefat" 
                     id="<?php echo $this->get_field_id( 'unique_id' ); ?>" 
@@ -79,14 +79,14 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                 <br/>
                 <small>
                     <?php 
-                    esc_html_e('Enter a Unique Section ID. You can use this ID in Menu item for enabling One Page Menu.','cambodiaictcamp')
+                    esc_html_e('Enter a Unique Section ID. You can use this ID in Menu item for enabling One Page Menu.','ict_camp')
                     ?>
                 </small>
             </p>
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
-                    <?php esc_html_e( 'Title', 'cambodiaictcamp' ); ?>
+                    <?php esc_html_e( 'Title', 'ict_camp' ); ?>
                 </label>
                 <input class="widefat" 
                     id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" 
@@ -98,7 +98,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'post_advanced_option' ) ); ?>">
-                    <?php esc_html_e( 'Show', 'cambodiaictcamp' ); ?>
+                    <?php esc_html_e( 'Show', 'ict_camp' ); ?>
                 </label>
                 <select class="widefat at-post-advanced-option" 
                     id="<?php echo esc_attr( $this->get_field_id( 'post_advanced_option' ) ); ?>" 
@@ -120,7 +120,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
 
             <p class="post-cat post-select">
                 <label for="<?php echo esc_attr( $this->get_field_id('event_star_post_cat') ); ?>">
-                    <?php esc_html_e('Select Category', 'cambodiaictcamp'); ?>
+                    <?php esc_html_e('Select Category', 'ict_camp'); ?>
                 </label>
                 <?php
                 $event_star_dropown_cat = [
@@ -144,7 +144,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
             </p>
             <p class="post-tag post-select">
                 <label for="<?php echo esc_attr( $this->get_field_id( 'event_star_post_tag' ) ); ?>">
-			        <?php esc_html_e( 'Select Tag', 'cambodiaictcamp' ); ?>
+			        <?php esc_html_e( 'Select Tag', 'ict_camp' ); ?>
                 </label>
 		        <?php
 		        $event_star_dropown_cat = [
@@ -169,7 +169,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'post_number' ) ); ?>">
-			        <?php esc_html_e( 'Number of posts to show', 'cambodiaictcamp' ); ?>
+			        <?php esc_html_e( 'Number of posts to show', 'ict_camp' ); ?>
                 </label>
                 <input class="widefat" 
                     id="<?php echo esc_attr( $this->get_field_id( 'post_number' ) ); ?>" 
@@ -181,7 +181,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'column_number' ) ); ?>">
-                    <?php esc_html_e( 'Column Number', 'cambodiaictcamp' ); ?>
+                    <?php esc_html_e( 'Column Number', 'ict_camp' ); ?>
                 </label>
                 <select class="widefat" 
                     id="<?php echo esc_attr( $this->get_field_id( 'column_number' ) ); ?>" 
@@ -203,7 +203,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'display_type' ) ); ?>">
-                    <?php esc_html_e( 'Display Type', 'cambodiaictcamp' ); ?>
+                    <?php esc_html_e( 'Display Type', 'ict_camp' ); ?>
                 </label>
                 <select class="widefat at-display-select" 
                     id="<?php echo esc_attr( $this->get_field_id( 'display_type' ) ); ?>" 
@@ -224,7 +224,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>">
-			        <?php esc_html_e( 'Order by', 'cambodiaictcamp' ); ?>
+			        <?php esc_html_e( 'Order by', 'ict_camp' ); ?>
                 </label>
                 <select class="widefat" 
                     id="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>" 
@@ -245,7 +245,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>">
-			        <?php esc_html_e( 'Order by', 'cambodiaictcamp' ); ?>
+			        <?php esc_html_e( 'Order by', 'ict_camp' ); ?>
                 </label>
                 <select class="widefat" 
                     id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" 
@@ -273,13 +273,13 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                     <?php checked( 1 == $enable_prev_next ? $instance['enable_prev_next'] : 0); ?> 
                 />
                 <label for="<?php echo esc_attr( $this->get_field_id( 'enable_prev_next' ) ); ?>">
-                    <?php esc_html_e( 'Enable Prev - Next on Carousel Column', 'cambodiaictcamp' ); ?>
+                    <?php esc_html_e( 'Enable Prev - Next on Carousel Column', 'ict_camp' ); ?>
                 </label>
             </p>
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'event_star_img_size' ) ); ?>">
-			        <?php esc_html_e( 'Normal Featured Post Image', 'cambodiaictcamp' ); ?>
+			        <?php esc_html_e( 'Normal Featured Post Image', 'ict_camp' ); ?>
                 </label>
                 <select class="widefat" 
                     id="<?php echo esc_attr( $this->get_field_id( 'event_star_img_size' ) ); ?>" 
@@ -302,12 +302,12 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                     <?php checked( 1 == $show_feature_image ? $instance['show_feature_image'] : 0); ?> 
                 />
                 <label for="<?php echo esc_attr( $this->get_field_id( 'show_feature_image' ) ); ?>">
-                    <?php esc_html_e( 'Show feature image of the post', 'cambodiaictcamp' ); ?>
+                    <?php esc_html_e( 'Show feature image of the post', 'ict_camp' ); ?>
                 </label>
             </p>
 
             <p>
-                <label for="<?php echo esc_attr( $this->get_field_id( 'background_options' ) ); ?>"><?php esc_html_e( 'Background Options', 'cambodiaictcamp' ); ?></label>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'background_options' ) ); ?>"><?php esc_html_e( 'Background Options', 'ict_camp' ); ?></label>
                 <select class="widefat" 
                     id="<?php echo esc_attr( $this->get_field_id( 'background_options' ) ); ?>" 
                     name="<?php echo esc_attr( $this->get_field_name( 'background_options' ) ); ?>"
@@ -326,7 +326,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
             </p>
             <p>
                 <small>
-                    <?php esc_html_e( 'Note: Some of the features only work in "Home main content area" due to minimum width in other areas.' ,'cambodiaictcamp'); ?>
+                    <?php esc_html_e( 'Note: Some of the features only work in "Home main content area" due to minimum width in other areas.' ,'ict_camp'); ?>
                 </small>
             </p>
             <?php

@@ -7,7 +7,7 @@ global $event_star_customizer_all_values;
 <div class="wrapper inner-main-title">
 	<div class="container">
 		<header class="entry-header init-animate">
-			<h1 class="page-title"><?php _e( 'Blog' ) ?></h1>
+			<h1 class="page-title"><?php _e( 'Blog', 'ict_camp' ) ?></h1>
 			<?php
 			the_archive_description( '<div class="taxonomy-description">', '</div>' );
 			if( 1 == $event_star_customizer_all_values['event-star-show-breadcrumb'] ){
@@ -47,9 +47,9 @@ global $event_star_customizer_all_values;
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<?php 
+	<?php
 	get_sidebar( 'left' );
-	get_sidebar(); 
+	get_sidebar();
 	?>
 </div><!-- #content -->
 <?php get_footer();
