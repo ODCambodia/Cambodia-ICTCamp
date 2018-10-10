@@ -9,30 +9,30 @@ class ICTCamp_Localize_Manager {
     "en" => "English",
     "km" => "Khmer"
   );
-  
+
 	function __construct() {
     add_action( 'after_setup_theme', array($this,'init_language_manager'));
 	}
-  
+
   function init_language_manager(){
     if (function_exists('qtranxf_getLanguage')) {
       $local_lang = qtranxf_getLanguage();
       $this->current_language = $local_lang;
     }
   }
-  
+
   function get_the_language_by_language_code($lang_code = 'en'){
       return $this->supported_languages[$lang_code];
-  } 
-  
+  }
+
   function get_current_language(){
       return $this->current_language;
   }
-  
+
   function get_supported_languages(){
       return $this->supported_languages;
   }
-  
+
   function echo_language_selectors(){
     if (function_exists('qtranxf_generateLanguageSelectCode')) {
         qtranxf_generateLanguageSelectCode('image');
@@ -53,20 +53,19 @@ class ICTCamp_Localize_Manager {
   }
 
   /****** Add function convert date, H.E ******/
-  function convert_date_to_kh_date($date_string, $splitted_by = '.'){
-      if (ictcamp_localize_manager()->get_current_language() == 'km-KH') {
-          $date_string = date('dd/mm/YYYY', strtotime($date_string));
-          $splitted_date = explode($splitted_by, $date_string);
+  function khmer_date($date_string, $splitted_by = '.'){
+      if (ictcamp_localize_manager()->get_current_language() == 'km') {
+          $splitted_date = explode($splitted_by, $date_string); 
           $joined_date = '';
-          if (count($splitted_date) > 1) { 
-              $joined_date .= 'ថ្ងៃទី '.convert_to_kh_number($splitted_date[0]);
-              $joined_date .= ' ខែ'.convert_to_kh_month($splitted_date[1]);
-              $joined_date .= ' ឆ្នាំ'.convert_to_kh_number($splitted_date[2]);
+          if (count($splitted_date) > 1) {
+              $joined_date .= 'ថ្ងៃទី '.ictcamp_localize_manager()->convert_to_kh_number($splitted_date[0]);
+              $joined_date .= ' ខែ'.ictcamp_localize_manager()->convert_to_kh_month($splitted_date[1]);
+              $joined_date .= ' ឆ្នាំ'.ictcamp_localize_manager()->convert_to_kh_number($splitted_date[2]);
           }
 
           return $joined_date;
       } else {
-          $return_date = date('d F Y', strtotime($date_string));
+          $return_date = date('j F Y', strtotime($date_string));
           return  $return_date;
       }
   }
