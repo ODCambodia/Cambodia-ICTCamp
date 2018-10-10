@@ -5,7 +5,6 @@ $content_from = $event_star_customizer_all_values['event-star-blog-archive-conte
 
 $no_blog_image = '';
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="content-wrapper">
         <?php
@@ -28,24 +27,25 @@ $no_blog_image = '';
         ?>
 
         <div class="entry-content <?php echo $no_blog_image; ?>">
-			<?php
-			if ( 'post' === get_post_type() ) : ?>
-                <header class="entry-header <?php echo $no_blog_image; ?>">
-                    <div class="entry-meta">
-						<?php
-						// event_star_cats_lists()
-						?>
-                    </div><!-- .entry-meta -->
-                </header><!-- .entry-header -->
-			<?php
-			endif; ?>
-			<div class="entry-header-title">
-				<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-			</div>
-            <footer class="entry-footer">
-				<?php cambodia_ict_camp_entry_footer(); ?>
-            </footer><!-- .entry-footer -->
-			<?php
+				<?php
+				if ( 'post' === get_post_type() ) : ?>
+	            <header class="entry-header <?php echo $no_blog_image; ?>">
+	                <div class="entry-meta">
+										<?php
+										// event_star_cats_lists()
+										?>
+	                </div><!-- .entry-meta -->
+	            </header><!-- .entry-header -->
+				<?php
+				endif; ?>
+				<div class="entry-header-title">
+					<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+				</div>
+				<div class="posts-meta-div">
+					<?php echo_ictcamp_post_meta(get_post(), array("date","categories","tags")); ?>
+				</div>
+
+				<?php
             if ( 'content' == $content_from ) :
 	            the_content( sprintf(
 	            /* translators: %s: Name of current post. */

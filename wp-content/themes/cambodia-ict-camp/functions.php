@@ -74,3 +74,9 @@ require_once( __DIR__ . '/inc/template-tags.php' );
 // Register Custom Form Fields for Taxonomy
 require_once( __DIR__ . '/inc/taxonomy-form-fields/categories/colors.php' );
 require_once( __DIR__ . '/inc/taxonomy-form-fields/categories/images.php' );
+
+
+// Util Content
+require_once( __DIR__ . '/inc/utils-content.php' );
+// Language Management
+require_once( __DIR__ . '/inc/localize-manager.php' );
