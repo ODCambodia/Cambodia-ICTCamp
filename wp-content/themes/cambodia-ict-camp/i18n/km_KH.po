@@ -1,28 +1,30 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: 2018-10-05 16:14+0700\n"
-"PO-Revision-Date: 2018-10-05 16:14+0700\n"
+"Project-Id-Version: cambodia-ict-camp\n"
+"POT-Creation-Date: 2018-10-10 15:44+0700\n"
+"PO-Revision-Date: 2018-10-10 16:20+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: km_KH\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-KeywordsList: _e;__;esc_html__;esc_html_e\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _;_e;__;_x\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: archive-speakers.php:10 inc/custom-post-types/speakers.php:9
-#: inc/custom-post-types/speakers.php:23 inc/custom-post-types/speakers.php:24
+#: archive-speakers.php:10 inc/custom-post-types/speakers.php:7
+#: inc/custom-post-types/speakers.php:9 inc/custom-post-types/speakers.php:23
+#: inc/custom-post-types/speakers.php:24
 msgid "Speakers"
 msgstr "វាគ្មិន"
 
 #: inc/custom-meta-boxes/speakers/expertise.php:7
 msgid "Expertise"
-msgstr ""
+msgstr "អ្នកជំនាញ"
 
 #: inc/custom-meta-boxes/speakers/organization.php:7
 msgid "Organization"
@@ -32,8 +34,13 @@ msgstr "ស្ថាប័ន"
 msgid "Social Media Links"
 msgstr ""
 
+#: inc/custom-post-types/announcements.php:7
 #: inc/custom-post-types/announcements.php:9
 msgid "Announcements"
+msgstr "សេចក្តីប្រកាស"
+
+#: inc/custom-post-types/announcements.php:8
+msgid "Announcement"
 msgstr "សេចក្តីប្រកាស"
 
 #: inc/custom-post-types/announcements.php:10
@@ -76,7 +83,7 @@ msgstr ""
 #: inc/custom-post-types/partners.php:18 inc/custom-post-types/sessions.php:18
 #: inc/custom-post-types/speakers.php:18
 msgid "Not Found"
-msgstr ""
+msgstr "ព័ត៌មានពុំអាចរកបាន"
 
 #: inc/custom-post-types/announcements.php:19
 #: inc/custom-post-types/donors.php:19 inc/custom-post-types/organizers.php:19
@@ -90,9 +97,13 @@ msgstr ""
 msgid "announcements"
 msgstr ""
 
-#: inc/custom-post-types/donors.php:9
+#: inc/custom-post-types/donors.php:7 inc/custom-post-types/donors.php:9
 msgid "Donors"
-msgstr ""
+msgstr "ម្ចាស់ជំនួយ"
+
+#: inc/custom-post-types/donors.php:8
+msgid "Donor"
+msgstr "ម្ចាស់ជំនួយ"
 
 #: inc/custom-post-types/donors.php:10
 msgid "Parent Donor"
@@ -120,16 +131,21 @@ msgstr ""
 
 #: inc/custom-post-types/donors.php:17
 msgid "Search Donor"
-msgstr ""
+msgstr "ស្វែងរកម្ចាស់ជំនួយ"
 
 #: inc/custom-post-types/donors.php:23 inc/custom-post-types/donors.php:24
 msgid "donors"
 msgstr ""
 
+#: inc/custom-post-types/organizers.php:7
 #: inc/custom-post-types/organizers.php:9
 #: inc/custom-post-types/organizers.php:23
 #: inc/custom-post-types/organizers.php:24
 msgid "Organizers"
+msgstr "អ្នករៀបចំកម្មវិធី"
+
+#: inc/custom-post-types/organizers.php:8
+msgid "Organizer"
 msgstr "អ្នករៀបចំកម្មវិធី"
 
 #: inc/custom-post-types/organizers.php:10
@@ -158,12 +174,16 @@ msgstr ""
 
 #: inc/custom-post-types/organizers.php:17
 msgid "Search Organizer"
-msgstr ""
+msgstr "ស្វែងរកអ្នករៀបចំកម្មវិធី"
 
-#: inc/custom-post-types/partners.php:9 inc/custom-post-types/partners.php:23
-#: inc/custom-post-types/partners.php:24
+#: inc/custom-post-types/partners.php:7 inc/custom-post-types/partners.php:9
+#: inc/custom-post-types/partners.php:23 inc/custom-post-types/partners.php:24
 msgid "Parnters"
 msgstr "ដៃគូ"
+
+#: inc/custom-post-types/partners.php:8
+msgid "Partner"
+msgstr ""
 
 #: inc/custom-post-types/partners.php:10
 msgid "Parent Partner"
@@ -193,8 +213,12 @@ msgstr ""
 msgid "Search Partner"
 msgstr ""
 
-#: inc/custom-post-types/sessions.php:9
+#: inc/custom-post-types/sessions.php:7 inc/custom-post-types/sessions.php:9
 msgid "Sessions"
+msgstr ""
+
+#: inc/custom-post-types/sessions.php:8
+msgid "Session"
 msgstr ""
 
 #: inc/custom-post-types/sessions.php:10
@@ -233,13 +257,17 @@ msgstr ""
 msgid "Agenda Sessions"
 msgstr ""
 
+#: inc/custom-post-types/speakers.php:8
+msgid "Speaker"
+msgstr "វាគ្មិន"
+
 #: inc/custom-post-types/speakers.php:10
 msgid "Parent Speaker"
 msgstr ""
 
 #: inc/custom-post-types/speakers.php:11
 msgid "All Speakers"
-msgstr ""
+msgstr "វាគ្មិនទាំងអស់"
 
 #: inc/custom-post-types/speakers.php:12
 msgid "View Speaker"
@@ -259,6 +287,15 @@ msgstr ""
 
 #: inc/custom-post-types/speakers.php:17
 msgid "Search Speaker"
+msgstr ""
+
+#: inc/custom-taxonomies/session-types.php:7
+#: inc/custom-taxonomies/session-types.php:17
+msgid "Types"
+msgstr ""
+
+#: inc/custom-taxonomies/session-types.php:8
+msgid "Type"
 msgstr ""
 
 #: inc/custom-taxonomies/session-types.php:9
@@ -293,9 +330,13 @@ msgstr ""
 msgid "New Type Name"
 msgstr ""
 
-#: inc/custom-taxonomies/session-types.php:17
-msgid "Types"
-msgstr ""
+#: inc/custom-taxonomies/years.php:7 inc/custom-taxonomies/years.php:17
+msgid "Years"
+msgstr "ឆ្នាំ"
+
+#: inc/custom-taxonomies/years.php:8
+msgid "Year"
+msgstr "ឆ្នាំ"
 
 #: inc/custom-taxonomies/years.php:9
 msgid "Search Years"
@@ -329,10 +370,6 @@ msgstr ""
 msgid "New Year Name"
 msgstr ""
 
-#: inc/custom-taxonomies/years.php:17
-msgid "Years"
-msgstr "ឆ្នាំ"
-
 #: inc/taxonomy-form-fields/categories/colors.php:13
 #: inc/taxonomy-form-fields/categories/colors.php:31
 msgid "Theme Color"
@@ -359,15 +396,6 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-parts/content-list-posts.php:56
-#: inc/template-parts/content-single-post.php:56
-msgid "Pages:"
-msgstr ""
-
-#: inc/template-tags.php:41
-msgid ", "
-msgstr ""
-
 #: index.php:10
 msgid "Blog"
 msgstr "ប្លក់"
@@ -376,98 +404,10 @@ msgstr "ប្លក់"
 msgid " #"
 msgstr ""
 
-#: widgets/camp-organizers.php:15
-msgid "CICT Organizer Widget"
-msgstr ""
-
-#: widgets/camp-organizers.php:17
-msgid "Display a list of all organizers of the camp"
-msgstr ""
-
 #: widgets/camp-organizers.php:88 widgets/camp-themes.php:69
 msgid "New Title"
 msgstr ""
 
 #: widgets/camp-organizers.php:93 widgets/camp-themes.php:74
 msgid "Title: "
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:42
-msgid "CICT Posts Column"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:45
-msgid "Show posts from selected category with advanced options"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:71
-msgid "Section ID"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:82
-msgid ""
-"Enter a Unique Section ID. You can use this ID in Menu item for enabling One "
-"Page Menu."
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:89
-msgid "Title"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:101
-msgid "Show"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:123
-msgid "Select Category"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:147
-msgid "Select Tag"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:172
-msgid "Number of posts to show"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:184
-msgid "Column Number"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:206
-msgid "Display Type"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:227 widgets/camp-posts-no-img.php:248
-msgid "Order by"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:276
-msgid "Enable Prev - Next on Carousel Column"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:282
-msgid "Normal Featured Post Image"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:305
-msgid "Show feature image of the post"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:310
-msgid "Background Options"
-msgstr ""
-
-#: widgets/camp-posts-no-img.php:329
-msgid ""
-"Note: Some of the features only work in \"Home main content area\" due to "
-"minimum width in other areas."
-msgstr ""
-
-#: widgets/camp-themes.php:15
-msgid "CICT Theme Widget"
-msgstr ""
-
-#: widgets/camp-themes.php:17
-msgid "Display a list of all themes of the camp"
 msgstr ""

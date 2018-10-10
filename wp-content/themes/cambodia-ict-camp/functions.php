@@ -29,9 +29,9 @@ function add_google_fonts()
 
 // Load Theme's Translated Link
 add_action( 'after_setup_theme', 'ictcamp_theme_setup' );
-function ictcamp_theme_setup() 
+function ictcamp_theme_setup()
 {
-	load_theme_textdomain( 'ict_camp', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'ict_camp', get_stylesheet_directory() . '/i18n' );
 }
 
 // Register Custom Taxonomies
