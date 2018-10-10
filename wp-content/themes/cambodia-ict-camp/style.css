@@ -4,8 +4,8 @@
 	Description:  Event Star Child Theme
 	Author:       Open Development Cambodia
 	Author URI:
-	Template:     event-star 
-	Version:      1.0.2 
+	Template:     event-star
+	Version:      1.0.3
 	License:
 	License URI:
 	Tags:         responsive-layout
@@ -19,11 +19,14 @@
 
 h1, h2, h3, h4, h5, h6, p, a, li, td, th, div, input, text {
 	font-family: inherit !important;
-	line-height: 2em;
+	line-height: 1.5em;
 }
 
 li {
-	line-height: 2em;
+	line-height: 1.5em;
+}
+a:hover{
+	color: rgb(150, 201, 66) !important;
 }
 
 .km-KH input,
@@ -130,4 +133,18 @@ li {
 	position: absolute;
 	width: 100%;
 }
+
+.posts-meta-div {
+	font-size: 12px;
+}
+.post-meta ul{
+	margin: 0 0 5px;
+	padding: 0;
+}
+.post-meta ul li{
+	display: inline-block;
+	list-style-type: none;
+	padding-right: 5px;
+}
+
 /* END Theme Page
