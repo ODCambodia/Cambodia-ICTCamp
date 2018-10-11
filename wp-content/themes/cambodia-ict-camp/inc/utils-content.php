@@ -105,10 +105,10 @@ function echo_ictcamp_post_meta($the_post, $show_elements = array('date','catego
 				 	endif;
 	      endif;
 
-        if (in_array('comment',$show_elements)):
+        if (in_array('comment', $show_elements)):
           if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
             echo '<span class="comments-link"><i class="fa fa-comment-o"></i> ';
-           	  comments_popup_link( esc_html__( 'Leave a comment', 'event-star' ), esc_html__( '1 Comment', 'event-star' ), esc_html__( '% Comments', 'event-star' ) );
+           	  comments_popup_link( esc_html__( 'Leave a comment', 'ict_camp' ), esc_html__( '1 Comment', 'ict_camp' ), esc_html__( '% Comments', 'ict_camp' ) );
               echo '</span>';
           endif;
         endif;
@@ -118,4 +118,3 @@ function echo_ictcamp_post_meta($the_post, $show_elements = array('date','catego
 	</div>
 	<?php
 }
-?>
