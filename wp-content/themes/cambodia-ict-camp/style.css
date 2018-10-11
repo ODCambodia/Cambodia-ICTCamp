@@ -1,15 +1,15 @@
 /*
-	Theme Name:   Cambodia ICT Camp
-	Theme URI:
-	Description:  Event Star Child Theme
-	Author:       Open Development Cambodia
-	Author URI:
-	Template:     event-star
-	Version:      1.0.3
-	License:
-	License URI:
-	Tags:         responsive-layout
-	Text Domain:  cambodia-ict-camp
+  Theme Name:   Cambodia ICT Camp
+  Theme URI:
+  Description:  Event Star Child Theme
+  Author:       Open Development Cambodia
+  Author URI:
+  Template:     event-star
+  Version:      1.0.3
+  License:
+  License URI:
+  Tags:         responsive-layout
+  Text Domain:  cambodia-ict-camp
  */
 
 /* General */
@@ -32,7 +32,7 @@ a:hover{
 .km-KH input,
 .km-KH select,
 .km-KH span {
-    font-family: inherit !important;
+  font-family: inherit !important;
 }
 
 .km-KH .post-grid-item .grid-content-wrapper .item-title {
@@ -73,6 +73,11 @@ a:hover{
 	font-size: 14px;
 	margin-top: 4px;
 	padding: 11px 12px;
+}
+
+#qtranslate-chooser li {
+  display: inline-block;
+  margin: 0 5px;
 }
 
 .navbar {

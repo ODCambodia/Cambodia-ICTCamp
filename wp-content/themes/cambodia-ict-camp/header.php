@@ -7,22 +7,21 @@
  * @hooked event_star_doctype -  10
  */
 do_action( 'event_star_action_before_head' );?>
-	<head>
+    <head>
+        <?php
+        /**
+         * event_star_action_before_wp_head hook
+         * @since Event Star 1.0.0
+         *
+         * @hooked event_star_before_wp_head -  10
+         */
+        do_action( 'event_star_action_before_wp_head' );
 
-		<?php
-		/**
-		 * event_star_action_before_wp_head hook
-		 * @since Event Star 1.0.0
-		 *
-		 * @hooked event_star_before_wp_head -  10
-		 */
-		do_action( 'event_star_action_before_wp_head' );
+        wp_head();
+        ?>
 
-		wp_head();
-		?>
-
-	</head>
-<body <?php body_class( get_bloginfo('language') );?>>
+    </head>
+<body <?php body_class( get_bloginfo( 'language' ) );?>>
 
 <?php
 /**
@@ -42,12 +41,11 @@ do_action( 'event_star_action_before' );
 do_action( 'event_star_action_before_header' );
 
 /**
- * event_star_action_header hook
- * @since Event Star 1.0.0
+ * ict_camp_action_header hook
  *
- * @hooked event_star_header - 10
+ * @hooked ict_camp_header - 10
  */
-do_action( 'event_star_action_header' );
+do_action( 'ict_camp_action_header' );
 
 /**
  * event_star_action_after_header hook

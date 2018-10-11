@@ -24,7 +24,7 @@ add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
 
 function add_google_fonts()
 {
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Battambang', false );
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Battambang', false );
 }
 
 // Load Theme's Translated Link
@@ -34,6 +34,22 @@ function ictcamp_theme_setup()
     load_theme_textdomain( 'event-star', get_stylesheet_directory() . '/i18n/parent-language' );
     load_child_theme_textdomain( 'ict_camp', get_stylesheet_directory() . '/i18n' );
 }
+
+// Widget
+add_action( 'widgets_init', 'register_camp_widgets' );
+
+function register_camp_widgets()
+{
+    register_widget( 'Camp_Themes_Widget' );
+    register_widget( 'Camp_Organizers_Widget' );
+}
+
+require_once( __DIR__ . '/widgets/camp-posts-no-img.php' );
+require_once( __DIR__ . '/widgets/camp-themes.php' );
+require_once( __DIR__ . '/widgets/camp-organizers.php' );
+
+// Register Hooks
+require_once( __DIR__ . '/hooks/header.php');
 
 // Register Custom Taxonomies
 require_once( __DIR__ . '/inc/custom-taxonomies/years.php' );
@@ -56,19 +72,6 @@ require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/social-media-links.php'
 require_once( __DIR__ . '/inc/custom-meta-boxes/sessions/hall.php' );
 require_once( __DIR__ . '/inc/custom-meta-boxes/sessions/time.php' );
 
-// Widget
-add_action( 'widgets_init', 'register_camp_widgets' );
-
-function register_camp_widgets()
-{
-	register_widget( 'Camp_Themes_Widget' );
-	register_widget( 'Camp_Organizers_Widget' );
-}
-
-require_once( __DIR__ . '/widgets/camp-posts-no-img.php' );
-require_once( __DIR__ . '/widgets/camp-themes.php' );
-require_once( __DIR__ . '/widgets/camp-organizers.php' );
-
 // Template tags
 require_once( __DIR__ . '/inc/template-tags.php' );
 
@@ -76,8 +79,8 @@ require_once( __DIR__ . '/inc/template-tags.php' );
 require_once( __DIR__ . '/inc/taxonomy-form-fields/categories/colors.php' );
 require_once( __DIR__ . '/inc/taxonomy-form-fields/categories/images.php' );
 
-
 // Util Content
 require_once( __DIR__ . '/inc/utils-content.php' );
+
 // Language Management
 require_once( __DIR__ . '/inc/localize-manager.php' );
