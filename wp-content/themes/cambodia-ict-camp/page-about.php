@@ -45,7 +45,7 @@ if(
 			?>
 				<div class="section padding-top-1-em" id="organizers">
 					<div class="section-title">
-						<h2>Organizers</h2>
+						<h2><?php _e( 'Organizers', 'ict_camp' ); ?></h2>
 					</div>
 
 					<div class="setcion-body">
@@ -98,7 +98,7 @@ if(
 			?>
 				<div class="section padding-top-1-em" id="partners">
 					<div class="section-title">
-						<h2>Partners</h2>
+						<h2><?php  _e( 'Partners', 'ict_camp' ); ?></h2>
 					</div>
 
 					<div class="setcion-body">
@@ -151,7 +151,7 @@ if(
 			?>
 				<div class="section padding-top-1-em" id="donors">
 					<div class="section-title">
-						<h2>Donors</h2>
+						<h2><?php _e( 'Donors', 'ict_camp' ); ?></h2>
 					</div>
 
 					<div class="setcion-body">

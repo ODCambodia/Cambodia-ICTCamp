@@ -1,19 +1,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cambodia-ict-camp\n"
-"POT-Creation-Date: 2018-10-10 15:44+0700\n"
-"PO-Revision-Date: 2018-10-10 16:20+0700\n"
+"POT-Creation-Date: 2018-10-11 11:47+0700\n"
+"PO-Revision-Date: 2018-10-11 11:47+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: en_US\n"
+"Language: km_KH\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: _;_e;__;_x\n"
+"X-Poedit-KeywordsList: _;_e;__;_x;esc_html__\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: archive-speakers.php:10 inc/custom-post-types/speakers.php:7
@@ -98,6 +98,7 @@ msgid "announcements"
 msgstr ""
 
 #: inc/custom-post-types/donors.php:7 inc/custom-post-types/donors.php:9
+#: page-about.php:154
 msgid "Donors"
 msgstr "ម្ចាស់ជំនួយ"
 
@@ -135,12 +136,12 @@ msgstr "ស្វែងរកម្ចាស់ជំនួយ"
 
 #: inc/custom-post-types/donors.php:23 inc/custom-post-types/donors.php:24
 msgid "donors"
-msgstr ""
+msgstr "ម្ចាស់ជំនួយ"
 
 #: inc/custom-post-types/organizers.php:7
 #: inc/custom-post-types/organizers.php:9
 #: inc/custom-post-types/organizers.php:23
-#: inc/custom-post-types/organizers.php:24
+#: inc/custom-post-types/organizers.php:24 page-about.php:48
 msgid "Organizers"
 msgstr "អ្នករៀបចំកម្មវិធី"
 
@@ -183,7 +184,7 @@ msgstr "ដៃគូ"
 
 #: inc/custom-post-types/partners.php:8
 msgid "Partner"
-msgstr ""
+msgstr "ដៃគូ"
 
 #: inc/custom-post-types/partners.php:10
 msgid "Parent Partner"
@@ -396,12 +397,41 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
+#: inc/template-parts/content-list-posts.php:56
+#: inc/template-parts/content-single-post.php:56
+msgid "Pages:"
+msgstr ""
+
+#: inc/utils-content.php:111
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/utils-content.php:111
+msgid "1 Comment"
+msgstr ""
+
+#: inc/utils-content.php:111
+msgid "% Comments"
+msgstr ""
+
 #: index.php:10
 msgid "Blog"
 msgstr "ប្លក់"
 
+#: page-about.php:101
+msgid "Partners"
+msgstr "ដៃគូ"
+
 #: page-themes.php:55
 msgid " #"
+msgstr ""
+
+#: widgets/camp-organizers.php:15
+msgid "CICT Organizer Widget"
+msgstr "អ្នករៀបចំកម្មវិធី"
+
+#: widgets/camp-organizers.php:17
+msgid "Display a list of all organizers of the camp"
 msgstr ""
 
 #: widgets/camp-organizers.php:88 widgets/camp-themes.php:69
@@ -410,4 +440,20 @@ msgstr ""
 
 #: widgets/camp-organizers.php:93 widgets/camp-themes.php:74
 msgid "Title: "
+msgstr ""
+
+#: widgets/camp-posts-no-img.php:42
+msgid "CICT Posts Column"
+msgstr ""
+
+#: widgets/camp-posts-no-img.php:45
+msgid "Show posts from selected category with advanced options"
+msgstr ""
+
+#: widgets/camp-themes.php:15
+msgid "CICT Theme Widget"
+msgstr ""
+
+#: widgets/camp-themes.php:17
+msgid "Display a list of all themes of the camp"
 msgstr ""
