@@ -31,8 +31,7 @@ function add_google_fonts()
 add_action( 'after_setup_theme', 'ictcamp_theme_setup' );
 function ictcamp_theme_setup()
 {
-	load_theme_textdomain( 'event-star', get_stylesheet_directory() . '/i18n/parent-language' );
-	load_child_theme_textdomain( 'ict_camp', get_stylesheet_directory() . '/i18n' );
+    load_theme_textdomain( 'ict_camp', get_stylesheet_directory() . '/i18n' );
 }
 
 // Register Custom Taxonomies
