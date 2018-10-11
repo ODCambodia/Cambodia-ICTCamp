@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cambodia-ict-camp\n"
-"POT-Creation-Date: 2018-10-11 11:56+0700\n"
-"PO-Revision-Date: 2018-10-11 12:04+0700\n"
+"POT-Creation-Date: 2018-10-11 14:53+0700\n"
+"PO-Revision-Date: 2018-10-11 15:12+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: km_KH\n"
@@ -24,7 +24,7 @@ msgstr "វាគ្មិន"
 
 #: inc/custom-meta-boxes/speakers/expertise.php:7
 msgid "Expertise"
-msgstr "អ្នកជំនាញ"
+msgstr "ជំនាញ"
 
 #: inc/custom-meta-boxes/speakers/organization.php:7
 msgid "Organization"
@@ -402,16 +402,21 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: inc/utils-content.php:111
+#: inc/utils-content.php:111 inc/utils-content.php:130
 msgid "Leave a comment"
-msgstr ""
+msgstr "បញ្ចេញមតិ"
 
-#: inc/utils-content.php:111
+#: inc/utils-content.php:111 inc/utils-content.php:130
 msgid "1 Comment"
 msgstr ""
 
-#: inc/utils-content.php:111
+#: inc/utils-content.php:111 inc/utils-content.php:130
 msgid "% Comments"
+msgstr ""
+
+#: inc/utils-content.php:138
+#, php-format
+msgid "Edit %s"
 msgstr ""
 
 #: index.php:10

@@ -43,17 +43,17 @@ $no_blog_image = '';
 				<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 			</div>
             <footer class="entry-footer">
-				<?php cambodia_ict_camp_entry_footer(); ?>
+				<?php echo_ictcamp_post_meta( get_post(), ['date', 'tags'] ); ?>
             </footer><!-- .entry-footer -->
 			<?php
             if ( 'content' == $content_from ) :
 	            the_content( sprintf(
 	            /* translators: %s: Name of current post. */
-		            wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'event-star' ), array( 'span' => array( 'class' => array() ) ) ),
+		            wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'ict_camp' ), array( 'span' => array( 'class' => array() ) ) ),
 		            the_title( '<span class="screen-reader-text">"', '"</span>', false )
 	            ) );
 	            wp_link_pages( array(
-		            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'event-star' ),
+		            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ict_camp' ),
 		            'after'  => '</div>',
 	            ) );
             else :
