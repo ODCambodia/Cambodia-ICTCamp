@@ -30,7 +30,8 @@ a:hover{
 }
 
 .km-KH input,
-.km-KH select {
+.km-KH select,
+.km-KH span {
     font-family: inherit !important;
 }
 
