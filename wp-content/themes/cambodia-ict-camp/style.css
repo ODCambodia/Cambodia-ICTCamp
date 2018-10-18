@@ -55,6 +55,10 @@ a:hover{
 	background-color: #06323d;
 }
 
+.margin-bottom-10-px {
+  margin-bottom: 10px;
+}
+
 .no-margin {
 	margin: 0;
 }

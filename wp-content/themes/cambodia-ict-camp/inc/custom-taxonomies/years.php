@@ -17,7 +17,7 @@ function create_camp_years_hierarchical_taxonomy()
 		'menu_name'         => __( 'Year of Camp' ),
 	];
 
-	register_taxonomy( 'camp_year', ['page', 'post', 'sessions', 'partners', 'speakers', 'organizers', 'donors'], [
+	register_taxonomy( 'camp_year', ['page', 'post', 'sessions', 'partners', 'facilitators', 'organizers', 'donors'], [
 	    'hierarchical'      => true,
 	    'labels'            => $labels,
 	    'show_ui'           => true,

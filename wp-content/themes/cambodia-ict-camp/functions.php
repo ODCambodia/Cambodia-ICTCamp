@@ -52,21 +52,22 @@ require_once( __DIR__ . '/widgets/camp-organizers.php' );
 require_once( __DIR__ . '/hooks/header.php');
 
 // Register Custom Taxonomies
-require_once( __DIR__ . '/inc/custom-taxonomies/years.php' );
+require_once( __DIR__ . '/inc/custom-taxonomies/facilitator-groups.php' );
 require_once( __DIR__ . '/inc/custom-taxonomies/session-types.php' );
+require_once( __DIR__ . '/inc/custom-taxonomies/years.php' );
 
 // Register Custom Post Types
 require_once( __DIR__ . '/inc/custom-post-types/announcements.php' );
 require_once( __DIR__ . '/inc/custom-post-types/organizers.php' );
 require_once( __DIR__ . '/inc/custom-post-types/partners.php' );
 require_once( __DIR__ . '/inc/custom-post-types/sessions.php' );
-require_once( __DIR__ . '/inc/custom-post-types/speakers.php' );
+require_once( __DIR__ . '/inc/custom-post-types/facilitators.php' );
 require_once( __DIR__ . '/inc/custom-post-types/donors.php' );
 
-// Register Custom Meta Boxes for Speaker post type
-require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/expertise.php' );
-require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/organization.php' );
-require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/social-media-links.php' );
+// Register Custom Meta Boxes for Facilitator post type
+require_once( __DIR__ . '/inc/custom-meta-boxes/facilitators/expertise.php' );
+require_once( __DIR__ . '/inc/custom-meta-boxes/facilitators/organization.php' );
+require_once( __DIR__ . '/inc/custom-meta-boxes/facilitators/social-media-links.php' );
 
 // Register Custom Meta Boxes for Session post type
 require_once( __DIR__ . '/inc/custom-meta-boxes/sessions/hall.php' );
