@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cambodia-ict-camp\n"
-"POT-Creation-Date: 2018-10-11 14:53+0700\n"
-"PO-Revision-Date: 2018-10-11 15:12+0700\n"
+"POT-Creation-Date: 2018-10-19 14:20+0700\n"
+"PO-Revision-Date: 2018-10-19 14:21+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: km_KH\n"
@@ -16,21 +16,75 @@ msgstr ""
 "X-Poedit-KeywordsList: _;_e;__;_x;esc_html__\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: archive-speakers.php:10 inc/custom-post-types/speakers.php:7
-#: inc/custom-post-types/speakers.php:9 inc/custom-post-types/speakers.php:23
-#: inc/custom-post-types/speakers.php:24
+#: ---page-contact.php:36
+msgid "Contact Information"
+msgstr ""
+
+#: ---page-contact.php:50
+msgid "Contact Form"
+msgstr ""
+
+#: ---page-contact.php:54
+msgid "Name"
+msgstr ""
+
+#: ---page-contact.php:55
+msgid "Your Name"
+msgstr ""
+
+#: ---page-contact.php:59
+msgid "Email"
+msgstr ""
+
+#: ---page-contact.php:60
+msgid "Your Email"
+msgstr ""
+
+#: ---page-contact.php:64
+msgid "Message"
+msgstr ""
+
+#: ---page-contact.php:65
+msgid "Your Message"
+msgstr ""
+
+#: ---page-contact.php:68
+msgid "Submit"
+msgstr ""
+
+#: archive-facilitators.php:10 archive-facilitators.php:107
+#: inc/custom-post-types/facilitators.php:7
+#: inc/custom-post-types/facilitators.php:9
+#: inc/custom-post-types/facilitators.php:23
+#: inc/custom-post-types/facilitators.php:24
+msgid "Facilitators"
+msgstr "អ្នកសម្របសម្រួល"
+
+#: archive-facilitators.php:50
+msgid "Advisory Committee"
+msgstr "គណៈកម្មការប្រឹក្សាភិបាល"
+
+#: archive-facilitators.php:163
+msgid "Volunteers"
+msgstr "អ្នកស្ម័គ្រចិត្ត"
+
+#: archive-speakers.php:10
 msgid "Speakers"
 msgstr "វាគ្មិន"
 
-#: inc/custom-meta-boxes/speakers/expertise.php:7
+#: hooks/header.php:226
+msgid "Event Booking"
+msgstr ""
+
+#: inc/custom-meta-boxes/facilitators/expertise.php:7
 msgid "Expertise"
 msgstr "ជំនាញ"
 
-#: inc/custom-meta-boxes/speakers/organization.php:7
+#: inc/custom-meta-boxes/facilitators/organization.php:7
 msgid "Organization"
 msgstr "ស្ថាប័ន"
 
-#: inc/custom-meta-boxes/speakers/social-media-links.php:7
+#: inc/custom-meta-boxes/facilitators/social-media-links.php:7
 msgid "Social Media Links"
 msgstr ""
 
@@ -60,9 +114,10 @@ msgid "Add New Announcement"
 msgstr ""
 
 #: inc/custom-post-types/announcements.php:14
-#: inc/custom-post-types/donors.php:14 inc/custom-post-types/organizers.php:14
+#: inc/custom-post-types/donors.php:14
+#: inc/custom-post-types/facilitators.php:14
+#: inc/custom-post-types/organizers.php:14
 #: inc/custom-post-types/partners.php:14 inc/custom-post-types/sessions.php:14
-#: inc/custom-post-types/speakers.php:14
 msgid "Add New"
 msgstr ""
 
@@ -79,16 +134,18 @@ msgid "Search Announcement"
 msgstr ""
 
 #: inc/custom-post-types/announcements.php:18
-#: inc/custom-post-types/donors.php:18 inc/custom-post-types/organizers.php:18
+#: inc/custom-post-types/donors.php:18
+#: inc/custom-post-types/facilitators.php:18
+#: inc/custom-post-types/organizers.php:18
 #: inc/custom-post-types/partners.php:18 inc/custom-post-types/sessions.php:18
-#: inc/custom-post-types/speakers.php:18
 msgid "Not Found"
 msgstr "ព័ត៌មានពុំអាចរកបាន"
 
 #: inc/custom-post-types/announcements.php:19
-#: inc/custom-post-types/donors.php:19 inc/custom-post-types/organizers.php:19
+#: inc/custom-post-types/donors.php:19
+#: inc/custom-post-types/facilitators.php:19
+#: inc/custom-post-types/organizers.php:19
 #: inc/custom-post-types/partners.php:19 inc/custom-post-types/sessions.php:19
-#: inc/custom-post-types/speakers.php:19
 msgid "Not found in Trash"
 msgstr ""
 
@@ -137,6 +194,40 @@ msgstr "ស្វែងរកម្ចាស់ជំនួយ"
 #: inc/custom-post-types/donors.php:23 inc/custom-post-types/donors.php:24
 msgid "donors"
 msgstr "ម្ចាស់ជំនួយ"
+
+#: inc/custom-post-types/facilitators.php:8
+msgid "Facilitator"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:10
+msgid "Parent Facilitator"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:11
+msgid "All Facilitators"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:12
+msgid "View Facilitator"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:13
+msgid "Add New Facilitator"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:15
+msgid "Edit Facilitator"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:16
+msgid "Update Facilitator"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:17
+#, fuzzy
+#| msgid "Search Donor"
+msgid "Search Facilitator"
+msgstr "ស្វែងរកម្ចាស់ជំនួយ"
 
 #: inc/custom-post-types/organizers.php:7
 #: inc/custom-post-types/organizers.php:9
@@ -258,36 +349,47 @@ msgstr ""
 msgid "Agenda Sessions"
 msgstr ""
 
-#: inc/custom-post-types/speakers.php:8
-msgid "Speaker"
-msgstr "វាគ្មិន"
-
-#: inc/custom-post-types/speakers.php:10
-msgid "Parent Speaker"
+#: inc/custom-taxonomies/facilitator-groups.php:7
+#: inc/custom-taxonomies/facilitator-groups.php:17
+msgid "Groups"
 msgstr ""
 
-#: inc/custom-post-types/speakers.php:11
-msgid "All Speakers"
-msgstr "វាគ្មិនទាំងអស់"
-
-#: inc/custom-post-types/speakers.php:12
-msgid "View Speaker"
+#: inc/custom-taxonomies/facilitator-groups.php:8
+msgid "Group"
 msgstr ""
 
-#: inc/custom-post-types/speakers.php:13
-msgid "Add New Speaker"
+#: inc/custom-taxonomies/facilitator-groups.php:9
+#, fuzzy
+#| msgid "Search Donor"
+msgid "Search Group"
+msgstr "ស្វែងរកម្ចាស់ជំនួយ"
+
+#: inc/custom-taxonomies/facilitator-groups.php:10
+msgid "All Group"
 msgstr ""
 
-#: inc/custom-post-types/speakers.php:15
-msgid "Edit Speaker"
+#: inc/custom-taxonomies/facilitator-groups.php:11
+msgid "Parent Group"
 msgstr ""
 
-#: inc/custom-post-types/speakers.php:16
-msgid "Update Speaker"
+#: inc/custom-taxonomies/facilitator-groups.php:12
+msgid "Parent Group:"
 msgstr ""
 
-#: inc/custom-post-types/speakers.php:17
-msgid "Search Speaker"
+#: inc/custom-taxonomies/facilitator-groups.php:13
+msgid "Edit Group"
+msgstr ""
+
+#: inc/custom-taxonomies/facilitator-groups.php:14
+msgid "Update Group"
+msgstr ""
+
+#: inc/custom-taxonomies/facilitator-groups.php:15
+msgid "Add New Group"
+msgstr ""
+
+#: inc/custom-taxonomies/facilitator-groups.php:16
+msgid "New Group Name"
 msgstr ""
 
 #: inc/custom-taxonomies/session-types.php:7
@@ -331,44 +433,44 @@ msgstr ""
 msgid "New Type Name"
 msgstr ""
 
-#: inc/custom-taxonomies/years.php:7 inc/custom-taxonomies/years.php:17
-msgid "Years"
-msgstr "ឆ្នាំ"
+#: inc/custom-taxonomies/years.php:7
+msgid "Years of Camp"
+msgstr ""
 
-#: inc/custom-taxonomies/years.php:8
-msgid "Year"
-msgstr "ឆ្នាំ"
+#: inc/custom-taxonomies/years.php:8 inc/custom-taxonomies/years.php:17
+msgid "Year of Camp"
+msgstr ""
 
 #: inc/custom-taxonomies/years.php:9
-msgid "Search Years"
+msgid "Search Years of Camp"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:10
-msgid "All Years"
+msgid "All Years of Camp"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:11
-msgid "Parent Year"
+msgid "Parent Year of Camp"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:12
-msgid "Parent Year:"
+msgid "Parent Year of Camp:"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:13
-msgid "Edit Year"
+msgid "Edit Year of Camp"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:14
-msgid "Update Year"
+msgid "Update Year of Camp"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:15
-msgid "Add New Year"
+msgid "Add New Year of Camp"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:16
-msgid "New Year Name"
+msgid "New Year of Camp Name"
 msgstr ""
 
 #: inc/taxonomy-form-fields/categories/colors.php:13
@@ -402,21 +504,16 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: inc/utils-content.php:111 inc/utils-content.php:130
+#: inc/utils-content.php:111
 msgid "Leave a comment"
 msgstr "បញ្ចេញមតិ"
 
-#: inc/utils-content.php:111 inc/utils-content.php:130
+#: inc/utils-content.php:111
 msgid "1 Comment"
 msgstr ""
 
-#: inc/utils-content.php:111 inc/utils-content.php:130
+#: inc/utils-content.php:111
 msgid "% Comments"
-msgstr ""
-
-#: inc/utils-content.php:138
-#, php-format
-msgid "Edit %s"
 msgstr ""
 
 #: index.php:10
@@ -462,3 +559,15 @@ msgstr ""
 #: widgets/camp-themes.php:17
 msgid "Display a list of all themes of the camp"
 msgstr ""
+
+#~ msgid "Speaker"
+#~ msgstr "វាគ្មិន"
+
+#~ msgid "All Speakers"
+#~ msgstr "វាគ្មិនទាំងអស់"
+
+#~ msgid "Years"
+#~ msgstr "ឆ្នាំ"
+
+#~ msgid "Year"
+#~ msgstr "ឆ្នាំ"
