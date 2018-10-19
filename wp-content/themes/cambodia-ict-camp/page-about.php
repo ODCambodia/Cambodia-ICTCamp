@@ -45,10 +45,10 @@ if(
 			?>
 				<div class="section padding-top-1-em" id="organizers">
 					<div class="section-title">
-						<h2><?php _e( 'Organizers', 'ict_camp' ); ?></h2>
+						<h2 class="text-center"><?php _e( 'Organizers', 'ict_camp' ); ?></h2>
 					</div>
 
-					<div class="setcion-body">
+					<div class="setcion-body margin-top-3-em">
 						<?php
 						while ( $organizers->have_posts() ) {
 							$organizers->the_post();
@@ -97,11 +97,11 @@ if(
 				$wrap_count = 4;
 			?>
 				<div class="section padding-top-1-em" id="partners">
-					<div class="section-title">
+					<div class="section-title text-center">
 						<h2><?php  _e( 'Partners', 'ict_camp' ); ?></h2>
 					</div>
 
-					<div class="setcion-body">
+					<div class="setcion-body margin-top-3-em">
 						<?php
 						while ( $partners->have_posts() ) {
 							$partners->the_post();
@@ -151,10 +151,10 @@ if(
 			?>
 				<div class="section padding-top-1-em" id="donors">
 					<div class="section-title">
-						<h2><?php _e( 'Donors', 'ict_camp' ); ?></h2>
+						<h2 class="text-center"><?php _e( 'Donors', 'ict_camp' ); ?></h2>
 					</div>
 
-					<div class="setcion-body">
+					<div class="setcion-body margin-top-3-em">
 						<?php
 						while ( $donors->have_posts() ) {
 							$donors->the_post();
