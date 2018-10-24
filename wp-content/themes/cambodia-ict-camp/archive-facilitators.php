@@ -46,13 +46,12 @@ global $event_star_customizer_all_values;
                 ?>
                     <div class="section padding-top-1-em" id="advisory-committee">
                         <div class="section-title">
-                            <h2>
+                            <h2 class="text-center">
                                 <?php _e( 'Advisory Committee', 'ict_camp' ); ?>
                             </h2>
-                            <hr>
                         </div>
 
-                        <div class="setcion-body">
+                        <div class="setcion-body margin-top-3-em">
                             <?php
                             /* Start the Loop */
                             $counter = 1;
@@ -104,11 +103,12 @@ global $event_star_customizer_all_values;
                     ?>
                     <div class="section padding-top-1-em" id="facilitators">
                         <div class="section-title">
-                            <h2><?php _e( 'Facilitators', 'ict_camp' ); ?></h2>
-                            <hr>
+                            <h2 class="text-center">
+                                <?php _e( 'Facilitators', 'ict_camp' ); ?>
+                            </h2>
                         </div>
 
-                        <div class="setcion-body">
+                        <div class="setcion-body margin-top-3-em">
                             <?php
                             /* Start the Loop */
                             $counter = 1;
@@ -160,11 +160,12 @@ global $event_star_customizer_all_values;
                     ?>
                     <div class="section padding-top-1-em" id="volunteers">
                         <div class="section-title">
-                            <h2><?php _e( 'Volunteers', 'ict_camp' ); ?></h2>
-                            <hr>
+                            <h2 class="text-center">
+                                <?php _e( 'Volunteers', 'ict_camp' ); ?>
+                            </h2>
                         </div>
 
-                        <div class="setcion-body">
+                        <div class="setcion-body margin-top-3-em">
                             <?php
                             /* Start the Loop */
                             $counter = 1;
