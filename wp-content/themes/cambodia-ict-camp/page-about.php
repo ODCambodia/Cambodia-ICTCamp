@@ -54,7 +54,7 @@ if(
 							$organizers->the_post();
 							
 							if( $counter%$wrap_count == 0 ) {
-								echo '<div class="row">';
+								echo '<div class=" flex-box-row">';
 							}
 							?>
 
@@ -77,7 +77,7 @@ if(
 							if( $counter%$wrap_count == 3 ) {
 								echo '</div>';
 							}
-							
+
 							$counter++;
 						}
 						?>
@@ -107,7 +107,7 @@ if(
 							$partners->the_post();
 							
 							if( $counter%$wrap_count == 0 ) {
-								echo '<div class="row">';
+								echo '<div class="row flex-box-row">';
 							}
 							?>
 
@@ -130,7 +130,7 @@ if(
 							if( $counter%$wrap_count == 3 ) {
 								echo '</div>';
 							}
-							
+
 							$counter++;
 						}
 						?>
@@ -160,7 +160,7 @@ if(
 							$donors->the_post();
 							
 							if( $counter%$wrap_count == 0 ) {
-								echo '<div class="row">';
+								echo '<div class="row flex-box-row">';
 							}
 							?>
 
@@ -183,18 +183,18 @@ if(
 							if( $counter%$wrap_count == 3 ) {
 								echo '</div>';
 							}
-							
+
 							$counter++;
 						}
 						?>
 					</div>
 				</div>
 			<?php
-			}
-			?>
-			<!-- END Suppporter Section -->
-		</main><!-- #main -->
-	</div><!-- #primary -->
+            }
+            ?><!-- END Suppporter Section -->
+        </main><!-- #main -->
+    </div><!-- #primary -->
+
     <?php
     get_sidebar( 'left' );
     get_sidebar();

@@ -59,7 +59,7 @@ global $event_star_customizer_all_values;
 
                             while( $advisory_committees->have_posts() ) : $advisory_committees->the_post();
                                 if( $counter%$wrap_count == 1 ) {
-                                    echo '<div class="row">';
+                                    echo '<div class="row flex-box-row">';
                                 }
 
                                 get_template_part( 'inc/template-parts/facilitators/content', 'list' );
@@ -116,7 +116,7 @@ global $event_star_customizer_all_values;
 
                             while( $facilitators->have_posts() ) : $facilitators->the_post();
                                 if( $counter%$wrap_count == 1 ) {
-                                    echo '<div class="row">';
+                                    echo '<div class="row flex-box-row">';
                                 }
 
                                 get_template_part( 'inc/template-parts/facilitators/content', 'list' );
@@ -173,7 +173,7 @@ global $event_star_customizer_all_values;
 
                             while( $volunteers->have_posts() ) : $volunteers->the_post();
                                 if( $counter%$wrap_count == 1 ) {
-                                    echo '<div class="row">';
+                                    echo '<div class="row flex-box-row">';
                                 }
 
                                 get_template_part( 'inc/template-parts/facilitators/content', 'list' );
