@@ -47,6 +47,11 @@ a:hover{
 	margin: 0, auto;
 }
 
+.flex-box-row {
+  display: flex;
+  justify-content: center;
+}
+
 .img-responsive {
 	margin: auto;
 }
