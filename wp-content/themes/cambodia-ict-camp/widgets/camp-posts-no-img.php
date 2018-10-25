@@ -461,7 +461,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
             if ($event_star_featured_query->have_posts()) :
                 echo $args['before_widget']; 
             ?>
-                <section id="<?php echo esc_attr( $unique_id ); ?>" class="at-widgets acme-col-posts <?php echo $bg_gray_class;?>">
+                <section id="<?php echo esc_attr( $unique_id ); ?>" class="cict-widgets acme-col-posts <?php echo $bg_gray_class;?>">
                     <div class="container">
                         <?php
                         if( ! empty( $title ) ) {

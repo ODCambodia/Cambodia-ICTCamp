@@ -183,3 +183,10 @@ a:hover{
 }
 
 /* END Theme Page
+
+/* Widgets */
+.cict-widgets {
+  overflow: hidden;
+  padding: 15px 0;
+}
+/* END Widgets */

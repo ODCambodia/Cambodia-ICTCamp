@@ -25,9 +25,6 @@ class Camp_Themes_Widget extends WP_Widget
 		$title = apply_filters( 'widget_title', $instance['title'] );
 
 		echo $args['before_widget'];
-		if( ! empty( $title ) ) {
-			echo $args['before_title'] . $title . $args['after_title'];
-		}
 
 		$attr = [
 			'hide_empty' => 0,
@@ -38,34 +35,48 @@ class Camp_Themes_Widget extends WP_Widget
 
 		$themes = get_categories( $attr );
 		?>
+        <section class="cict-widgets">
+            <div class="container">
 
-		<div class="container">
-		<?php
-		foreach( $themes as $theme ) {
-			$theme_image = get_term_meta( $theme->term_id, '_category_image_value_key', true );
-		?>
-			<div class="aling-center col-xs-12 col-sm-12 col-md-3">
-				<a href="<?php echo get_site_url() . '/themes#' . $theme->slug; ?>">
-					<div class="theme-box" style="background-image: url( <?php echo $theme_image; ?>);">
-						<h5 class="text-center">
-							<?php _e( $theme->name ); ?>
-						</h5>
-					</div>
-				</a>
-			</div>
-		<?php
-		}
-		?>
-	</div>
-	<?php
-	}
-	
-	// Form Field on Widget Screen
-	public function form( $instance )
-	{
-		if( isset( $instance['title'] ) ) {
-			$title = $instance['title'];
-		} else {
+                <?php
+                if( ! empty( $title ) ) {
+                    echo $args['before_title'] . $title . $args['after_title'];
+                }
+                ?>
+
+                <div class="flex-box-row">
+                    <?php
+                    foreach( $themes as $theme ) {
+                        $theme_image = get_term_meta( $theme->term_id, '_category_image_value_key', true );
+                        ?>
+
+                        <div class="aling-center col-xs-12 col-sm-12 col-md-3">
+                            <a href="<?php echo get_site_url() . '/themes#' . $theme->slug; ?>">
+                            <div class="theme-box" style="background-image: url( <?php echo $theme_image; ?>);">
+                                <h5 class="text-center">
+                                        <?php _e( $theme->name ); ?>
+                                    </h5>
+                                </div>
+                            </a>
+                        </div>
+
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </section>
+    <?php
+        echo $args['after_widget'];
+        echo '<div class="clearfix"></div>';
+    }
+
+    // Form Field on Widget Screen
+    public function form( $instance )
+    {
+        if( isset( $instance['title'] ) ) {
+            $title = $instance['title'];
+        } else {
 			$title = __( 'New Title', 'ict_camp' );
 		}
 		?>

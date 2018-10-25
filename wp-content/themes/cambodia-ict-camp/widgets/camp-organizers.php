@@ -25,60 +25,56 @@ class Camp_Organizers_Widget extends WP_Widget
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		echo $args['before_widget'];
 
-		if( ! empty( $title ) ) {
-			echo $args['before_title'] . $title . $args['after_title'];
-		}
-
 		$organizers = new WP_Query( [ 'post_type' => 'organizers' ] );
 
 		if( $organizers->have_posts() ) {
 			$number = wp_count_posts( 'organizers' )->publish;
+            ?>
 
-			switch ( $number ) {
-				case 1:
-					$col = 'col-md-12';
-					break;
-				case 2:
-					$col = 'col-md-6';
-					break;
-				case 3:
-					$col = 'col-md-4';
-					break;
-				default:
-					$col = 'col-md-3';
-					break;
-			}
-		?>
-			<div class="container-fluid">
-				<?php
-				while( $organizers->have_posts() ) {
-					$organizers->the_post();
-				?>
-					<div class="align-center col-xs-12 col-sm-12 <?php echo $col; ?>">
-						<div>
-							<?php
-							$attributes = [
-								'title' => __( get_the_title() ),
-								'class' => 'img-responsive',
-							];
+            <section class="cict-widgets">
+                <div class="container">
 
-							$logo = get_the_post_thumbnail( get_the_ID(), 'medium', $attributes );
-							$responsive_logo = preg_replace( '/(width|height)="\d*"\s/', "", $logo );
-							?>
-							<a href="<?php echo get_the_excerpt(); ?>">
-								<?php echo $responsive_logo  ?>
-							</a>
-						</div>
-					</div><!-- col-xs-12 col-sm-12 col-md-3 -->
-				<?php
-				}
-				?>
-			</div>
-	<?php
-		}
-		wp_reset_postdata();
-	}
-	
+                    <?php
+                    if( ! empty( $title ) ) {
+                        echo $args['before_title'] . $title . $args['after_title'];
+                    }
+                    ?>
+
+                    <div class="flex-box-row">
+                        <?php
+                        while( $organizers->have_posts() ) {
+                            $organizers->the_post();
+                        ?>
+                            <div class="align-center col-xs-12 col-sm-12 col-md-3">
+                                <?php
+                                $attributes = [
+                                    'title' => __( get_the_title() ),
+                                    'class' => 'img-responsive',
+                                ];
+
+                                $logo = get_the_post_thumbnail( get_the_ID(), 'medium', $attributes );
+                                $responsive_logo = preg_replace( '/(width|height)="\d*"\s/', "", $logo );
+                                ?>
+
+                                <a href="<?php echo get_the_excerpt(); ?>">
+                                    <?php echo $responsive_logo; ?>
+                                </a>
+                            </div><!-- col-xs-12 col-sm-12 col-md-3 -->
+                        <?php
+                        }
+                        ?>
+
+                    </div>
+                </div>
+            </section>
+        <?php
+            echo $args['after_widget'];
+            echo '<div class="clearfix"></div>';
+        }
+
+        wp_reset_postdata();
+    }
+
 	// Form Field on Widget Screen
 	public function form( $instance )
 	{
