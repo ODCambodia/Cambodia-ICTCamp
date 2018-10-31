@@ -14,7 +14,7 @@
 
 /* General */
 .km-KH {
-	font-family: "Battambang", "Open Sans", "Helvetica", "Arial", sans-serif;
+	font-family: "Metal", "Open Sans", "Helvetica", "Arial", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, li, td, th, div, input, text {
@@ -22,11 +22,13 @@ h1, h2, h3, h4, h5, h6, p, a, li, td, th, div, input, text {
 	line-height: 1.5em;
 }
 
-li {
-	line-height: 1.5em;
-}
 a:hover{
 	color: rgb(150, 201, 66) !important;
+}
+
+.km-KH li,
+.km-KH p {
+  line-height: 1.7em;
 }
 
 .km-KH input,
