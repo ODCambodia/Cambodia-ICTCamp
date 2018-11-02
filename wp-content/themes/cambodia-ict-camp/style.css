@@ -49,13 +49,25 @@ a:hover{
 	margin: 0, auto;
 }
 
+.btn-primary {
+  border: 1px solid #06323d;
+}
+
+.btn-primary:hover {
+  background-color: #06323dB3;
+  border: 1px solid #00a600;
+}
+
+.btn-reverse:hover {
+  background-color: #06323dB3 !important;
+}
+
 .flex-box-row {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-
   flex-flow: row wrap;
   justify-content: center;
 }
