@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-12 col-md-3">
+<div class="col-xs-12 col-sm-12 col-md-2">
     <?php
     $attributes = [
         'title' => get_the_title(),
