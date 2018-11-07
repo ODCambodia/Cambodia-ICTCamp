@@ -55,7 +55,7 @@ global $event_star_customizer_all_values;
                             <?php
                             /* Start the Loop */
                             $counter = 1;
-                            $wrap_count = 4;
+                            $wrap_count = 6;
 
                             while( $advisory_committees->have_posts() ) : $advisory_committees->the_post();
                                 if( $counter%$wrap_count == 1 ) {
