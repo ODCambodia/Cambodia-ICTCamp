@@ -3,7 +3,6 @@ wp-config.php
 
 wp-content/themes/*
 wp-content/uploads/
-wp-content/plugins/
 
 !wp-content/themes/event-star
 !wp-content/themes/cambodia-ict-camp
