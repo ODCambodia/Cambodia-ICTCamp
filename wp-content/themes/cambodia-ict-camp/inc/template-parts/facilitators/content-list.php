@@ -17,11 +17,11 @@
     </a>
 
     <p class="text-center">
-        <b><?php echo get_the_title(); ?></b>
+        <strong><?php echo get_the_title(); ?></strong>
         <br/>
         <em><?php _e( $facilitator_expertise ); ?></em>
         <br/>
-        <?php _e( $facilitator_organization ); ?>
+        <small><?php _e( $facilitator_organization ); ?></small>
     </p>
     <br>
 
