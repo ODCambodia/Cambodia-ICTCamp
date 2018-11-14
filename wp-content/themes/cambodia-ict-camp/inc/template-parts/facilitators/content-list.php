@@ -59,7 +59,7 @@
                                 <br/>
                                 <span><?php _e( $facilitator_organization ); ?></span>
                             </p>
-                            <p><?php _e( get_the_content() ); ?></p>
+                            <p><?php _e( the_content() ); ?></p>
                         </div>
                     </div>
                 </div>
