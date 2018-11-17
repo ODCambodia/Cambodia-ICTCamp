@@ -1,56 +1,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cambodia-ict-camp\n"
-"POT-Creation-Date: 2018-10-19 14:20+0700\n"
-"PO-Revision-Date: 2018-10-19 14:21+0700\n"
+"POT-Creation-Date: 2018-11-18 00:26+0700\n"
+"PO-Revision-Date: 2018-11-18 00:26+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: km_KH\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _;_e;__;_x;esc_html__\n"
 "X-Poedit-SearchPath-0: .\n"
-
-#: ---page-contact.php:36
-msgid "Contact Information"
-msgstr ""
-
-#: ---page-contact.php:50
-msgid "Contact Form"
-msgstr ""
-
-#: ---page-contact.php:54
-msgid "Name"
-msgstr ""
-
-#: ---page-contact.php:55
-msgid "Your Name"
-msgstr ""
-
-#: ---page-contact.php:59
-msgid "Email"
-msgstr ""
-
-#: ---page-contact.php:60
-msgid "Your Email"
-msgstr ""
-
-#: ---page-contact.php:64
-msgid "Message"
-msgstr ""
-
-#: ---page-contact.php:65
-msgid "Your Message"
-msgstr ""
-
-#: ---page-contact.php:68
-msgid "Submit"
-msgstr ""
 
 #: archive-facilitators.php:10 archive-facilitators.php:107
 #: inc/custom-post-types/facilitators.php:7
@@ -62,9 +26,9 @@ msgstr "អ្នកសម្របសម្រួល"
 
 #: archive-facilitators.php:50
 msgid "Advisory Committee"
-msgstr "គណៈកម្មការប្រឹក្សាភិបាល"
+msgstr "គណៈកម្មការប្រឹក្សាយោបល់"
 
-#: archive-facilitators.php:163
+#: archive-facilitators.php:164
 msgid "Volunteers"
 msgstr "អ្នកស្ម័គ្រចិត្ត"
 
@@ -500,8 +464,14 @@ msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: inc/template-parts/content-list-posts.php:56
+#: inc/template-parts/content-page.php:17
 #: inc/template-parts/content-single-post.php:56
 msgid "Pages:"
+msgstr ""
+
+#: inc/template-parts/content-page.php:28
+#, php-format
+msgid "Edit %s"
 msgstr ""
 
 #: inc/utils-content.php:111
@@ -524,7 +494,7 @@ msgstr "ប្លក់"
 msgid "Partners"
 msgstr "ដៃគូ"
 
-#: page-themes.php:55
+#: page-themes.php:52
 msgid " #"
 msgstr ""
 
@@ -536,11 +506,11 @@ msgstr "អ្នករៀបចំកម្មវិធី"
 msgid "Display a list of all organizers of the camp"
 msgstr ""
 
-#: widgets/camp-organizers.php:88 widgets/camp-themes.php:69
+#: widgets/camp-organizers.php:84 widgets/camp-themes.php:80
 msgid "New Title"
 msgstr ""
 
-#: widgets/camp-organizers.php:93 widgets/camp-themes.php:74
+#: widgets/camp-organizers.php:89 widgets/camp-themes.php:85
 msgid "Title: "
 msgstr ""
 
