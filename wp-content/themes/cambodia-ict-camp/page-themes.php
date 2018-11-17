@@ -39,7 +39,7 @@ if( ( is_front_page() && 1 != $event_star_hide_front_page_header ) || !is_front_
                 'hide_empty' => 0,
                 'orderby'    => 'name',
                 'parent'     => 0,
-                'exclude'    => 1 
+                'exclude'    => 1
             ];
 
             $themes = get_categories( $args );
@@ -49,7 +49,7 @@ if( ( is_front_page() && 1 != $event_star_hide_front_page_header ) || !is_front_
             ?>
                 <div class="col-xs-12" id="<?php echo $theme->slug; ?>">
                     <h2 style="color: <?php echo esc_attr( $theme_color ); ?>">
-                        <?php _e( $theme->name . ' #' ); ?>
+                        <?php _e( $theme->name ); ?>
                     </h2>
                     <p><?php _e( $theme->description ); ?></p>
                 </div>
