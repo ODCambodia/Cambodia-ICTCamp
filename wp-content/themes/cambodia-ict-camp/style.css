@@ -29,7 +29,6 @@ a:hover{
 .km-KH li,
 .km-KH p {
   line-height: 1.7em;
-  font-size: 14px;
 }
 
 .km-KH input,
@@ -41,7 +40,9 @@ a:hover{
 .km-KH .post-grid-item .grid-content-wrapper .item-title {
 	font-family: inherit !important;
 }
-
+small{
+	font-size: 85% !important;
+}
 .at-event-count-down .feature-col {
 	text-align: center;
 }
