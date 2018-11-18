@@ -5,7 +5,7 @@
   Author:       Open Development Cambodia
   Author URI:
   Template:     event-star
-  Version:      1.0.3
+  Version:      1.0.4
   License:
   License URI:
   Tags:         responsive-layout
@@ -14,7 +14,7 @@
 
 /* General */
 .km-KH {
-	font-family: "Metal", "Open Sans", "Helvetica", "Arial", sans-serif;
+	font-family: 'Siemreap', cursive, "Open Sans", "Helvetica", "Arial", sans-serif !important;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, li, td, th, div, input, text {
