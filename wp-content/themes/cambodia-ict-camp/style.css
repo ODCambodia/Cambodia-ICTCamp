@@ -66,6 +66,10 @@ small {
   background-color: #06323dB3 !important;
 }
 
+.display-none {
+  display: none;
+}
+
 .flex-box-row {
   display: -webkit-box;
   display: -moz-box;
