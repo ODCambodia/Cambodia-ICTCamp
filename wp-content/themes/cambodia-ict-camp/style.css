@@ -5,7 +5,7 @@
   Author:       Open Development Cambodia
   Author URI:
   Template:     event-star
-  Version:      1.0.4
+  Version:      1.0.
   License:
   License URI:
   Tags:         responsive-layout
@@ -40,9 +40,11 @@ a:hover{
 .km-KH .post-grid-item .grid-content-wrapper .item-title {
 	font-family: inherit !important;
 }
-small{
-	font-size: 85% !important;
+
+small {
+  font-size: 85% !important;
 }
+
 .at-event-count-down .feature-col {
 	text-align: center;
 }
