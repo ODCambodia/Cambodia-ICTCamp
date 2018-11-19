@@ -17,11 +17,11 @@
     </a>
 
     <p class="text-center">
-        <b><?php echo get_the_title(); ?></b>
+        <strong><?php echo get_the_title(); ?></strong>
         <br/>
-        <?php _e( $facilitator_expertise ); ?>
+        <em><?php _e( $facilitator_expertise ); ?></em>
         <br/>
-        <?php _e( $facilitator_organization ); ?>
+        <small><?php _e( $facilitator_organization ); ?></small>
     </p>
     <br>
 
@@ -41,21 +41,29 @@
                         <div class="col-xs-12 col-md-8">
                             <p>
                                 <b>
-                                    <a target="_blank" href="<?php echo $facilitator_linked_in_link; ?>">
-                                        <?php _e( get_the_title() ); ?>
-                                    </a>
+                                    <?php 
+                                    _e( get_the_title() );
+                                    
+                                    if ( $facilitator_linked_in_link ) {
+                                    ?>
+                                        <a style="margin-left: 0.5em" target="_blank"
+                                            href="<?php echo $facilitator_linked_in_link; ?>"
+                                            title="LinkedIn"
+                                        >
+                                            <i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i>
+                                        </a>
+                                    <?php } ?>
                                 </b>
                                 <br>
-                                <i><?php echo $facilitator_expertise; ?></i>
+                                <em><?php _e( $facilitator_expertise ); ?></em>
                                 <br/>
                                 <span><?php _e( $facilitator_organization ); ?></span>
                             </p>
-                            <p><?php _e( get_the_content() ); ?></p>
+                            <p><?php _e( the_content() ); ?></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- END Bio Modal -->
+    </div><!-- END Bio Modal -->
 </div>

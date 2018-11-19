@@ -31,7 +31,7 @@ add_action( 'wp_enqueue_scripts', 'add_google_fonts' );
 
 function add_google_fonts()
 {
-    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Metal', false );
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Siemreap', false );
 }
 
 // Load Theme's Translated Link
