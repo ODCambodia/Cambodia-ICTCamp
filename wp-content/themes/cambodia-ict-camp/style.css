@@ -5,7 +5,7 @@
   Author:       Open Development Cambodia
   Author URI:
   Template:     event-star
-  Version:      1.0.7
+  Version:      1.0.8
   License:
   License URI:
   Tags:         responsive-layout
@@ -62,16 +62,16 @@ small {
 }
 
 .btn-primary:hover {
-  background-color: #06323dB3;
+  background-color: rgba(6, 50, 61, 0.70);
   border: 1px solid #00a600;
 }
 
 .btn-reverse {
-  background-color: #00a600B3 !important;
+  background-color: rgba(0, 166, 0, 0.60) !important;
 }
 
 .btn-reverse:hover {
-  background-color: #06323dB3 !important;
+  background-color: rgba(6, 50, 61, 0.70) !important;
 }
 
 .display-none {
@@ -194,13 +194,13 @@ small {
 }
 
 .theme-box h5 {
-	bottom: 0;
-	right: 0;
-	background: rgba(255, 255, 255, 0.65);
-	margin: 0px;
-	padding: 10px;
-	position: absolute;
-	width: 100%;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
 }
 
 .posts-meta-div {
