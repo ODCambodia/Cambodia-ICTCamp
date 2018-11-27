@@ -21,7 +21,7 @@ body {
   color: #333;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, li, td, th, div, input, text {
+h1, h2, h3, h4, h5, h6, p, a, b, strong, ul, li, td, th, div, input, text, span, select, small{
 	font-family: inherit !important;
 	line-height: 1.5em;
 }
