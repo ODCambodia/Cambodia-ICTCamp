@@ -194,10 +194,10 @@ small {
 	padding-top: 0;
 }
 
-#menu-footer_menu li a {
+#menu-footer_menu li a, .footer-copyright a{
 	color: #fafafa !important;
 }
-#menu-footer_menu li a:hover {
+#menu-footer_menu li a:hover, footer-copyright a:hover{
 	font-size: 15px;
 	color: #95c841 !important;
 }
