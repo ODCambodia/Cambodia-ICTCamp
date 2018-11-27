@@ -13,12 +13,15 @@
  */
 
 /* General */
-.km-KH , .km-KH body{
-	font-family: 'Siemreap', cursive, "Open Sans", "Helvetica", "Arial", sans-serif !important;
+.km-KH , body.km-KH {
+	font-family: "Siemreap", "Open Sans", "Helvetica", "Arial", sans-serif !important;
 }
 
 body {
-  color: #333;
+  	color: #333;
+}
+#page{
+	background: #fdfdfd;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, b, strong, ul, li, td, th, div, input, text, span, select, small{
@@ -26,8 +29,11 @@ h1, h2, h3, h4, h5, h6, p, a, b, strong, ul, li, td, th, div, input, text, span,
 	line-height: 1.5em;
 }
 
+a {
+	color: #96c942 !important;
+}
 a:hover{
-	color: rgb(150, 201, 66) !important;
+	color: #06323d !important;
 }
 
 .km-KH li,
@@ -35,11 +41,6 @@ a:hover{
   line-height: 1.7em;
 }
 
-.km-KH input,
-.km-KH select,
-.km-KH span {
-  font-family: inherit !important;
-}
 
 .km-KH .post-grid-item .grid-content-wrapper .item-title {
 	font-family: inherit !important;
