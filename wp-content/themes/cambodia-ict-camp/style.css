@@ -35,7 +35,15 @@ a {
 a:hover{
 	color: #06323d !important;
 }
-
+.txtcolor-white {
+	color: #fafafa !important;
+} 
+.txtcolor-dgreen {
+	color: #06323d !important;
+}
+.txtcolor-white:hover, .txtcolor-dgreen:hover{
+	color: #06323d !important;
+}
 .km-KH li,
 .km-KH p {
   line-height: 1.7em;
