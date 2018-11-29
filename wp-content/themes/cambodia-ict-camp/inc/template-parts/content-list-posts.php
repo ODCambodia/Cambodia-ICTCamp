@@ -46,7 +46,7 @@ $no_blog_image = '';
             </div>
 
             <div class="posts-meta-div">
-                <?php echo_ictcamp_post_meta( get_post(), array( 'date' ) ); ?>
+                <?php echo_ictcamp_post_meta( get_post(), array( 'date', 'tags' ) ); ?>
             </div>
 
             <?php
