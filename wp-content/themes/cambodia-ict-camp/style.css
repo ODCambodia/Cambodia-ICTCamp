@@ -185,6 +185,10 @@ small {
 .search-woo .featured-button {
   margin-top: 2em;
 }
+
+.top-header ul li a:hover {
+  color: #95c841 !important;
+}
 /* END Navbar */
 
 /* Page Header */
