@@ -42,7 +42,7 @@ $no_blog_image = '';
             endif; ?>
 
             <div class="entry-header-title">
-                <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+                <?php the_title( sprintf( '<h2 class="entry-title"><a class="txtcolor-dgreen" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
             </div>
 
             <div class="posts-meta-div">

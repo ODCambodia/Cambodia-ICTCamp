@@ -46,9 +46,10 @@ a:hover{
 .txtcolor-dgreen {
   color: #06323d !important;
 }
+
 .txtcolor-white:hover, 
 .txtcolor-dgreen:hover {
-  color: #06323d !important;
+  color: #96c942 !important;
 }
 
 .km-KH li,
