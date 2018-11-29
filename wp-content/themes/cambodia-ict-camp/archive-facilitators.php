@@ -69,7 +69,6 @@ global $event_star_customizer_all_values;
 
                                     $counter++;
                                 }
-                                do_action( 'event_star_action_posts_navigation' );
                                 ?>
                             </div>
                         </div>
