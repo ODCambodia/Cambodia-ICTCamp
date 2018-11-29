@@ -549,7 +549,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                                                     </div><!-- .entry-meta -->
                                                 </header><!-- .entry-header -->
                                                 <div class="entry-header-title">
-                                                    <?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+                                                    <?php the_title( sprintf( '<h3 class="entry-title"><a class="txtcolor-dgreen" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
                                                 </div>
                                                 <?php
                                                 $excerpt = event_star_excerpt_words_count( absint( $event_star_words ) );
