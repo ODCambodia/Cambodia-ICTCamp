@@ -19,7 +19,6 @@ do_action( 'event_star_action_before_head' );?>
 
         wp_head();
         ?>
-
     </head>
 <body <?php body_class( get_bloginfo( 'language' ) );?>>
 
