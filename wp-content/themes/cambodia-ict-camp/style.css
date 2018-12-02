@@ -274,21 +274,25 @@ small {
   padding: 1em 2.2em;
 }
 
+.ui-accordion-header {
+  outline: none;
+}
+
 .ui-state-default {
   background: #f6f6f6;
   border: 1px solid #c5c5c5;
 }
 
-.ui-state-active {
+.ui-state-active,
+.ui-state-default:hover {
   background: #06323d;
   border: 1px solid #06323d;
   border-bottom: none;
   color: #fff;
-  font-weight: normal;
 }
 
 .ui-widget-content {
-  border: 1px solid #06323d;
+  border: 1px solid #c5c5c5;
 }
 /* END Accordion */
 
