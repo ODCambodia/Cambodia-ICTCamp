@@ -497,20 +497,20 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                                         echo "<div class='clearfix'></div>";
                                     }
                                     if( 1 == $column_number ){
-                                        $event_star_list_classes .= " col-sm-12";
+                                        $event_star_list_classes .= " col-xs-12";
                                     } 
                                     elseif( 2 == $column_number ){
-                                        $event_star_list_classes .= " col-sm-6";
+                                        $event_star_list_classes .= " col-xs-12 col-md-6";
                                     } 
                                     elseif( 3 == $column_number ){
-                                        $event_star_list_classes .= " col-sm-12 col-md-4";
+                                        $event_star_list_classes .= " col-xs-12 col-md-4";
                                     } 
                                     else{
-                                        $event_star_list_classes .= " col-sm-12 col-md-3";
+                                        $event_star_list_classes .= " col-xs-12 col-md-3";
                                     }
                                 } 
                                 ?>
-                                <div class="<?php echo esc_attr( $event_star_list_classes ); ?>">
+                                <div class="col-xs-12 <?php echo esc_attr( $event_star_list_classes ); ?>">
                                     <article id="post-<?php the_ID(); ?>" <?php post_class('init-animate zoomIn'); ?>>
                                         <div class="content-wrapper">
                                             <?php 
@@ -519,7 +519,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                                                 <div class="image-wrap">    
                                                     <?php
                                                     $no_blog_image = '';
-                                                    
+
                                                     if ( has_post_thumbnail() ) {
                                                     ?>
                                                         <!--post thumbnal options-->
@@ -532,10 +532,10 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                                                     } 
                                                     else{
                                                         $no_blog_image = 'no-image';
-                                                    } 
+                                                    }
                                                     ?>
                                                 </div>
-                                            <?php 
+                                            <?php
                                             } else {
                                                 $no_blog_image = 'no-image';
                                             }
