@@ -14,27 +14,28 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
      * @subpackage Event_Star_Posts_Col
      * @since 1.0.0
      */
-    class Event_Star_Posts_Col extends WP_Widget {
-
+    class Event_Star_Posts_Col extends WP_Widget 
+    {
         /*defaults values for fields*/
         private $defaults = [
-	        'unique_id'                 => '',
-	        'title'                     => '',
-	        'post_advanced_option'      => 'recent',
-	        'event_star_post_cat'       => -1,
-	        'event_star_post_tag'       => -1,
+            'unique_id'                 => '',
+            'title'                     => '',
+            'post_advanced_option'      => 'recent',
+            'event_star_post_cat'       => -1,
+            'event_star_post_tag'       => -1,
             'post_number'               => 4,
             'column_number'             => 4,
             'display_type'              => 'column',
             'orderby'                   => 'date',
             'order'                     => 'DESC',
-	        'enable_prev_next'          => 1,
-	        'event_star_img_size'       => 'large',
+            'enable_prev_next'          => 1,
+            'event_star_img_size'       => 'large',
             'show_feature_image'        => 0,
-	        'background_options'        => 'default'
+            'background_options'        => 'default'
         ];
 
-        function __construct() {
+        function __construct()
+        {
             parent::__construct(
                 /*Base ID of your widget*/
                 'event_star_posts_col',
@@ -48,23 +49,24 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
         }
 
         /*Widget Backend*/
-        public function form( $instance ) {
+        public function form( $instance )
+        {
             $instance                   = wp_parse_args( (array) $instance, $this->defaults);
-	        $unique_id                  = esc_attr( $instance['unique_id'] );
-	        $title                      = esc_attr( $instance['title'] );
-	        $post_advanced_option       = esc_attr( $instance['post_advanced_option'] );
-	        $event_star_post_cat        = esc_attr( $instance['event_star_post_cat'] );
-	        $event_star_post_tag        = esc_attr( $instance['event_star_post_tag'] );
-	        $post_number                = absint( $instance['post_number'] );
-	        $column_number              = absint( $instance['column_number'] );
-	        $display_type               = esc_attr( $instance['display_type'] );
-	        $orderby                    = esc_attr( $instance['orderby'] );
-	        $order                      = esc_attr( $instance['order'] );
-	        $enable_prev_next           = esc_attr( $instance['enable_prev_next'] );
-	        $event_star_img_size        = esc_attr( $instance['event_star_img_size'] );
+            $unique_id                  = esc_attr( $instance['unique_id'] );
+            $title                      = esc_attr( $instance['title'] );
+            $post_advanced_option       = esc_attr( $instance['post_advanced_option'] );
+            $event_star_post_cat        = esc_attr( $instance['event_star_post_cat'] );
+            $event_star_post_tag        = esc_attr( $instance['event_star_post_tag'] );
+            $post_number                = absint( $instance['post_number'] );
+            $column_number              = absint( $instance['column_number'] );
+            $display_type               = esc_attr( $instance['display_type'] );
+            $orderby                    = esc_attr( $instance['orderby'] );
+            $order                      = esc_attr( $instance['order'] );
+            $enable_prev_next           = esc_attr( $instance['enable_prev_next'] );
+            $event_star_img_size        = esc_attr( $instance['event_star_img_size'] );
             $show_feature_image         = esc_attr( $instance['show_feature_image'] );
-	        $background_options         = esc_attr( $instance['background_options'] );
-	        ?>
+            $background_options         = esc_attr( $instance['background_options'] );
+            ?>
 
             <p>
                 <label for="<?php echo $this->get_field_id( 'unique_id' ); ?>">
@@ -104,17 +106,17 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                     id="<?php echo esc_attr( $this->get_field_id( 'post_advanced_option' ) ); ?>" 
                     name="<?php echo esc_attr( $this->get_field_name( 'post_advanced_option' ) ); ?>" 
                 >
-			        <?php
-			        $post_advanced_options = event_star_post_advanced_options();
-			        
+                    <?php
+                    $post_advanced_options = event_star_post_advanced_options();
+
                     foreach( $post_advanced_options as $key => $value ) {
-				    ?>
+                    ?>
                         <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $post_advanced_option ); ?>>
                             <?php echo esc_attr( $value );?>
                         </option>
-				    <?php
-			        }
-			        ?>
+                    <?php
+                    }
+                    ?>
                 </select>
             </p>
 
@@ -122,10 +124,11 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                 <label for="<?php echo esc_attr( $this->get_field_id('event_star_post_cat') ); ?>">
                     <?php esc_html_e('Select Category', 'ict_camp'); ?>
                 </label>
+
                 <?php
                 $event_star_dropown_cat = [
-	                'show_option_none'   => false,
-	                'orderby'            => 'name',
+                    'show_option_none'   => false,
+                    'orderby'            => 'name',
                     'order'              => 'asc',
                     'show_count'         => 1,
                     'hide_empty'         => 1,
@@ -144,32 +147,32 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
             </p>
             <p class="post-tag post-select">
                 <label for="<?php echo esc_attr( $this->get_field_id( 'event_star_post_tag' ) ); ?>">
-			        <?php esc_html_e( 'Select Tag', 'ict_camp' ); ?>
+                    <?php esc_html_e( 'Select Tag', 'ict_camp' ); ?>
                 </label>
-		        <?php
-		        $event_star_dropown_cat = [
-			        'show_option_none'   => false,
-			        'orderby'            => 'name',
-			        'order'              => 'asc',
-			        'show_count'         => 1,
-			        'hide_empty'         => 1,
-			        'echo'               => 1,
-			        'selected'           => $event_star_post_tag,
-			        'hierarchical'       => 1,
-			        'name'               => $this->get_field_name( 'event_star_post_tag' ),
-			        'id'                 => $this->get_field_name( 'event_star_post_tag' ),
-			        'class'              => 'widefat',
-			        'taxonomy'           => 'post_tag',
-			        'hide_if_empty'      => false,
-		        ];
+                <?php
+                $event_star_dropown_cat = [
+                    'show_option_none'   => false,
+                    'orderby'            => 'name',
+                    'order'              => 'asc',
+                    'show_count'         => 1,
+                    'hide_empty'         => 1,
+                    'echo'               => 1,
+                    'selected'           => $event_star_post_tag,
+                    'hierarchical'       => 1,
+                    'name'               => $this->get_field_name( 'event_star_post_tag' ),
+                    'id'                 => $this->get_field_name( 'event_star_post_tag' ),
+                    'class'              => 'widefat',
+                    'taxonomy'           => 'post_tag',
+                    'hide_if_empty'      => false,
+                ];
 
-		        wp_dropdown_categories( $event_star_dropown_cat );
-		        ?>
+                wp_dropdown_categories( $event_star_dropown_cat );
+                ?>
             </p>
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'post_number' ) ); ?>">
-			        <?php esc_html_e( 'Number of posts to show', 'ict_camp' ); ?>
+                    <?php esc_html_e( 'Number of posts to show', 'ict_camp' ); ?>
                 </label>
                 <input class="widefat" 
                     id="<?php echo esc_attr( $this->get_field_id( 'post_number' ) ); ?>" 
@@ -187,17 +190,17 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                     id="<?php echo esc_attr( $this->get_field_id( 'column_number' ) ); ?>" 
                     name="<?php echo esc_attr( $this->get_field_name( 'column_number' ) ); ?>" 
                 >
-			        <?php
-			        $event_star_widget_column_numbers = event_star_widget_column_number();
+                    <?php
+                    $event_star_widget_column_numbers = event_star_widget_column_number();
 
-			        foreach( $event_star_widget_column_numbers as $key => $value ) {
-				    ?>
+                    foreach( $event_star_widget_column_numbers as $key => $value ) {
+                    ?>
                         <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $column_number ); ?>>
                             <?php echo esc_attr( $value );?>
                         </option>
-				    <?php
-			        }
-			        ?>
+                    <?php
+                    }
+                ?>
                 </select>
             </p>
 
@@ -209,58 +212,58 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                     id="<?php echo esc_attr( $this->get_field_id( 'display_type' ) ); ?>" 
                     name="<?php echo esc_attr( $this->get_field_name( 'display_type' ) ); ?>" 
                 >
-			        <?php
-			        $event_star_widget_display_types = event_star_widget_display_type();
-			        foreach ( $event_star_widget_display_types as $key => $value ) {
-				    ?>
+                    <?php
+                    $event_star_widget_display_types = event_star_widget_display_type();
+                    foreach ( $event_star_widget_display_types as $key => $value ) {
+                    ?>
                         <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $display_type ); ?>>
                             <?php echo esc_attr( $value );?>
                         </option>
-				    <?php
-			        }
-			        ?>
+                    <?php
+                    }
+                    ?>
                 </select>
             </p>
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>">
-			        <?php esc_html_e( 'Order by', 'ict_camp' ); ?>
+                    <?php esc_html_e( 'Order by', 'ict_camp' ); ?>
                 </label>
                 <select class="widefat" 
                     id="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>" 
                     name="<?php echo esc_attr( $this->get_field_name( 'orderby' ) ); ?>" 
                 >
-			        <?php
-			        $event_star_post_orderby = event_star_post_orderby();
-			        foreach ( $event_star_post_orderby as $key => $value ) {
-				    ?>
+                    <?php
+                    $event_star_post_orderby = event_star_post_orderby();
+                    foreach ( $event_star_post_orderby as $key => $value ) {
+                    ?>
                         <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $orderby ); ?>>
                             <?php echo esc_attr( $value );?>
                         </option>
-				    <?php
-			        }
-			        ?>
+                    <?php
+                    }
+                    ?>
                 </select>
             </p>
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>">
-			        <?php esc_html_e( 'Order by', 'ict_camp' ); ?>
+                     <?php esc_html_e( 'Order by', 'ict_camp' ); ?>
                 </label>
                 <select class="widefat" 
                     id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>" 
                     name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>" 
                 >
-			        <?php
-			        $event_star_post_order = event_star_post_order();
-			        foreach ( $event_star_post_order as $key => $value ) {
-				    ?>
+                    <?php
+                    $event_star_post_order = event_star_post_order();
+                    foreach ( $event_star_post_order as $key => $value ) {
+                    ?>
                         <option value="<?php echo esc_attr( $key )?>" <?php selected( $key, $order ); ?>>
                             <?php echo esc_attr( $value );?>
                         </option>
-				    <?php
-			        }
-			        ?>
+                    <?php
+                    }
+                    ?>
                 </select>
             </p>
             <hr /><!--view all link separate-->
@@ -279,18 +282,18 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
 
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'event_star_img_size' ) ); ?>">
-			        <?php esc_html_e( 'Normal Featured Post Image', 'ict_camp' ); ?>
+                    <?php esc_html_e( 'Normal Featured Post Image', 'ict_camp' ); ?>
                 </label>
                 <select class="widefat" 
                     id="<?php echo esc_attr( $this->get_field_id( 'event_star_img_size' ) ); ?>" 
                     name="<?php echo esc_attr( $this->get_field_name( 'event_star_img_size' ) ); ?>"
                 >
-			        <?php
-			        $event_star_image_sizes = event_star_get_image_sizes_options();
-			        foreach( $event_star_image_sizes as $key => $event_star_column_array ) {
-				        echo ' <option value="'.esc_attr( $key ).'" '.selected( $event_star_img_size, $key, 0). '>'.esc_attr( $event_star_column_array ).'</option>';
-			        }
-			        ?>
+                    <?php
+                    $event_star_image_sizes = event_star_get_image_sizes_options();
+                    foreach( $event_star_image_sizes as $key => $event_star_column_array ) {
+                        echo ' <option value="'.esc_attr( $key ).'" '.selected( $event_star_img_size, $key, 0). '>'.esc_attr( $event_star_column_array ).'</option>';
+                    }
+                    ?>
                 </select>
             </p>
 
@@ -312,16 +315,16 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                     id="<?php echo esc_attr( $this->get_field_id( 'background_options' ) ); ?>" 
                     name="<?php echo esc_attr( $this->get_field_name( 'background_options' ) ); ?>"
                 >
-			        <?php
-			        $event_star_background_options = event_star_background_options();
-			        foreach ( $event_star_background_options as $key => $value ) {
-			        ?>
+                    <?php
+                    $event_star_background_options = event_star_background_options();
+                    foreach ( $event_star_background_options as $key => $value ) {
+                    ?>
                         <option value="<?php echo esc_attr( $key ) ?>" <?php selected( $key, $background_options ); ?>>
                             <?php echo esc_attr( $value ); ?>
                         </option>
-			        <?php
-			        }
-			        ?>
+                    <?php
+                    }
+                    ?>
                 </select>
             </p>
             <p>
@@ -345,37 +348,27 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
          */
         public function update( $new_instance, $old_instance ) {
             $instance = [];
-	        $instance[ 'unique_id' ]                = sanitize_key( $new_instance[ 'unique_id' ] );
-	        $instance[ 'title' ]                    = ( isset( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
-	        
-	        $post_advanced_options                  = event_star_post_advanced_options();
-	        $instance[ 'post_advanced_option' ]     = event_star_sanitize_choice_options( $new_instance[ 'post_advanced_option' ], $post_advanced_options, 'recent' );
-	        
-	        $instance[ 'event_star_post_cat' ]      = ( isset( $new_instance['event_star_post_cat'] ) ) ? esc_attr( $new_instance['event_star_post_cat'] ) : '';
-	        $instance[ 'event_star_post_tag' ]      = ( isset( $new_instance['event_star_post_tag'] ) ) ? esc_attr( $new_instance['event_star_post_tag'] ) : '';
-	        $instance[ 'post_number' ]              = absint( $new_instance[ 'post_number' ] );
-	        $instance[ 'column_number' ]            = absint( $new_instance[ 'column_number' ] );
-	        
-	        $event_star_widget_display_types    = event_star_widget_display_type();
-	        $instance[ 'display_type' ]         = event_star_sanitize_choice_options( $new_instance[ 'display_type' ], $event_star_widget_display_types, 'column' );
-
-	        $event_star_post_orderby            = event_star_post_orderby();
-	        $instance[ 'orderby' ]              = event_star_sanitize_choice_options( $new_instance[ 'orderby' ], $event_star_post_orderby, 'date' );
-
-	        $event_star_post_order              = event_star_post_order();
-	        $instance[ 'order' ]                = event_star_sanitize_choice_options( $new_instance[ 'order' ], $event_star_post_order, 'DESC' );
-
-	        $instance[ 'enable_prev_next' ]     = isset($new_instance['enable_prev_next'])? 1 : 0;
-
-	        $event_star_image_sizes             = event_star_get_image_sizes_options();
-	        $instance[ 'event_star_img_size' ]  = event_star_sanitize_choice_options( $new_instance[ 'event_star_img_size' ], $event_star_image_sizes, 'post-thumbnail' );
-
+            $instance[ 'unique_id' ]                = sanitize_key( $new_instance[ 'unique_id' ] );
+            $instance[ 'title' ]                    = ( isset( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
+            $post_advanced_options                  = event_star_post_advanced_options();
+            $instance[ 'post_advanced_option' ]     = event_star_sanitize_choice_options( $new_instance[ 'post_advanced_option' ], $post_advanced_options, 'recent' );
+            $instance[ 'event_star_post_cat' ]      = ( isset( $new_instance['event_star_post_cat'] ) ) ? esc_attr( $new_instance['event_star_post_cat'] ) : '';
+            $instance[ 'event_star_post_tag' ]      = ( isset( $new_instance['event_star_post_tag'] ) ) ? esc_attr( $new_instance['event_star_post_tag'] ) : '';
+            $instance[ 'post_number' ]              = absint( $new_instance[ 'post_number' ] );
+            $instance[ 'column_number' ]            = absint( $new_instance[ 'column_number' ] );
+            $event_star_widget_display_types    = event_star_widget_display_type();
+            $instance[ 'display_type' ]         = event_star_sanitize_choice_options( $new_instance[ 'display_type' ], $event_star_widget_display_types, 'column' );
+            $event_star_post_orderby            = event_star_post_orderby();
+            $instance[ 'orderby' ]              = event_star_sanitize_choice_options( $new_instance[ 'orderby' ], $event_star_post_orderby, 'date' );
+            $event_star_post_order              = event_star_post_order();
+            $instance[ 'order' ]                = event_star_sanitize_choice_options( $new_instance[ 'order' ], $event_star_post_order, 'DESC' );
+            $instance[ 'enable_prev_next' ]     = isset($new_instance['enable_prev_next'])? 1 : 0;
+            $event_star_image_sizes             = event_star_get_image_sizes_options();
+            $instance[ 'event_star_img_size' ]  = event_star_sanitize_choice_options( $new_instance[ 'event_star_img_size' ], $event_star_image_sizes, 'post-thumbnail' );
             $instance[ 'show_feature_image' ]     = isset($new_instance['show_feature_image'])? 1 : 0;
-
-	        $event_star_widget_background_options   = event_star_background_options();
-	        $instance[ 'background_options' ]       = event_star_sanitize_choice_options( $new_instance[ 'background_options' ], $event_star_widget_background_options, 'default' );
-
-	        return $instance;
+            $event_star_widget_background_options   = event_star_background_options();
+            $instance[ 'background_options' ]       = event_star_sanitize_choice_options( $new_instance[ 'background_options' ], $event_star_widget_background_options, 'default' );
+            return $instance;
         }
 
         /**
@@ -391,22 +384,22 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
          */
         public function widget($args, $instance) {
             $instance                   = wp_parse_args( (array) $instance, $this->defaults);
-	        $unique_id                  = !empty( $instance[ 'unique_id' ] ) ? esc_attr( $instance[ 'unique_id' ] ) : esc_attr( $this->id );
-	        $event_star_post_cat        = esc_attr( $instance['event_star_post_cat'] );
-	        $event_star_post_tag        = esc_attr( $instance['event_star_post_tag'] );
-	        $title                      = ! empty( $instance['title'] ) ? esc_attr( $instance['title'] ) : get_cat_name($event_star_post_cat);
-	        $title                      = apply_filters( 'widget_title', $title, $instance, $this->id_base );
-	        $post_advanced_option       = esc_attr( $instance[ 'post_advanced_option' ] );
-	        $post_number                = absint( $instance[ 'post_number' ] );
-	        $column_number              = absint( $instance[ 'column_number' ] );
-	        $display_type               = esc_attr( $instance[ 'display_type' ] );
-	        $orderby                    = esc_attr( $instance[ 'orderby' ] );
-	        $order                      = esc_attr( $instance[ 'order' ] );
-	        $enable_prev_next           = esc_attr( $instance['enable_prev_next'] );
-	        $event_star_img_size        = esc_attr( $instance['event_star_img_size'] );
+            $unique_id                  = !empty( $instance[ 'unique_id' ] ) ? esc_attr( $instance[ 'unique_id' ] ) : esc_attr( $this->id );
+            $event_star_post_cat        = esc_attr( $instance['event_star_post_cat'] );
+            $event_star_post_tag        = esc_attr( $instance['event_star_post_tag'] );
+            $title                      = ! empty( $instance['title'] ) ? esc_attr( $instance['title'] ) : get_cat_name($event_star_post_cat);
+            $title                      = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+            $post_advanced_option       = esc_attr( $instance[ 'post_advanced_option' ] );
+            $post_number                = absint( $instance[ 'post_number' ] );
+            $column_number              = absint( $instance[ 'column_number' ] );
+            $display_type               = esc_attr( $instance[ 'display_type' ] );
+            $orderby                    = esc_attr( $instance[ 'orderby' ] );
+            $order                      = esc_attr( $instance[ 'order' ] );
+            $enable_prev_next           = esc_attr( $instance['enable_prev_next'] );
+            $event_star_img_size        = esc_attr( $instance['event_star_img_size'] );
             $show_feature_image         = esc_attr( $instance['show_feature_image'] );
-	        $background_options         = esc_attr( $instance['background_options'] );
-	        $bg_gray_class              = $background_options == 'gray'?'at-gray-bg':'';
+            $background_options         = esc_attr( $instance['background_options'] );
+            $bg_gray_class              = $background_options == 'gray'?'at-gray-bg':'';
             /**
              * Filter the arguments for the Recent Posts widget.
              *
@@ -415,46 +408,43 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
              * @see WP_Query
              *
              */
-	        $sticky = get_option( 'sticky_posts' );
-	        $query_args = [
-		        'posts_per_page'        => $post_number,
-		        'post_status'           => 'publish',
-		        'post_type'             => 'post',
-		        'no_found_rows'         => 1,
-		        'order'                 => $order,
-		        'ignore_sticky_posts'   => true,
-		        'post__not_in'          => $sticky
-	        ];
+            $sticky = get_option( 'sticky_posts' );
+            $query_args = [
+                'posts_per_page'        => $post_number,
+                'post_status'           => 'publish',
+                'post_type'             => 'post',
+                'no_found_rows'         => 1,
+                'order'                 => $order,
+                'ignore_sticky_posts'   => true,
+                'post__not_in'          => $sticky
+            ];
 
-	        switch ( $post_advanced_option ) {
+            switch ( $post_advanced_option ) {
+                case 'cat' :
+                    $query_args['cat'] = $event_star_post_cat;
+                    break;
 
-		        case 'cat' :
-			        $query_args['cat'] = $event_star_post_cat;
-			        break;
-
-		        case 'tag' :
+                case 'tag' :
                     $tag = get_tag($event_star_post_tag);
                     $event_star_post_tag = $tag->slug;
-			        $query_args['tag'] = $event_star_post_tag;
-			        break;
-	        }
+                    $query_args['tag'] = $event_star_post_tag;
+                    break;
+            }
 
-	        switch ( $orderby ) {
-
+            switch ( $orderby ) {
                 case 'ID' :
-		        case 'author' :
-		        case 'title' :
-		        case 'date' :
-		        case 'modified' :
-		        case 'rand' :
-		        case 'comment_count' :
-		        case 'menu_order' :
-			        $query_args['orderby']  = $orderby;
-			        break;
-
-		        default :
-			        $query_args['orderby']  = 'date';
-	        }
+                case 'author' :
+                case 'title' :
+                case 'date' :
+                case 'modified' :
+                case 'rand' :
+                case 'comment_count' :
+                case 'menu_order' :
+                    $query_args['orderby']  = $orderby;
+                    break;
+                default :
+                    $query_args['orderby']  = 'date';
+            }
 
             $event_star_featured_query = new WP_Query( $query_args );
 
@@ -475,40 +465,48 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                                 echo "</div>";
                             }
                         }
+
                         $div_attr = 'class="featured-entries-col ' . $display_type . '"';
+
                         if( 'carousel' == $display_type ){
                             $div_attr = 'class="featured-entries-col acme-slick-carausel" data-column="'.absint( $column_number ).'"';
                         }
+
                         if( 1 == $enable_prev_next && 'carousel' == $display_type ) {
-	                        echo "<span class='at-action-wrapper'>";
-	                        echo '<i class="prev fa fa-angle-left"></i><i class="next fa fa-angle-right"></i>';
-	                        echo "</span>";/*.at-action-wrapper*/
+                            echo "<span class='at-action-wrapper'>";
+                            echo '<i class="prev fa fa-angle-left"></i><i class="next fa fa-angle-right"></i>';
+                            echo "</span>";/*.at-action-wrapper*/
                         }
                         ?>
                         <div id="<?php echo esc_attr( $unique_id );?>" <?php echo $div_attr;?>>
                             <?php
                             $event_star_featured_index = 1;
-                            while ( $event_star_featured_query->have_posts() ) :$event_star_featured_query->the_post();
+
+                            while ( $event_star_featured_query->have_posts() ) {
+                                $event_star_featured_query->the_post();
                                 $thumb = $event_star_img_size;
                                 $event_star_list_classes = 'single-list';
                                 $event_star_words = 21;
+
                                 if( 'carousel' != $display_type ) {
                                     if( 1 != $event_star_featured_index && $event_star_featured_index % $column_number == 1 ){
                                         echo "<div class='clearfix'></div>";
                                     }
-                                    if( 1 == $column_number ){
-                                        $event_star_list_classes .= " col-xs-12";
-                                    } 
-                                    elseif( 2 == $column_number ){
-                                        $event_star_list_classes .= " col-xs-12 col-md-6";
-                                    } 
-                                    elseif( 3 == $column_number ){
-                                        $event_star_list_classes .= " col-xs-12 col-md-4";
-                                    } 
-                                    else{
-                                        $event_star_list_classes .= " col-xs-12 col-md-3";
+                                    switch ( $column_number ) {
+                                        case 1 :
+                                            $event_star_list_classes .= " col-xs-12";
+                                            break;
+                                        case 2 :
+                                            $event_star_list_classes .= " col-xs-12 col-md-6";
+                                            break;
+                                        case 3 :
+                                            $event_star_list_classes .= " col-xs-12 col-md-4";
+                                            break;
+                                        case 4 :
+                                            $event_star_list_classes .= " col-xs-12 col-md-3";
+                                            break;
                                     }
-                                } 
+                                }
                                 ?>
                                 <div class="col-xs-12 <?php echo esc_attr( $event_star_list_classes ); ?>">
                                     <article id="post-<?php the_ID(); ?>" <?php post_class('init-animate zoomIn'); ?>>
@@ -516,7 +514,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                                             <?php 
                                             if( $show_feature_image == 1 ) {
                                             ?>
-                                                <div class="image-wrap">    
+                                                <div class="image-wrap">
                                                     <?php
                                                     $no_blog_image = '';
 
@@ -529,7 +527,7 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                                                             </a>
                                                         </div><!-- .post-thumb
                                                         <?php
-                                                    } 
+                                                    }
                                                     else{
                                                         $no_blog_image = 'no-image';
                                                     }
@@ -553,14 +551,14 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                                                 </div>
                                                 <?php
                                                 $excerpt = event_star_excerpt_words_count( absint( $event_star_words ) );
-                                                echo '<div class="details">'.wp_kses_post( wpautop( $excerpt ) ).'</div>';
+                                                echo '<div class="details">' . wp_kses_post( wpautop( $excerpt ) ) . '</div>';
                                                 if( !empty( $event_star_read_more_text ) ){
                                                     ?>
                                                     <a class="btn btn-primary" href="<?php the_permalink(); ?> ">
                                                         <?php echo esc_html( $event_star_read_more_text ); ?>
                                                     </a>
                                                     <?php
-                                                } 
+                                                }
                                                 ?>
                                             </div><!-- .entry-content -->
                                         </div>
@@ -568,8 +566,8 @@ if ( ! class_exists( 'Event_Star_Posts_Col' ) ) {
                                 </div><!--dynamic css-->
                                 <?php
                                 $event_star_featured_index++;
-                                endwhile;
-                                ?>
+                            }
+                            ?>
                         </div><!--featured entries-col-->
                     </div>
                 </section>
