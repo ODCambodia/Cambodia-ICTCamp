@@ -49,7 +49,7 @@ if(
 				'parent'     => 0,
 				'hide_empty' => false
 			];
-			
+
 			$years = get_terms( $args );
 
 			foreach ( $years as $year ) {
@@ -58,7 +58,7 @@ if(
 					$days = get_terms( $taxonomy, [ 'child_of' => $year->term_id ] );
 					?>
 
-					<ul class="nav nav-tabs nav-justified no-margin">
+					<ul class="nav nav-tabs nav-justified no-margin" role="tab-list">
 						<?php
 						$counter = 0;
 						$class_active = 'active';
@@ -73,8 +73,8 @@ if(
 								}
 								?>
 
-								<li class="<?php echo $class_active; ?>">
-									<a data-toggle="pill" href="<?php echo '#' . $day->slug; ?>">
+								<li class="<?php echo $class_active; ?>" role="presentation">
+									<a href="<?php echo get_site_url() . '#' . $day->slug; ?>" aria-controls="<?php echo $day->slug; ?>" role="tab" data-toggle="tab">
 										<?php _e( $day->name ); ?>
 									</a>
 								</li>
@@ -84,8 +84,8 @@ if(
 						}
 						?>
 					</ul>
-				<?php	
-				}			
+				<?php
+				}
 			}
 			?>
 
@@ -122,7 +122,7 @@ if(
 							</div>
 						<?php
 						}
-					}		
+					}
 				}
 				?>
 			</div>
