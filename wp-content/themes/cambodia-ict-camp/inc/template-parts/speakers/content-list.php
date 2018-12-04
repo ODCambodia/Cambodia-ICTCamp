@@ -59,7 +59,7 @@
                                 <br/>
                                 <span><?php _e( $speaker_organization ); ?></span>
                             </p>
-                            <p><?php _e( the_content() ); ?></p>
+                            <?php _e( the_content() ); ?>
                         </div>
                     </div>
                 </div>
