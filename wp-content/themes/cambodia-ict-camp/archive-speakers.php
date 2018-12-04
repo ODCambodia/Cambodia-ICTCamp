@@ -56,7 +56,7 @@ global $event_star_customizer_all_values;
                     </div>
                 </div>
             <?php
-            }else {
+            } else {
                 get_template_part( 'template-parts/content', 'none' );
             }
             ?>
