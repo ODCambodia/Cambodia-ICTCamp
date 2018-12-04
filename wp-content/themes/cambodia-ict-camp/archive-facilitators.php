@@ -30,7 +30,7 @@ global $event_star_customizer_all_values;
 
                     $args = [
                         'post_type' => 'facilitators',
-                        'orderby'   => 'title',
+                        'orderby'   => 'slug',
                         'order'     => 'asc',
                         'tax_query' => [
                             [
