@@ -8,6 +8,7 @@ global $event_star_customizer_all_values;
     <div class="container">
         <header class="entry-header init-animate">
             <h1 class="page-title"><?php _e( post_type_archive_title( '', false ), 'ict_camp' ); ?></h1>
+
             <?php
             if( 1 == $event_star_customizer_all_values['event-star-show-breadcrumb'] ){
                 event_star_breadcrumbs();
@@ -21,12 +22,21 @@ global $event_star_customizer_all_values;
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
             <?php
-            if( have_posts() ) :
-                /* Start the Loop */
-                $counter = 1;
-                $wrap_count = 4;
+            $args = [
+                'post_type' => 'speakers',
+                'orderby'   => 'post_name',
+                'order'     => 'ASC',
+            ];
 
-                while( have_posts() ) : the_post();
+            $speakers = new WP_Query( $args );
+
+            if( $speakers->have_posts() ) {
+                $counter = 1;
+                $wrap_count = 6;
+
+                while( $speakers->have_posts() ) {
+                    $speakers->the_post();
+
                     if( $counter%$wrap_count == 1 ) {
                         echo '<div class="row flex-box-row">';
                     }
@@ -36,14 +46,13 @@ global $event_star_customizer_all_values;
                     if( $counter%$wrap_count == 0 ) {
                         echo '</div>';
                     }
-                    ?>
 
-                <?php
-                endwhile;
-            else:
+                    $counter++;
+                }
+            } else {
                 get_template_part( 'template-parts/content', 'none' );
-            endif; ?>
-
+            } 
+            ?>
         </main><!-- #main -->
     </div><!-- #primary -->
     <?php

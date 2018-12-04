@@ -21,7 +21,13 @@ global $event_star_customizer_all_values;
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
             <?php
-            $facilitator_terms = get_terms( array( 'taxonomy' => 'facilitator_group', 'orderby' => 'slug' ) );
+            $args = [
+                'taxonomy' => 'facilitator_group',
+                'orderby'  => 'slug',
+                'order'    => 'ASC',
+            ];
+
+            $facilitator_terms = get_terms( $args );
 
             if ( !empty( $facilitator_terms ) && !is_wp_error( $facilitator_terms ) ) {
                 // echo '<div class="section padding-top-1-em">';
@@ -30,8 +36,8 @@ global $event_star_customizer_all_values;
 
                     $args = [
                         'post_type' => 'facilitators',
-                        'orderby'   => 'slug',
-                        'order'     => 'asc',
+                        'orderby'   => 'post_name',
+                        'order'     => 'ASC',
                         'tax_query' => [
                             [
                                 'taxonomy' => 'facilitator_group',
