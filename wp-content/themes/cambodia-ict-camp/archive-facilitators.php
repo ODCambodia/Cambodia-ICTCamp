@@ -59,7 +59,6 @@ global $event_star_customizer_all_values;
                                 <?php
                                 $counter = 1;
                                 $wrap_count = 6;
-
                                 while ( $facilitator_group->have_posts() ) {
                                     $facilitator_group->the_post();
 
@@ -69,7 +68,7 @@ global $event_star_customizer_all_values;
 
                                     get_template_part( 'inc/template-parts/facilitators/content', 'list' );
 
-                                    if( $counter%$wrap_count == 0 ) {
+                                    if( ($counter%$wrap_count == 0) || ($counter == $facilitator_group->post_count) ) {
                                         echo '</div>';
                                     }
 
@@ -79,9 +78,8 @@ global $event_star_customizer_all_values;
                             </div>
                         </div>
                     <?php
-                    }
-                    echo "</div>";
-                } 
+                    } 
+                }
             } else {
                 get_template_part( 'template-parts/content', 'none' );
             }

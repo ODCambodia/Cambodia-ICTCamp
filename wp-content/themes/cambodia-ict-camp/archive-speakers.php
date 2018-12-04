@@ -30,28 +30,35 @@ global $event_star_customizer_all_values;
 
             $speakers = new WP_Query( $args );
 
-            if( $speakers->have_posts() ) {
-                $counter = 1;
-                $wrap_count = 6;
+            if ( $speakers->have_posts() ) {
+            ?>
+                <div class="section padding-top-1-em">
+                    <div class="setcion-body margin-top-3-em">
+                        <?php
+                        $counter = 1;
+                        $wrap_count = 6;
+                        while ( $speakers->have_posts() ) {
+                            $speakers->the_post();
 
-                while( $speakers->have_posts() ) {
-                    $speakers->the_post();
+                            if ($counter%$wrap_count == 1 ) {
+                                echo '<div class="row flex-box-row">';
+                            }
 
-                    if( $counter%$wrap_count == 1 ) {
-                        echo '<div class="row flex-box-row">';
-                    }
+                            get_template_part( 'inc/template-parts/facilitators/content', 'list' );
 
-                    get_template_part( 'inc/template-parts/facilitators/content', 'list' );
+                            if( ($counter%$wrap_count == 0) || ($counter == $speakers->post_count) ) {
+                                echo '</div>';
+                            }
 
-                    if( $counter%$wrap_count == 0 ) {
-                        echo '</div>';
-                    }
-
-                    $counter++;
-                }
-            } else {
+                            $counter++;
+                        }
+                        ?>
+                    </div>
+                </div>
+            <?php
+            }else {
                 get_template_part( 'template-parts/content', 'none' );
-            } 
+            }
             ?>
         </main><!-- #main -->
     </div><!-- #primary -->
