@@ -5,7 +5,7 @@
   Author:       Open Development Cambodia
   Author URI:
   Template:     event-star
-  Version:      1.0.12
+  Version:      1.0.13
   License:
   License URI:
   Tags:         responsive-layout
@@ -293,16 +293,21 @@ small {
   outline: none;
 }
 
+.ui-state-active {
+  background: #06323d;
+  border: 1px solid #06323d;
+  border-bottom: none;
+  color: #fff;
+}
+
 .ui-state-default {
   background: #f6f6f6;
   border: 1px solid #c5c5c5;
 }
 
-.ui-state-active,
 .ui-state-default:hover {
   background: #06323d;
   border: 1px solid #06323d;
-  border-bottom: none;
   color: #fff;
 }
 
