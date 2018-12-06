@@ -187,6 +187,14 @@ small {
   margin-top: 2em;
 }
 
+.sm-up-container {
+  background-color: rgba(179, 184, 178, 0.3);
+}
+
+.sm-up-container:hover {
+  background-color: rgba(179, 184, 178, 0.6);
+}
+
 .top-header ul li a:hover {
   color: #95c841 !important;
 }
