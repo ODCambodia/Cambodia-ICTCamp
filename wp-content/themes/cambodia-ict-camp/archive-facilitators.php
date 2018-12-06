@@ -24,7 +24,7 @@ global $event_star_customizer_all_values;
             $args = [
                 'taxonomy' => 'facilitator_group',
                 'orderby'  => 'slug',
-                'order'    => 'ASC',
+                'order'  => 'DESC',
             ];
 
             $facilitator_terms = get_terms( $args );
@@ -78,7 +78,7 @@ global $event_star_customizer_all_values;
                             </div>
                         </div>
                     <?php
-                    } 
+                    }
                 }
             } else {
                 get_template_part( 'template-parts/content', 'none' );
