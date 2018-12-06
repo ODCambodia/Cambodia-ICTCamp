@@ -144,6 +144,14 @@ small {
   width: 55px;
 }
 
+.sm-up-container {
+  background-color: transparent;
+}
+
+.sm-up-container:hover {
+  background-color: rgba(171, 177, 170, 0.4);
+}
+
 .text-center {
   text-align: center;
 }
