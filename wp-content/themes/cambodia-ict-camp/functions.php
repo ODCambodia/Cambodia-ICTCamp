@@ -96,9 +96,6 @@ require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/expertise.php' );
 require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/organization.php' );
 require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/social-media-links.php' );
 
-// Template tags
-require_once( __DIR__ . '/inc/template-tags.php' );
-
 // Register Custom Form Fields for Taxonomy
 require_once( __DIR__ . '/inc/taxonomy-form-fields/categories/colors.php' );
 require_once( __DIR__ . '/inc/taxonomy-form-fields/categories/images.php' );
