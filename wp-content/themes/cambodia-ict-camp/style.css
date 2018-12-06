@@ -5,7 +5,7 @@
   Author:       Open Development Cambodia
   Author URI:
   Template:     event-star
-  Version:      1.0.12
+  Version:      1.0.13
   License:
   License URI:
   Tags:         responsive-layout
@@ -256,6 +256,10 @@ small {
 .cict-widgets {
   padding: 15px 0;
   overflow: hidden;
+}
+
+.info-icon-box-wrapper .info-icon-box {
+  border: none;
 }
 /* END Widgets */
 
