@@ -35,7 +35,7 @@ global $event_star_customizer_all_values;
         <main id="main" class="site-main" role="main">
         <?php
         while ( have_posts() ) : the_post();
-            get_template_part( 'inc/template-parts/content-single-post', 'single' ); ?>
+            get_template_part( 'inc/template-parts/content', 'single-post' ); ?>
             <div class="clearfix"></div>
             <?php
             the_post_navigation();
