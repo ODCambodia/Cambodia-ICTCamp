@@ -26,7 +26,38 @@ $no_blog_image = '';
                 <?php the_title( sprintf( '<h2 class="entry-title"><a class="txtcolor-dgreen" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
             </div>
             <footer class="entry-footer">
-                <?php echo_ictcamp_post_meta( get_post(), ['date', 'tags'] ); ?>
+                <?php
+                if (get_post_type() == "speakers"){
+                  $speaker_meta = array(
+                                      array('icon' => 'fa-user',
+                                            'label' => get_post_meta( $post->ID, '_speakers_expertise_value_key', true ),
+                                            'link' => '',
+                                          ),
+                                      array('icon' => 'fa-institution',
+                                            'label' => get_post_meta( $post->ID, '_speakers_organization_value_key', true ),
+                                            'link' => '',
+                                          );
+                                  );
+
+                    echo_ictcamp_post_meta( get_post(), ['custom'], null, null, null,  $speaker_meta);
+                }else if (get_post_type() == "facilitators"){
+                    $facilitator = array(
+                                      array('icon' => 'fa-user',
+                                            'label' => get_post_meta( $post->ID, '_facilitators_expertise_value_key', true ),
+                                            'link' => '',
+                                          ),
+                                      array('icon' => 'fa-institution',
+                                            'label' => get_post_meta( $post->ID, '_facilitators_organization_value_key', true ),
+                                            'link' => '',
+                                          );
+                                  );
+
+                    echo_ictcamp_post_meta( get_post(), ['custom'], null, null, null,  $speaker_meta);
+                }else {
+                  echo_ictcamp_post_meta( get_post(), ['date', 'tags'] );
+                }
+                 ?>
+
             </footer><!-- .entry-footer -->
             <?php
             if ( 'content' == $content_from ) :

@@ -3,7 +3,7 @@
  * Prints HTML with meta information for the categories, tags and comments.
  */
 
-function echo_ictcamp_post_meta($the_post, $show_elements = array('date','categories','tags','sources'), $order = "metadata_created", $max_num_cats = null, $max_num_tags = null)
+function echo_ictcamp_post_meta($the_post, $show_elements = array('date','categories','tags','sources', 'custom'), $order = "metadata_created", $max_num_cats = null, $max_num_tags = null, $custom_arr = null)
 {
 	global $post;
 	$post = $the_post;
@@ -103,17 +103,41 @@ function echo_ictcamp_post_meta($the_post, $show_elements = array('date','catego
 						</li>
 				<?php
 				 	endif;
-	      endif;
-
-        if (in_array('comment', $show_elements)):
-          if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
-            echo '<span class="comments-link"><i class="fa fa-comment-o"></i> ';
-           	  comments_popup_link( esc_html__( 'Leave a comment', 'ict_camp' ), esc_html__( '1 Comment', 'ict_camp' ), esc_html__( '% Comments', 'ict_camp' ) );
-              echo '</span>';
-          endif;
+      endif;
+      if (in_array('comment', $show_elements)):
+        if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
+          echo '<span class="comments-link"><i class="fa fa-comment-o"></i> ';
+         	  comments_popup_link( esc_html__( 'Leave a comment', 'ict_camp' ), esc_html__( '1 Comment', 'ict_camp' ), esc_html__( '% Comments', 'ict_camp' ) );
+            echo '</span>';
         endif;
-
-        ?>
+      endif;
+			?>
+			<?php
+			if (in_array('custom', $show_elements)):
+				/* format of $custom_arr
+				$custom_arr = array(
+													array('icon' => 'fa-user',
+																'label' => 'text',
+																'link' => 'url',
+															)
+											);
+				*/
+        if (isset($post)) {
+					if ($custom_arr) {
+						$custom_link = null;
+						foreach ($custom_arr as $val) {
+							$custom_label .= $val->link? '<a href="'.$val->link.'">'.$val->label.'</a>, ' : $val->label;
+							if ($val):
+								echo '<li class="custom-meta">';
+								echo '<i class="fa '.$val->icon.'"></i> ';
+									echo $custom_label;
+								echo '</li> ';
+							endif;
+						}
+  				}
+  			}// if custom
+      endif; ?>
+      ?>
 		</ul>
 	</div>
 	<?php
