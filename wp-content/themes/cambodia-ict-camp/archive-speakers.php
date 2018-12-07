@@ -44,7 +44,7 @@ global $event_star_customizer_all_values;
                                 echo '<div class="row flex-box-row">';
                             }
 
-                            get_template_part( 'inc/template-parts/facilitators/content', 'list' );
+                            get_template_part( 'inc/template-parts/speakers/content', 'list' );
 
                             if( ($counter%$wrap_count == 0) || ($counter == $speakers->post_count) ) {
                                 echo '</div>';
