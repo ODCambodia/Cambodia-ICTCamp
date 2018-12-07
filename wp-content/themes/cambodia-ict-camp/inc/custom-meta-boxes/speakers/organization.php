@@ -4,7 +4,7 @@ add_action( 'save_post', 'save_speakers_organization_data' );
 
 function create_speakers_organization_meta_box()
 {
-    add_meta_box( 'speakers_organization', __( 'Organization' ), 'add_speakers_organization_callback', 'speakers', 'side' );
+    add_meta_box( 'speakers_organization', __( 'Organization' ), 'add_speakers_organization_callback', 'speakers', 'advanced' );
 }
 
 function add_speakers_organization_callback( $post )
