@@ -306,7 +306,7 @@ small {
 }
 
 .ui-state-active {
-  background: #06323d;
+  background: #06323d !important;
   border: 1px solid #06323d;
   border-bottom: none;
   color: #fff;
