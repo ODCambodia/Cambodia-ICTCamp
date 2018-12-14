@@ -115,7 +115,7 @@ if ( ! function_exists( 'event_star_feature_slider' ) ) :
                             $text_align = $event_star_feature_slider_text_align;
                         }
 
-                        if( 1 == $event_star_feature_slider_enable_animation ){
+                        if( 1 == $event_star_feature_slider_enable_animation ) {
                             $animation1 = 'init-animate fadeInDown';
                             $animation2 = 'init-animate fadeInDown';
                             $animation3 = 'init-animate fadeInDown';
@@ -126,21 +126,18 @@ if ( ! function_exists( 'event_star_feature_slider' ) ) :
                         while( $slider_query->have_posts() ):$slider_query->the_post();
 
                             if( 'alternate' == $event_star_feature_slider_text_align ) {
-                                if( 1 == $slider_index ){
+                                if( 1 == $slider_index ) {
                                     $text_align = 'text-left';
-                                    }
-                                elseif ( 2 == $slider_index ){
+                                } elseif ( 2 == $slider_index ) {
                                     $text_align = 'text-center';
-                                }
-                                else{
+                                } else {
                                     $text_align = 'text-right';
                                 }
                             }
 
                             if ( has_post_thumbnail() ) {
-                                $image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
-                            }
-                            else {
+                                $image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+                            } else {
                                 $image_url[0] = get_template_directory_uri() . '/assets/img/default-image.jpg';
                             }
 
@@ -178,39 +175,52 @@ if ( ! function_exists( 'event_star_feature_slider' ) ) :
                                         if( !empty( $slides_single_data['event-date'] ) ) {
                                             $date_time = event_star_date_time_array( $slides_single_data['event-date'] );
                                             $camp_start_date = $slides_single_data['event-date'];
+                                            $camp_end_date = '21/12/2018';
                                             $now = date( 'd/m/Y - H:i' );
-                                            echo $now;
 
-                                            if ( $now < $camp_start_date ) {
-                                                if( !empty( $date_time ) && is_array( $date_time ) ) {
+                                            if( !empty( $date_time ) && is_array( $date_time ) ) {
+                                                if ( $now <= $camp_start_date ) {
                                                     $event_star_days_text = $event_star_customizer_all_values['event-star-days-text'];
                                                     $event_star_hours_text = $event_star_customizer_all_values['event-star-hours-text'];
                                                     $event_star_min_text = $event_star_customizer_all_values['event-star-min-text'];
                                                     $event_star_second_text = $event_star_customizer_all_values['event-star-second-text'];
 
                                                     include( locate_template( './inc/template-parts/slider/section-countdown.php' ) );
-                                                }
-                                            } else {
-                                                $now = date( 'd/m/Y' );
-                                                switch ( '17/12/2018' ) {
-                                                    case '17/12/2018':
-                                                        echo '<p>The First Day of Cambodia ICT Camp is opening now</p>';
-                                                        break;
-                                                    case '18/12/2018':
-                                                        echo '<h3>The Second Day of Cambodia ICT Camp is ongoing</h3>';
-                                                        break;
-                                                    case '19/12/2018':
-                                                        echo '<h3>The Third Day of Cambodia ICT Camp is ongoing</h3>';
-                                                        break;
-                                                    case '20/12/2018':
-                                                        echo '<h3>The Fourth Day of Cambodia ICT Camp is ongoing</h3>';
-                                                        break;
-                                                    case '21/12/2018':
-                                                        echo '<h3>The last day of Cambodia ICT Camp is ongoing/h2>';
-                                                        break;
-                                                    default:
-                                                        # code...
-                                                        break;
+                                                } else {
+                                                    $now = date( 'd/m/Y' );
+
+                                                    switch ( $now ) {
+                                                        case '17/12/2018':
+                                                            echo '<h3 class="after-countdown-text">';
+                                                                _e('The First Day of Cambodia ICT Camp is opening now.', 'ict_camp');
+                                                            echo '</h3>';
+                                                            break;
+                                                        case '18/12/2018':
+                                                            echo '<h3 class="after-countdown-text">';
+                                                                _e( 'The Second Day of Cambodia ICT Camp is ongoing.', 'ict_camp' );
+                                                            echo '</h3>';
+                                                            break;
+                                                        case '19/12/2018':
+                                                            echo '<h3 class="after-countdown-text">';
+                                                                _e( 'The Third Day of Cambodia ICT Camp is ongoing.', 'ict_camp' );
+                                                            echo '</h3>';
+                                                            break;
+                                                        case '20/12/2018':
+                                                            echo '<h3 class="after-countdown-text">';
+                                                                _e( 'The Fourth Day of Cambodia ICT Camp is ongoing.', 'ict_camp' );
+                                                            echo '</h3>';
+                                                            break;
+                                                        case '21/12/2018':
+                                                            echo '<h3 class="after-countdown-text">';
+                                                                _e( 'The last day of Cambodia ICT Camp is ongoing.', 'ict_camp' );
+                                                            echo '</h3>';
+                                                            break;
+                                                        default:
+                                                            echo '<h3 class="after-countdown-text">';
+                                                                _e( 'The Cambodia ICT Camp was ended.', 'ict_camp' );
+                                                            echo '</h3>';
+                                                            break;
+                                                    }
                                                 }
                                             }
                                         }
@@ -223,10 +233,10 @@ if ( ! function_exists( 'event_star_feature_slider' ) ) :
                                         <?php
                                         }
 
-                                        if( !empty( $slides_single_data['button-2-text'] ) ){
+                                        if( !empty( $slides_single_data['button-2-text'] ) ) {
                                         ?>
                                             <a href="<?php echo esc_url( $slides_single_data['button-2-link'] );?>" class="<?php echo esc_attr( $animation5 );?> btn btn-primary outline-outward banner-btn">
-                                        <?php echo esc_html( $slides_single_data['button-2-text'] ); ?>
+                                                <?php echo esc_html( $slides_single_data['button-2-text'] ); ?>
                                             </a>
                                         <?php
                                         }
@@ -236,7 +246,8 @@ if ( ! function_exists( 'event_star_feature_slider' ) ) :
                             </div>
                             <?php
                             $slider_index ++;
-                            if( 3 < $slider_index ){
+
+                            if( 3 < $slider_index ) {
                                 $slider_index = 1;
                             }
                         endwhile;
