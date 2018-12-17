@@ -1,54 +1,46 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cambodia-ict-camp\n"
-"POT-Creation-Date: 2018-11-18 00:26+0700\n"
-"PO-Revision-Date: 2018-11-18 00:26+0700\n"
+"POT-Creation-Date: 2018-12-14 08:52+0700\n"
+"PO-Revision-Date: 2018-12-14 08:53+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: km_KH\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _;_e;__;_x;esc_html__\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: archive-facilitators.php:10 archive-facilitators.php:107
-#: inc/custom-post-types/facilitators.php:7
-#: inc/custom-post-types/facilitators.php:9
-#: inc/custom-post-types/facilitators.php:23
-#: inc/custom-post-types/facilitators.php:24
-msgid "Facilitators"
-msgstr "អ្នកសម្របសម្រួល"
-
-#: archive-facilitators.php:50
-msgid "Advisory Committee"
-msgstr "គណៈកម្មការប្រឹក្សាយោបល់"
-
-#: archive-facilitators.php:164
-msgid "Volunteers"
-msgstr "អ្នកស្ម័គ្រចិត្ត"
-
-#: archive-speakers.php:10
-msgid "Speakers"
-msgstr "វាគ្មិន"
+#: hooks/footer.php:90
+#, php-format
+msgid "%1$s by %2$s"
+msgstr ""
 
 #: hooks/header.php:226
 msgid "Event Booking"
 msgstr ""
 
+#: hooks/slider-selection.php:199
+msgid "The First Day of Cambodia ICT Camp is opening now"
+msgstr "ថ្ងៃទី ១ នៃការបោះជំរុំ ICT កម្ពុជាចាប់ដំណើរការហើយ"
+
 #: inc/custom-meta-boxes/facilitators/expertise.php:7
+#: inc/custom-meta-boxes/speakers/expertise.php:7
 msgid "Expertise"
 msgstr "ជំនាញ"
 
 #: inc/custom-meta-boxes/facilitators/organization.php:7
+#: inc/custom-meta-boxes/speakers/organization.php:7
 msgid "Organization"
 msgstr "ស្ថាប័ន"
 
 #: inc/custom-meta-boxes/facilitators/social-media-links.php:7
+#: inc/custom-meta-boxes/speakers/social-media-links.php:7
 msgid "Social Media Links"
 msgstr ""
 
@@ -82,6 +74,7 @@ msgstr ""
 #: inc/custom-post-types/facilitators.php:14
 #: inc/custom-post-types/organizers.php:14
 #: inc/custom-post-types/partners.php:14 inc/custom-post-types/sessions.php:14
+#: inc/custom-post-types/speakers.php:14
 msgid "Add New"
 msgstr ""
 
@@ -102,6 +95,7 @@ msgstr ""
 #: inc/custom-post-types/facilitators.php:18
 #: inc/custom-post-types/organizers.php:18
 #: inc/custom-post-types/partners.php:18 inc/custom-post-types/sessions.php:18
+#: inc/custom-post-types/speakers.php:18
 msgid "Not Found"
 msgstr "ព័ត៌មានពុំអាចរកបាន"
 
@@ -110,6 +104,7 @@ msgstr "ព័ត៌មានពុំអាចរកបាន"
 #: inc/custom-post-types/facilitators.php:19
 #: inc/custom-post-types/organizers.php:19
 #: inc/custom-post-types/partners.php:19 inc/custom-post-types/sessions.php:19
+#: inc/custom-post-types/speakers.php:19
 msgid "Not found in Trash"
 msgstr ""
 
@@ -158,6 +153,13 @@ msgstr "ស្វែងរកម្ចាស់ជំនួយ"
 #: inc/custom-post-types/donors.php:23 inc/custom-post-types/donors.php:24
 msgid "donors"
 msgstr "ម្ចាស់ជំនួយ"
+
+#: inc/custom-post-types/facilitators.php:7
+#: inc/custom-post-types/facilitators.php:9
+#: inc/custom-post-types/facilitators.php:23
+#: inc/custom-post-types/facilitators.php:24
+msgid "Facilitators"
+msgstr "អ្នកសម្របសម្រួល"
 
 #: inc/custom-post-types/facilitators.php:8
 msgid "Facilitator"
@@ -313,6 +315,55 @@ msgstr ""
 msgid "Agenda Sessions"
 msgstr ""
 
+#: inc/custom-post-types/speakers.php:7 inc/custom-post-types/speakers.php:9
+#: inc/custom-post-types/speakers.php:23 inc/custom-post-types/speakers.php:24
+msgid "Speakers"
+msgstr "វាគ្មិន"
+
+#: inc/custom-post-types/speakers.php:8
+msgid "Speaker"
+msgstr "វាគ្មិន"
+
+#: inc/custom-post-types/speakers.php:10
+#, fuzzy
+#| msgid "Speaker"
+msgid "Parent Speaker"
+msgstr "វាគ្មិន"
+
+#: inc/custom-post-types/speakers.php:11
+msgid "All Speakers"
+msgstr "វាគ្មិនទាំងអស់"
+
+#: inc/custom-post-types/speakers.php:12
+#, fuzzy
+#| msgid "Speaker"
+msgid "View Speaker"
+msgstr "វាគ្មិន"
+
+#: inc/custom-post-types/speakers.php:13
+#, fuzzy
+#| msgid "All Speakers"
+msgid "Add New Speaker"
+msgstr "វាគ្មិនទាំងអស់"
+
+#: inc/custom-post-types/speakers.php:15
+#, fuzzy
+#| msgid "Speaker"
+msgid "Edit Speaker"
+msgstr "វាគ្មិន"
+
+#: inc/custom-post-types/speakers.php:16
+#, fuzzy
+#| msgid "Speaker"
+msgid "Update Speaker"
+msgstr "វាគ្មិន"
+
+#: inc/custom-post-types/speakers.php:17
+#, fuzzy
+#| msgid "Search Organizer"
+msgid "Search Speaker"
+msgstr "ស្វែងរកអ្នករៀបចំកម្មវិធី"
+
 #: inc/custom-taxonomies/facilitator-groups.php:7
 #: inc/custom-taxonomies/facilitator-groups.php:17
 msgid "Groups"
@@ -457,15 +508,17 @@ msgstr ""
 msgid "Select a image for the theme."
 msgstr ""
 
-#: inc/template-parts/content-list-posts.php:52
-#: inc/template-parts/content-single-post.php:52
+#: inc/template-parts/content-list-posts.php:56
+#: inc/template-parts/content-single-post.php:35
+#: inc/template-parts/content.php:56
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-parts/content-list-posts.php:56
+#: inc/template-parts/content-list-posts.php:60
 #: inc/template-parts/content-page.php:17
-#: inc/template-parts/content-single-post.php:56
+#: inc/template-parts/content-single-post.php:39
+#: inc/template-parts/content.php:60
 msgid "Pages:"
 msgstr ""
 
@@ -493,10 +546,6 @@ msgstr "ប្លក់"
 #: page-about.php:101
 msgid "Partners"
 msgstr "ដៃគូ"
-
-#: page-themes.php:52
-msgid " #"
-msgstr ""
 
 #: widgets/camp-organizers.php:15
 msgid "CICT Organizer Widget"
@@ -530,11 +579,11 @@ msgstr ""
 msgid "Display a list of all themes of the camp"
 msgstr ""
 
-#~ msgid "Speaker"
-#~ msgstr "វាគ្មិន"
+#~ msgid "Advisory Committee"
+#~ msgstr "គណៈកម្មការប្រឹក្សាយោបល់"
 
-#~ msgid "All Speakers"
-#~ msgstr "វាគ្មិនទាំងអស់"
+#~ msgid "Volunteers"
+#~ msgstr "អ្នកស្ម័គ្រចិត្ត"
 
 #~ msgid "Years"
 #~ msgstr "ឆ្នាំ"

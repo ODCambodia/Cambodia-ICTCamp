@@ -5,7 +5,7 @@
   Author:       Open Development Cambodia
   Author URI:
   Template:     event-star
-  Version:      1.0.15
+  Version:      1.0.16
   License:
   License URI:
   Tags:         responsive-layout
@@ -272,6 +272,13 @@ small {
 /* END Widgets */
 
 /* Homepage Slider */
+.after-countdown-text {
+  background-color: rgba(12, 12, 12, 0.3);
+  color: #fff;
+  margin: auto;
+  padding: 5px;
+}
+
 .image-slider-wrapper .slider-content p {
   background: rgba(12, 12, 12, 0.3);
   margin: auto;
