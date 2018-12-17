@@ -29,15 +29,15 @@ msgstr ""
 #, fuzzy
 #| msgid "The First Day of Cambodia ICT Camp is opening now"
 msgid "The First Day of Cambodia ICT Camp is opening now."
-msgstr "ថ្ងៃទី ១ នៃការបោះជំរុំ ICT កម្ពុជាចាប់ដំណើរការហើយ"
+msgstr "ថ្ងៃទី ១ នៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែមចាប់ដំណើរការហើយ"
 
 #: hooks/slider-selection.php:200
 msgid "The Second Day of Cambodia ICT Camp is ongoing."
-msgstr "ថ្ងៃទី ២ នៃការបោះជំរុំ ICT កម្ពុជាចាប់ដំណើរការហើយ"
+msgstr "ថ្ងៃទី ២ នៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែម កំពុងដំណើរការហើយ"
 
 #: hooks/slider-selection.php:205
 msgid "The Third Day of Cambodia ICT Camp is ongoing."
-msgstr "ថ្ងៃទី ៣ នៃការបោះជំរុំ ICT កម្ពុជាចាប់ដំណើរការហើយ"
+msgstr "ថ្ងៃទី ៣ នៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែម កំពុងដំណើរការហើយ"
 
 #: hooks/slider-selection.php:210
 msgid "The Fourth Day of Cambodia ICT Camp is ongoing."
@@ -45,13 +45,13 @@ msgstr "ថ្ងៃទី ៤ នៃកម្មវិធីកម្ពុជ�
 
 #: hooks/slider-selection.php:215
 msgid "The last day of Cambodia ICT Camp is ongoing."
-msgstr "ថ្ងៃចុងក្រោយនៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែម ចាប់ផ្តើមហើយ"
+msgstr "ថ្ងៃចុងក្រោយនៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែម កំពុងដំណើរការហើយ"
 
 #: hooks/slider-selection.php:220
 #, fuzzy
 #| msgid "The First Day of Cambodia ICT Camp is opening now"
 msgid "The Cambodia ICT Camp was ended."
-msgstr "ថ្ងៃទី ១ នៃការបោះជំរុំ ICT កម្ពុជាចាប់ដំណើរការហើយ"
+msgstr "កម្មវិធីកម្ពុជាអាយស៊ីធីខែមបានបញ្ចប់ជាស្ថាពរហើយ"
 
 #: inc/custom-meta-boxes/facilitators/expertise.php:7
 #: inc/custom-meta-boxes/speakers/expertise.php:7
