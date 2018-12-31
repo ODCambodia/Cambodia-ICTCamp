@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cambodia-ict-camp\n"
-"POT-Creation-Date: 2018-12-17 10:03+0700\n"
-"PO-Revision-Date: 2018-12-17 13:49+0700\n"
+"POT-Creation-Date: 2019-01-18 14:09+0700\n"
+"PO-Revision-Date: 2019-01-18 14:09+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: km_KH\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -25,33 +25,29 @@ msgstr ""
 msgid "Event Booking"
 msgstr ""
 
-#: hooks/slider-selection.php:195
-#, fuzzy
-#| msgid "The First Day of Cambodia ICT Camp is opening now"
+#: hooks/slider-selection.php:197
 msgid "The First Day of Cambodia ICT Camp is opening now."
-msgstr "ថ្ងៃទី ១ នៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែមចាប់ដំណើរការហើយ"
+msgstr "ថ្ងៃទី ១ នៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែមកំពុងដំណើរការ"
 
-#: hooks/slider-selection.php:200
+#: hooks/slider-selection.php:202
 msgid "The Second Day of Cambodia ICT Camp is ongoing."
-msgstr "ថ្ងៃទី ២ នៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែម កំពុងដំណើរការហើយ"
+msgstr "ថ្ងៃទី ២ នៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែមកំពុងដំណើរការ"
 
-#: hooks/slider-selection.php:205
+#: hooks/slider-selection.php:207
 msgid "The Third Day of Cambodia ICT Camp is ongoing."
-msgstr "ថ្ងៃទី ៣ នៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែម កំពុងដំណើរការហើយ"
+msgstr "ថ្ងៃទី ៣ នៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែមកំពុងដំណើរការ"
 
-#: hooks/slider-selection.php:210
+#: hooks/slider-selection.php:212
 msgid "The Fourth Day of Cambodia ICT Camp is ongoing."
-msgstr "ថ្ងៃទី ៤ នៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែម កំពុងដំណើរការហើយ"
+msgstr "ថ្ងៃទី ៤ នៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែមកំពុងដំណើរការ"
 
-#: hooks/slider-selection.php:215
+#: hooks/slider-selection.php:217
 msgid "The last day of Cambodia ICT Camp is ongoing."
-msgstr "ថ្ងៃចុងក្រោយនៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែម កំពុងដំណើរការហើយ"
+msgstr "ថ្ងៃចុងក្រោយនៃកម្មវិធីកម្ពុជាអាយស៊ីធីខែមកំពុងដំណើរការ"
 
-#: hooks/slider-selection.php:220
-#, fuzzy
-#| msgid "The First Day of Cambodia ICT Camp is opening now"
+#: hooks/slider-selection.php:222
 msgid "The Cambodia ICT Camp was ended."
-msgstr "កម្មវិធីកម្ពុជាអាយស៊ីធីខែមបានបញ្ចប់ជាស្ថាពរហើយ"
+msgstr "កម្មវិធីកម្ពុជាអាយស៊ីធីខែមបានបញ្ចប់ជាស្ថាពរ"
 
 #: inc/custom-meta-boxes/facilitators/expertise.php:7
 #: inc/custom-meta-boxes/speakers/expertise.php:7
