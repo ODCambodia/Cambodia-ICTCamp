@@ -5,7 +5,7 @@
   Author:       Open Development Cambodia
   Author URI:
   Template:     event-star
-  Version:      1.0.16
+  Version:      1.0.17
   License:
   License URI:
   Tags:         responsive-layout
@@ -132,6 +132,10 @@ small {
 
 .no-padding-bottom {
   padding-bottom: 0px !important;
+}
+
+.padding-bottom-1-em {
+  padding-bottom: 1em;
 }
 
 .padding-top-1-em {

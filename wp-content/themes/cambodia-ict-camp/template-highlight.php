@@ -34,7 +34,7 @@ if(
         <main id="main" class="site-main" role="main">
             <?php
             $args = [
-                'hide_empty' => 0,
+                'hide_empty' => 1,
                 'orderby'    => 'name',
                 'parent'     => 0,
                 'exclude'    => 1
@@ -46,11 +46,18 @@ if(
 
                 foreach ( $themes as $theme ) {
                 ?>
-                    <div class="section padding-top-1-em" id="<?php echo $facilitator_term->slug; ?>">
+                    <div id="<?php echo $theme->slug; ?>">
                         <div class="section-title">
                             <h2 class="text-center"><?php _e( $theme->name ); ?></h2>
                         </div>
                         <div class="setcion-body margin-top-3-em">
+                            <?php
+                            if( $theme->description != '' ) {
+                            ?>
+                                <p class="text-center padding-bottom-1-em"><?php _e( $theme->description ) ?></p>
+                            <?php
+                            }
+                            ?>
 
                             <?php
                             $args = [
@@ -74,7 +81,7 @@ if(
                                         'class' => 'aligncenter margin-bottom-10-px',
                                     ];
 
-                                    $profile = get_the_post_thumbnail( $post->ID, [250, 250], $attributes );
+                                    $profile = get_the_post_thumbnail( $post->ID, [600, 600], $attributes );
                                     $responsive_profile = preg_replace( '/(width|height)="\d*"\s/', '', $profile );
                                     ?>
                                     <div class="col-xs-12 col-sm-4 col-md-4">
