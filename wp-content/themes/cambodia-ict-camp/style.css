@@ -73,6 +73,10 @@ small {
   margin: 0, auto;
 }
 
+#banner-title {
+  color: #fff;
+}
+
 .btn-primary {
   border: 1px solid #06323d;
   color:#fff !important;
