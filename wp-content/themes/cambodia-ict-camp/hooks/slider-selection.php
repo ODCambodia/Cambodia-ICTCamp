@@ -31,10 +31,10 @@ if ( !function_exists('event_star_default_slider') ) :
                     <div class="slider-content <?php echo $text_align;?>">
                         <div class="container">
                             <div class="banner-title <?php echo $animation1;?>">
-                                <?php esc_html_e('Event Star','event-star' );?>
+                                <?php esc_html_e('Event Star', 'event-star' );?>
                             </div>
                             <div class="image-slider-caption <?php echo $animation2;?>">
-                                <?php esc_html_e('The modern Event WordPress Theme','event-star' );?>
+                                <?php esc_html_e('The modern Event WordPress Theme', 'event-star' );?>
                             </div>
                         </div>
                     </div>
@@ -160,7 +160,9 @@ if ( ! function_exists( 'event_star_feature_slider' ) ) :
                                         <?php
                                         if( 1 == $event_star_feature_slider_image_only ) {
                                         ?>
-                                            <div class="banner-title <?php echo esc_attr( $animation1 );?>"><?php the_title()?></div>
+                                            <div class="banner-title <?php echo esc_attr( $animation1 );?>">
+                                              <h1 id="banner-title"><?php the_title()?></h1>
+                                            </div>
                                         <?php
                                         }
 
