@@ -22,7 +22,7 @@ if(
                     event_star_breadcrumbs();
                 }
                 ?>
-            </header><!-- .entry-header -->
+            </header>
         </div>
     </div>
     <?php
@@ -87,7 +87,10 @@ if(
                                     <div class="col-xs-12 col-sm-4 col-md-4">
                                         <?php echo $responsive_profile; ?>
                                         <div class="text-center margin-bottom-10-px">
-                                            <h3><?php the_content(); ?></h3>
+                                            <h3 class="inline">
+                                                <p><a href=""><i class="fa fa-download"></i></a></p>
+                                                <?php the_content(); ?>
+                                            </h3>
                                             <em><?php _e( get_the_excerpt() ); ?></em>
                                         </div>
                                     </div>
