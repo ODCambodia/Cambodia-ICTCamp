@@ -6,66 +6,69 @@ $content_from = $event_star_customizer_all_values['event-star-blog-archive-conte
 $no_blog_image = '';
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="content-wrapper">
-        <?php
-        // $thumbnail = $event_star_customizer_all_values['event-star-blog-archive-img-size'];
-        $thumbnail = 'full';
-
-        if( has_post_thumbnail() && 'disable' != $thumbnail ):
-            ?>
-            <!--post thumbnal options-->
-            <div class="image-wrap">
-                <div class="post-thumb">
-                    <a href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail( $thumbnail ); ?>
-                    </a>
-                </div><!-- .post-thumb-->
-            </div>
+<div class="col-sm-6 col-md-4">
+    <article id="post-<?php the_ID(); ?>" <?php post_class('no-border-bottom'); ?>>
+        <div class="content-wrapper">
             <?php
-        else:
-            $no_blog_image = 'no-image';
-        endif;
-        ?>
+            // $thumbnail = $event_star_customizer_all_values['event-star-blog-archive-img-size'];
+            $thumbnail_size = 'full';
 
-        <div class="entry-content <?php echo $no_blog_image; ?>">
-            <?php
-            if ( 'post' === get_post_type() ) : ?>
-                <header class="entry-header <?php echo $no_blog_image; ?>">
-                    <div class="entry-meta">
-                        <?php
-                        // event_star_cats_lists()
-                        ?>
-                    </div><!-- .entry-meta -->
-                </header><!-- .entry-header -->
+            if( has_post_thumbnail() && 'disable' != $thumbnail_size ):
+                $feature_image_url = get_the_post_thumbnail_url( $post->ID, $thumbnail_size );
+                ?>
+                <!--post thumbnal options-->
+                <div class="image-wrap">
+                    <div class="post-thumb">
+                        <a href="<?php the_permalink(); ?>">
+                            <!-- <?php the_post_thumbnail( $thumbnail_size ); ?> -->
+                            <div class="latest-feature-image" style="background-image: url( '<?php echo $feature_image_url; ?>' );"></div>
+                        </a>
+                    </div>
+                    <!-- .post-thumb-->
+                </div>
                 <?php
-            endif; ?>
-
-            <div class="entry-header-title">
-                <?php the_title( sprintf( '<h2 class="entry-title"><a class="txtcolor-dgreen" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-            </div>
-
-            <div class="posts-meta-div">
-                <?php echo_ictcamp_post_meta( get_post(), array( 'date', 'tags' ) ); ?>
-            </div>
-
-            <?php
-            if ( 'content' == $content_from ) :
-                the_content( sprintf(
-                /* translators: %s: Name of current post. */
-                    wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'ict_camp' ), array( 'span' => array( 'class' => array() ) ) ),
-                    the_title( '<span class="screen-reader-text">"', '"</span>', false )
-                ) );
-                wp_link_pages( array(
-                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ict_camp' ),
-                    'after'  => '</div>',
-                ) );
-            else :
-                the_excerpt();
+            else:
+                $no_blog_image = 'no-image';
             endif;
             ?>
-        </div><!-- .entry-content -->
 
-        <div class="clearfix"></div>
-    </div>
-</article><!-- #post-## -->
+            <div class="entry-content <?php echo $no_blog_image; ?>">
+                <?php
+                if ( 'post' === get_post_type() ) : ?>
+                    <header class="entry-header <?php echo $no_blog_image; ?>">
+                        <div class="entry-meta">
+                            <?php
+                            // event_star_cats_lists()
+                            ?>
+                        </div><!-- .entry-meta -->
+                    </header><!-- .entry-header -->
+                    <?php
+                endif; ?>
+
+                <div class="entry-header-title">
+                    <?php the_title( sprintf( '<h3 class="entry-title"><a class="txtcolor-dgreen" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+                </div>
+
+                <div class="posts-meta-div">
+                    <?php echo_ictcamp_post_meta( get_post(), array( 'date', 'tags' ) ); ?>
+                </div>
+
+                <?php
+                if ( 'content' == $content_from ) :
+                    the_content( sprintf(
+                    /* translators: %s: Name of current post. */
+                        wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'ict_camp' ), array( 'span' => array( 'class' => array() ) ) ),
+                        the_title( '<span class="screen-reader-text">"', '"</span>', false )
+                    ) );
+                    wp_link_pages( array(
+                        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ict_camp' ),
+                        'after'  => '</div>',
+                    ) );
+                else :
+                    the_excerpt();
+                endif;
+                ?>
+            </div><!-- .entry-content -->
+        </div>
+    </article><!-- #post-## -->
+</div>
