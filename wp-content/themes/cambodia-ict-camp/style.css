@@ -77,6 +77,10 @@ small {
   color: #fff;
 }
 
+.no-border-bottom {
+  border-bottom: none !important;
+}
+
 .btn-primary {
   border: 1px solid #06323d;
   color:#fff !important;
@@ -120,6 +124,12 @@ small {
 
 .inner-main-title {
   background-color: #06323d;
+}
+
+.latest-feature-image {
+  height: 100px;
+  background-size: cover;
+  background-position: center;
 }
 
 .margin-bottom-10-px {
@@ -421,3 +431,55 @@ small {
   background-position: -65px -16px;
 }
 /* END Jquery UI Icons */
+
+/* Carousel Slider */
+.carousel-control .fa {
+  top: 50%;
+  position: absolute;
+  z-index: 5;
+  display: inline-block;
+  margin-top: -10px;
+}
+
+.carousel-indicators {
+  left: 90%;
+  bottom: -15px;
+}
+/* END Carousel Slider */
+
+/* Extra Small Devices */
+@media only screen and (max-width: 576px) {
+  .latest-feature-image {
+    height: 150px;
+  }
+}
+
+/* Small Devices: Mobile Phone */
+@media only screen and (min-width: 576px) {
+  .latest-feature-image {
+    height: 200px;
+  }
+}
+
+/* Medium Device: Tablet */
+@media (min-width: 768px) {
+  .carousel-indicators {
+    left: 95%;
+  }
+
+  .latest-feature-image {
+    height: 300px;
+  }
+}
+
+/* Large Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  .latest-feature-image {
+    height: 350px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
