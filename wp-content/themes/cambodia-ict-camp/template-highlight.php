@@ -78,7 +78,7 @@ if(
 
                                     $attributes = [
                                         'title' => get_the_title(),
-                                        'class' => 'aligncenter margin-bottom-10-px',
+                                        'class' => 'aligncenter margin-bottom-10-px'
                                     ];
 
                                     $profile = get_the_post_thumbnail( $post->ID, [600, 600], $attributes );
