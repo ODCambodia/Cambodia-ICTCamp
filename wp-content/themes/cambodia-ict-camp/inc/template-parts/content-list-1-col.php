@@ -18,8 +18,8 @@ $no_blog_image = '';
     <div class="content-wrapper">
         <div class="entry-content <?php echo $no_blog_image; ?>">
             <div class="entry-header-title">
-                <?php the_title( sprintf( '<h4 class="entry-title"><i class="fa fa-download"></i>
-                  <a class="txtcolor-dgreen" href="%s" rel="bookmark">', esc_url( $link ) ), '</a></h4>' ); ?>
+                <?php the_title( sprintf( '<h4 class="entry-title">
+                  <a class="txtcolor-dgreen" href="%s" rel="bookmark"><i class="fa fa-download"></i> ', esc_url( $link ) ), '</a></h4>' ); ?>
             </div>
             <?php if ($show_meta): //$show_tags  ?>
               <div class="posts-meta-div">
