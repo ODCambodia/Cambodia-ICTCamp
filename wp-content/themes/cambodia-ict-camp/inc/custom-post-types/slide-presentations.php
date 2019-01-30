@@ -40,5 +40,5 @@ function create_slide_presentation_custom_post_type()
         'capability_type'     => 'post',
     ];
 
-    register_post_type( 'slide_presentations', $args );
+    register_post_type( 'presentations', $args );
 }
