@@ -3,39 +3,33 @@
  * Prints HTML with meta information for the categories, tags and comments.
  */
 
-function echo_ictcamp_post_meta($the_post, $show_elements = array('date','categories','tags','sources'), $order = "metadata_created", $max_num_cats = null, $max_num_tags = null)
+function echo_ictcamp_post_meta($the_post, $show_elements = array('date','categories','tags','sources'), $order = "metadata_created", $echo = true, $max_num_cats = null, $max_num_tags = null)
 {
 	global $post;
 	$post = $the_post;
-	?>
-	<div class="post-meta">
-		<ul>
-      <?php
-			if (in_array('date',$show_elements)): ?>
-        <li class="date">
-					<?php if ($order == 'metadata_modified'): ?>
-        					<i class="fa fa-pencil"></i>
-      						<?php
-      						 if (ictcamp_localize_manager()->get_current_language() == 'km') {
-      								 echo ictcamp_localize_manager()->khmer_date(get_the_modified_time('j.m.Y'));
-      						 } else {
-      								 echo get_the_modified_time('j F Y');
-      						 }
-      					  ?>
-					<?php else: ?>
-						<i class="fa fa-calendar-check-o"></i>
-						<?php
+	$post_meta = '';
+	$post_meta .= '<div class="post-meta">';
+		$post_meta .= '<ul>';
+			if (in_array('date',$show_elements)):
+        $post_meta .= '<li class="date">';
+				if ($order == 'metadata_modified'):
+        		$post_meta .= '<i class="fa fa-pencil"></i> ';
 						 if (ictcamp_localize_manager()->get_current_language() == 'km') {
-								 echo ictcamp_localize_manager()->khmer_date(get_the_time('j.m.Y'));
+								 $post_meta .= ictcamp_localize_manager()->khmer_date(get_the_modified_time('j.m.Y'));
 						 } else {
-								 echo get_the_date('j F Y');
+								 $post_meta .= get_the_modified_time('j F Y');
 						 }
-					  ?>
-					<?php endif; ?>
-  			</li>
-      <?php
-			endif; ?>
-      <?php
+				else:
+						$post_meta .='<i class="fa fa-calendar-check-o"></i> ';
+						 if (ictcamp_localize_manager()->get_current_language() == 'km') {
+								 $post_meta .= ictcamp_localize_manager()->khmer_date(get_the_time('j.m.Y'));
+						 } else {
+								 $post_meta .= get_the_date('j F Y');
+						 }
+				endif;
+  			$post_meta .='</li>';
+			endif;
+
 			if (in_array('sources', $show_elements)):
         if (taxonomy_exists('news_source') && isset($post)) {
   				$terms_news_source = get_the_terms($post->ID, 'news_source');
@@ -50,10 +44,10 @@ function echo_ictcamp_post_meta($the_post, $show_elements = array('date','catego
   							//We successfully got a link. Print it out.
   							$news_sources .= '<a href="'.$term_link.'">'.$term->name.'</a>, ';
   							if (isset($news_sources)):
-  								echo '<li class="news-source">';
-  								echo '<i class="fa fa-chain"></i> ';
-  								echo substr($news_sources, 0, -2);
-  								echo '</li> ';
+  								$post_meta .= '<li class="news-source">';
+  								$post_meta .= '<i class="fa fa-chain"></i> ';
+  								$post_meta .= substr($news_sources, 0, -2);
+  								$post_meta .= '</li> ';
   							endif;
   						}
   					}
@@ -67,19 +61,18 @@ function echo_ictcamp_post_meta($the_post, $show_elements = array('date','catego
 				if (isset($max_num_cats) && $max_num_cats > 0):
 					$category_list = array_splice($category_list,0,$max_num_cats);
 				endif;
-				if (!empty($category_list)): ?>
-					<li class="categories">
-	  				<i class="fa fa-folder-o"></i>
-					<?php
-						foreach ($category_list as $category): ?>
-							<a href="<?php echo get_category_link($category->term_id) ?>?queried_post_type=<?php echo get_post_type(); ?>"><?php echo $category->name ?></a>
-						<?php
+				if (!empty($category_list)):
+						$post_meta .= '<li class="categories">';
+	  				$post_meta .= '<i class="fa fa-folder-o"></i> ';
+
+						foreach ($category_list as $category):
+							$post_meta .= '<a href="'. get_category_link($category->term_id).'?queried_post_type='. get_post_type() .'">'. $category->name. '</a>';
+
 							if ($category != end($category_list)):
-								echo " / ";
+								$post_meta .= " / ";
 							endif;
-						endforeach; ?>
-					</li>
-	      <?php
+						endforeach;
+					$post_meta .= '</li>';
 				endif;
 			endif; ?>
       <?php
@@ -89,34 +82,35 @@ function echo_ictcamp_post_meta($the_post, $show_elements = array('date','catego
 					if (is_array($tag_list) && isset($max_num_tags) && $max_num_tags > 0):
 						$tag_list = array_splice($tag_list,0,$max_num_tags);
 					endif;
-					if (!empty($tag_list)): ?>
-						<li class="tags">
-		  				<i class="fa fa-tags"></i>
-								<?php
-							  foreach($tag_list as $tag): ?>
-							    <a href="<?php echo get_tag_link($tag->term_id) ?>?queried_post_type=<?php echo get_post_type(); ?>"><?php echo $tag->name ?></a>
-							  <?php
+					if (!empty($tag_list)):
+						$post_meta .= '<li class="tags">';
+		  					$post_meta .= '<i class="fa fa-tags"></i> ';
+
+							  foreach($tag_list as $tag):
+							    $post_meta .= '<a href="'.get_tag_link($tag->term_id) . '?queried_post_type='. get_post_type(). '">' . $tag->name . '</a>';
 									if ($tag != end($tag_list)):
-										echo " / ";
+										$post_meta .= " / ";
 									endif;
-								endforeach; ?>
-						</li>
-				<?php
+								endforeach;
+						$post_meta .= '</li>';
 				 	endif;
 	      endif;
 
         if (in_array('comment', $show_elements)):
           if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
-            echo '<span class="comments-link"><i class="fa fa-comment-o"></i> ';
+            $post_meta .= '<span class="comments-link"><i class="fa fa-comment-o"></i> ';
            	  comments_popup_link( esc_html__( 'Leave a comment', 'ict_camp' ), esc_html__( '1 Comment', 'ict_camp' ), esc_html__( '% Comments', 'ict_camp' ) );
-              echo '</span>';
+              $post_meta .= '</span>';
           endif;
         endif;
 
-        ?>
-		</ul>
-	</div>
-	<?php
+		$post_meta .= '</ul>';
+	$post_meta .= '</div>';
+	if ($echo):
+		echo $post_meta;
+	else:
+		return $post_meta;
+	endif;
 }
 
 /**
