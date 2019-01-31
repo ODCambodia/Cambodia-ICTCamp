@@ -1,9 +1,9 @@
 <?php
 global $event_star_customizer_all_values;
 $content_from = $event_star_customizer_all_values['event-star-blog-archive-content-from'];
-
 $post = isset($params["post"]) ? $params["post"] : null;
-$link = isset($params["link"]) ? $params["link"] : get_permalink();
+$custom_link = isset($params["custom_link"]) ? $params["custom_link"] : null;
+$no_link_get_permalink = isset($params["no_custom_link_get_permalink"]) ? $params["no_custom_link_get_permalink"] : false;
 $max_num_tags = isset($params["max_num_tags"]) ? $params["max_num_tags"] : null;
 $show_tags = isset($params["$show_tags"]) ? $params["$show_tags"] : null;
 $show_meta = isset($params["show_meta"]) ? $params["show_meta"] : true;
@@ -19,8 +19,20 @@ $no_blog_image = '';
     <div class="content-wrapper">
         <div class="entry-content <?php echo $no_blog_image; ?>">
             <div class="entry-header-title">
-                <?php the_title( sprintf( '<h4 class="entry-title">
-                  <a class="txtcolor-dgreen" href="%s" rel="bookmark"><i class="fa fa-download"></i> '. $show_order_number, esc_url( $link ) ), '</a></h4>' ); ?>
+                <?php
+                  if($no_link_get_permalink):
+                    $link = $custom_link? $custom_link : get_permalink();
+                    the_title( sprintf( '<h4 class="entry-title">
+                    <a class="txtcolor-dgreen" href="%s" rel="bookmark"><i class="fa fa-download"></i> '. $show_order_number, esc_url( $link ) ), '</a></h4>' );
+                  else:
+                      if($custom_link):
+                        the_title( sprintf( '<h4 class="entry-title">
+                        <a class="txtcolor-dgreen" href="%s" rel="bookmark"><i class="fa fa-download"></i> '. $show_order_number, esc_url( $custom_link ) ), '</a></h4>' );
+                      else:
+                        the_title( sprintf( '<h4 class="entry-title">'. $show_order_number, esc_url( $custom_link ) ), '</h4>' );
+                      endif;
+                  endif;
+                  ?>
             </div>
             <?php if ($show_meta): //$show_tags  ?>
               <div class="posts-meta-div">
