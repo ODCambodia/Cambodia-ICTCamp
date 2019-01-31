@@ -28,7 +28,7 @@ global $event_star_customizer_all_values;
             ];
 
             $presentation_terms = get_terms( $args );
-
+            $count_post_in_posttype = 0;
             if ( !empty( $presentation_terms ) && !is_wp_error( $presentation_terms ) ) {
                 foreach ( $presentation_terms as $presentation_term ) {
                     wp_reset_query();
@@ -64,10 +64,13 @@ global $event_star_customizer_all_values;
                                     if ($counter%$wrap_count == 1 ) {
                                         echo '<div class="no-margin">';
                                     }
+                                    $count_post_in_posttype++;
+                                    $order_number = "P" . $count_post_in_posttype . ". ";
                                     $source_link = get_post_meta( $post->ID, '_presentation_source_file_url_value_key', true ); 
                                     get_ictcamp_template('content-list-1-col',array(
                                   					"post" => get_post(),
                                   					"show_meta" => true,
+                                                    "show_order_number" => $order_number,
                                   					"show_excerpt" => false,
                                             "link" => $source_link
                                   			),true);
