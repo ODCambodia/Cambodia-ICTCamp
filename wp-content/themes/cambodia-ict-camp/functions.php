@@ -102,6 +102,9 @@ require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/social-media-links.php'
 require_once( __DIR__ . '/inc/taxonomy-form-fields/categories/colors.php' );
 require_once( __DIR__ . '/inc/taxonomy-form-fields/categories/images.php' );
 
+// Register Custom Meta Boxes for Presentation
+require_once( __DIR__ . '/inc/custom-meta-boxes/presentations/source-file-url.php' );
+
 // Util Content
 require_once( __DIR__ . '/inc/utils-content.php' );
 
