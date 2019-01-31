@@ -110,3 +110,6 @@ require_once( __DIR__ . '/inc/utils-content.php' );
 
 // Language Management
 require_once( __DIR__ . '/inc/localize-manager.php' );
+
+// Shortcode
+require_once( __DIR__ . '/inc/shortcode/display-custom-post-type.php' );
