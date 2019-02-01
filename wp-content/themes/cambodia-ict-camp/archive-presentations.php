@@ -66,7 +66,7 @@ global $event_star_customizer_all_values;
                                     }
                                     $count_post_in_posttype++;
                                     $order_number = "P" . $count_post_in_posttype . ". ";
-                                    $source_link = get_post_meta( $post->ID, '_presentation_source_file_url_value_key', true );
+                                    $source_link = get_post_meta( $post->ID, '_custom_link_value_key', true );
                                     get_ictcamp_template('content-list-1-col',array(
                                   					"post" => get_post(),
                                   					"show_meta" => true,
