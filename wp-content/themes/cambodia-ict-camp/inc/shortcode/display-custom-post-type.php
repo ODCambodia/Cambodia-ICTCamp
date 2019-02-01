@@ -89,9 +89,9 @@ function display_custom_post_type($atts){
                   $post_list .= '<p>'.get_the_content() .'</p>';
               endif;
 
-              $post_list .= ($shortcode_atts['display'] == "list")? '</li>' : ($shortcode_atts['row_container'] == "true")? '</div>' : '';
+              $post_list .= ($shortcode_atts['display'] == "list")? '</li>' : '</div>';
           }
-          $post_list .= ($shortcode_atts['display'] == "list")? '</ul>' : '</div>';
+          $post_list .= ($shortcode_atts['display'] == "list")? '</ul>' : ($shortcode_atts['row_container'] == "true")? '</div>' : '';
       }
       wp_reset_postdata();
       return $post_list;
