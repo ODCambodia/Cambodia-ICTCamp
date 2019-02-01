@@ -1,4 +1,4 @@
-<?php 
+<?php
 get_header();
 
 global $event_star_customizer_all_values;
@@ -36,10 +36,11 @@ if(
             ?>
 
 			<!-- Organizer Section -->
-			<?php 
+			<?php
+			/*
 			$organizers = new WP_Query( ['post_type' => 'organizers'] );
 
-			if( $organizers->have_posts() ) { 
+			if( $organizers->have_posts() ) {
 				$counter = 0;
 				$wrap_count = 4;
 			?>
@@ -52,7 +53,7 @@ if(
 						<?php
 						while ( $organizers->have_posts() ) {
 							$organizers->the_post();
-							
+
 							if( $counter%$wrap_count == 0 ) {
 								echo '<div class=" flex-box-row">';
 							}
@@ -89,10 +90,10 @@ if(
 			<!-- END Organizer Section -->
 
 			<!-- Partner Section -->
-			<?php 
+			<?php
 			$partners = new WP_Query( ['post_type' => 'partners'] );
 
-			if( $partners->have_posts() ) { 
+			if( $partners->have_posts() ) {
 				$counter = 0;
 				$wrap_count = 4;
 			?>
@@ -105,7 +106,7 @@ if(
 						<?php
 						while ( $partners->have_posts() ) {
 							$partners->the_post();
-							
+
 							if( $counter%$wrap_count == 0 ) {
 								echo '<div class="row flex-box-row">';
 							}
@@ -142,10 +143,10 @@ if(
 			<!-- END Partner Section -->
 
 			<!-- Supporter Section -->
-			<?php 
+			<?php
 			$donors = new WP_Query( ['post_type' => 'donors'] );
 
-			if( $donors->have_posts() ) { 
+			if( $donors->have_posts() ) {
 				$counter = 0;
 				$wrap_count = 4;
 			?>
@@ -158,7 +159,7 @@ if(
 						<?php
 						while ( $donors->have_posts() ) {
 							$donors->the_post();
-							
+
 							if( $counter%$wrap_count == 0 ) {
 								echo '<div class="row flex-box-row">';
 							}
@@ -191,6 +192,8 @@ if(
 				</div>
 			<?php
             }
+
+						*/
             ?><!-- END Suppporter Section -->
         </main><!-- #main -->
     </div><!-- #primary -->
