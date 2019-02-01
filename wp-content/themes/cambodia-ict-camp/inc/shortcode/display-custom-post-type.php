@@ -1,6 +1,6 @@
 <?php
 // Create shortcode name
-// [display_cpt post_type="post" show_thumbnail= true show_meta=true thumbnail_size="250, 200" show_post_title=true title_headtag ="h6" open_new_tab=false show_content=false show_excerpt=true display="inline/list" flex_box_row=true row_container=true camp_year="" max_post="5" open_new_tab=]
+// [display_cpt post_type="post" show_thumbnail= true show_meta=true thumbnail_size="250, 200" show_post_title=true title_headtag ="h6" open_new_tab=false show_content=false show_excerpt=true display="inline/list" flex_box_row=true row_container=true custom_link=true no_link_get_permalink=true camp_year="" max_post="5" open_new_tab=]
 add_shortcode( 'display_cpt', 'display_custom_post_type');
 
 function display_custom_post_type($atts){
@@ -18,6 +18,8 @@ function display_custom_post_type($atts){
         'display' => 'list', //inline/list
         'row_container' => true, //if display=inline
         'flex_box_row' => true, //if display=inline
+        'custom_link' => true,
+        'no_link_get_permalink' => true,
         'max_post' => '5',
         'camp_year' => ''
       ), $atts );
@@ -50,14 +52,26 @@ function display_custom_post_type($atts){
               $responsive_thumbnail = preg_replace( '/(width|height)="\d*"\s/', '', $thumbnail );
               $post_list .= ($shortcode_atts['display'] == "list")? '<li>' : '<div class="col-xs-12 col-sm-4 col-md-3">';
               if($shortcode_atts['show_thumbnail'] == "true"):
-                  $post_list .= '<a href="'. get_the_excerpt() .'"'. $open_new_tab. 'data-toggle="modal" data-target="'. $post->ID .'" >';
-                  $post_list .=  $responsive_thumbnail;
-                  $post_list .= '</a>';
+                  if($shortcode_atts['no_link_get_permalink'] == "true"):
+                      $link = ($shortcode_atts['custom_link'] == "true" )? $custom_link : get_permalink();
+                      $post_list .= '<a href="'. $link .'"'. $open_new_tab. 'data-toggle="modal" data-target="'. $post->ID .'" >';
+                        $post_list .=  $responsive_thumbnail;
+                      $post_list .= '</a>';
+                  else:
+                        $post_list .=  $responsive_thumbnail;
+                  endif;
               endif;
 
               if($shortcode_atts['show_post_title'] == "true"):
+                  $custom_link = get_post_meta( $post->ID, '_custom_link_value_key', true );
                   $post_list .= '<'.$shortcode_atts['title_headtag'].'>';
-                  $post_list .= '<a href="'. get_the_title() .'"'. $open_new_tab. ' data-toggle="modal" data-target="'. $post->ID .'">' .get_the_title().'</a>';
+                  if($shortcode_atts['no_link_get_permalink'] == "true"):
+                      $link = ($shortcode_atts['custom_link'] == "true" )? $custom_link : get_permalink();
+                      $post_list .= '<a href="'. $link .'"'. $open_new_tab. ' data-toggle="modal" data-target="'. $post->ID .'">' .get_the_title().'</a>';
+                  else:
+                      $post_list .= get_the_title();
+                  endif;
+
                   $post_list .= '</'.$shortcode_atts['title_headtag'].'>';
               endif;
 
