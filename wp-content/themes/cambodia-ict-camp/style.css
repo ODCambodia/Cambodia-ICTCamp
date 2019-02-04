@@ -5,7 +5,7 @@
   Author:       Open Development Cambodia
   Author URI:
   Template:     event-star
-  Version:      1.0.19
+  Version:      1.0.20
   License:
   License URI:
   Tags:         responsive-layout
@@ -171,6 +171,7 @@ small {
   position: absolute;
   width: 55px;
 }
+
 .section-title-left h2:after {
   border: 1px solid rgb(117, 201, 58);
   content: "";
@@ -179,6 +180,10 @@ small {
   width: 80%;
   margin: 15px 0 20px;
   position: relative;
+}
+
+.slick-list .slick-track .single-list article.post {
+  padding-bottom: 0;
 }
 
 .sm-up-container {
@@ -299,7 +304,7 @@ small {
 
 /* Widgets */
 .cict-widgets {
-  padding: 15px 0;
+  padding: 0 0 15px 0;
   overflow: hidden;
 }
 

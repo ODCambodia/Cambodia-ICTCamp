@@ -3,125 +3,142 @@
 // [display_cpt post_type="post" show_thumbnail= true show_meta=true thumbnail_size="250, 200" show_post_title=true title_headtag ="h6" open_new_tab=false show_content=false show_excerpt=true display="inline/list" flex_box_row=true row_container=true custom_link=true no_link_get_permalink=true camp_year="" max_post="5" open_new_tab=]
 add_shortcode( 'display_cpt', 'display_custom_post_type');
 
-function display_custom_post_type($atts){
+/**
+ * Shortcode for displaying list of custom posts in Gridview or Listview
+ * 
+ * @param  $atts [List of short code attribute]
+ * @return [string]
+ */
+function display_custom_post_type( $atts ) {
     ob_start();
+
     $shortcode_atts = shortcode_atts( array(
-        'post_type' => 'post',
-        'show_thumbnail' => true,
-        'thumbnail_size' => '250, 200',
-        'show_post_title' => true,
-        'show_meta' => true,
-        'title_headtag' => 'h6',
-        'open_new_tab' => true,
-        'show_excerpt' => true,
-        'show_content' => false,
-        'display' => 'list', //inline/list
-        'row_container' => true, //if display=inline
-        'flex_box_row' => true, //if display=inline
-        'custom_link' => true,
+        'post_type'             => 'post',
+        'show_thumbnail'        => true,
+        'thumbnail_size'        => 'full',
+        'show_post_title'       => false,
+        'show_meta'             => true,
+        'title_headtag'         => 'h6',
+        'open_new_tab'          => true,
+        'show_excerpt'          => false,
+        'show_content'          => true,
+        'display'               => 'list', // inline/list
+        'row_container'         => true,   // if display=inline
+        'flex_box_row'          => true,   // if display=inline
+        'custom_link'           => true,
         'no_link_get_permalink' => true,
-        'max_post' => '5',
-        'camp_year' => ''
-      ), $atts );
+        'max_post'              => '5',
+        'camp_year'             => ''
+    ), $atts );
 
-      $args = array(
-          'post_type' => $shortcode_atts['post_type'],
-          'posts_per_page' => $shortcode_atts['max_post'],
-          'post_status' => 'publish'
-      );
+    $args = array(
+        'post_type'      => $shortcode_atts['post_type'],
+        'posts_per_page' => $shortcode_atts['max_post'],
+        'post_status'    => 'publish'
+    );
 
-      if($shortcode_atts['camp_year']){
-          $args['tax_query'] = array(
-                  array(
-                    'taxonomy' => 'camp_year',
-                    'field'    => 'slug',
-                    'terms'    => $shortcode_atts['camp_year']
-                  )
-          );
-      }
+    if ( $shortcode_atts['camp_year'] ) {
+         $args['tax_query'] = array(
+            array(
+                'taxonomy' => 'camp_year',
+                'field'    => 'slug',
+                'terms'    => $shortcode_atts['camp_year']
+            )
+        );
+    }
 
-      $post_list = '';
-      $custom_post = new WP_Query( $args );
-      if( $custom_post->have_posts() ){
-          $flex_box_row = ($shortcode_atts['flex_box_row'] =='true')? 'flex-box-row': '';
-          $open_new_tab = ($shortcode_atts['open_new_tab'] =='true')? ' target="_blank"': '';
-          $post_list .= ($shortcode_atts['display'] == "list")? '<ul>' : ($shortcode_atts['row_container'] == "true")? '<div class="row '.$flex_box_row.'">' : '';
-          while( $custom_post->have_posts() ){
-              $custom_post->the_post();
-              $thumbnail = get_the_post_thumbnail( $post->ID, [$shortcode_atts['thumbnail_size']] );
-              $responsive_thumbnail = preg_replace( '/(width|height)="\d*"\s/', '', $thumbnail );
-              $post_list .= ($shortcode_atts['display'] == "list")? '<li>' : '<div class="col-xs-12 col-sm-4 col-md-3">';
-              if($shortcode_atts['show_thumbnail'] == "true"):
-                  if($shortcode_atts['no_link_get_permalink'] == "true"):
-                      $link = ($shortcode_atts['custom_link'] == "true" )? $custom_link : get_permalink();
-                      $post_list .= '<a href="'. $link .'"'. $open_new_tab. 'data-toggle="modal" data-target="'. $post->ID .'" >';
-                        $post_list .=  $responsive_thumbnail;
-                      $post_list .= '</a>';
-                  else:
-                        $post_list .=  $responsive_thumbnail;
-                  endif;
-              endif;
+    $post_list = '';
+    $custom_post = new WP_Query( $args );
 
-              if($shortcode_atts['show_post_title'] == "true"):
-                  $custom_link = get_post_meta( $post->ID, '_custom_link_value_key', true );
-                  $post_list .= '<'.$shortcode_atts['title_headtag'].'>';
-                  if($shortcode_atts['no_link_get_permalink'] == "true"):
-                      $link = ($shortcode_atts['custom_link'] == "true" )? $custom_link : get_permalink();
-                      $post_list .= '<a href="'. $link .'"'. $open_new_tab. ' data-toggle="modal" data-target="'. $post->ID .'">' .get_the_title().'</a>';
-                  else:
-                      $post_list .= get_the_title();
-                  endif;
+    if ( $custom_post->have_posts() ) {
+        $flex_box_row = ( $shortcode_atts['flex_box_row'] == true ) ? 'flex-box-row' : '';
+        $open_new_tab = ( ! strcmp( $shortcode_atts['open_new_tab'], 'true' ) ) ? ' target="_blank"' : '';
+        $post_list .= ( ! strcmp( $shortcode_atts['display'], 'list' ) ) ? '<ul>' : ( ! strcmp( $shortcode_atts['row_container'], 'true' ) ) ? '<div class="row ' . $flex_box_row . '">' : '';
 
-                  $post_list .= '</'.$shortcode_atts['title_headtag'].'>';
-              endif;
+        while ( $custom_post->have_posts() ) {
+            $custom_post->the_post();
 
-              if ($shortcode_atts['show_meta'] == "true"): //$show_tags
-                  $post_list .= '<div class="posts-meta-div">'.$shortcode_atts['show_meta'];
-                  $post_list .= echo_ictcamp_post_meta( get_post(), array( 'date', 'tags' ), '', false);
-                  $post_list .= '</div>';
-              endif;
+            $thumbnail = get_the_post_thumbnail( get_the_ID(), $shortcode_atts['thumbnail_size'] );
+            $responsive_thumbnail = preg_replace( '/(width|height)="\d*"\s/', '', $thumbnail );
 
-              if ($shortcode_atts['excerpt'] == "true"): //$show_tags
-                  $post_list .= '<p>'.get_the_excerpt() .'</p>';
-              endif;
+            $post_list .= ( ! strcmp( $shortcode_atts['display'], 'list' ) ) ? '<li>' : '<div class="col-xs-12 col-sm-4 col-md-4">';
+            $custom_link = get_post_meta( get_the_ID(), '_custom_link_value_key', true );
 
-              if ($shortcode_atts['show_content'] == "true"): //$show_tags
-                  $post_list .= '<p>'.get_the_content() .'</p>';
-              endif;
+            if ( ! strcmp( $shortcode_atts['show_thumbnail'], 'true' ) ) :
+                if ( $shortcode_atts['no_link_get_permalink'] == true ) :
+                    $link = ( $shortcode_atts['custom_link'] == true ) ? $custom_link : get_permalink();
+                    $post_list .= '<a href="' . $link . '"' . $open_new_tab . '" >';
+                    $post_list .=  $responsive_thumbnail;
+                    $post_list .= '</a>';
+                else :
+                    $post_list .=  $responsive_thumbnail;
+                endif;
+            endif;
 
-              $post_list .= ($shortcode_atts['display'] == "list")? '</li>' : '</div>';
-          }
-          $post_list .= ($shortcode_atts['display'] == "list")? '</ul>' : ($shortcode_atts['row_container'] == "true")? '</div>' : '';
-      }
-      wp_reset_postdata();
-      return $post_list;
+            if ( ! strcmp( $shortcode_atts['show_post_title'], 'true' ) ) :
+                $post_list .= '<' . $shortcode_atts['title_headtag'] . '>';
+
+                if ( $shortcode_atts['no_link_get_permalink'] == true ) :
+                    $link = ( $shortcode_atts['custom_link'] == true ) ? $custom_link : get_permalink();
+                    $post_list .= '<a href="' . $link . '"' . $open_new_tab . '">' . get_the_title() . '</a>';
+                else :
+                    $post_list .= get_the_title();
+                endif;
+
+                $post_list .= '</' . $shortcode_atts['title_headtag'] . '>';
+            endif;
+
+            // Show Tags
+            if ( ! strcmp( $shortcode_atts['show_meta'], 'true' ) ) :
+                $post_list .= '<div class="posts-meta-div">';
+                $post_list .= echo_ictcamp_post_meta( get_post(), array( 'date', 'tags' ), '', false );
+                $post_list .= '</div>';
+            endif;
+
+            // Show Excerpt
+            if ( $shortcode_atts['show_excerpt'] == true ) : //$show_tags
+                $post_list .= '<p>' . get_the_excerpt() . '</p>';
+            endif;
+
+            // Show content
+            if ( ! strcmp( $shortcode_atts['show_content'], 'true' ) ) :
+                $post_list .= '<p>' . get_the_content() . '</p>';
+            endif;
+
+            $post_list .= ( ! strcmp( $shortcode_atts['display'], 'list' ) ) ? '</li>' : '</div>';
+        }  
+        $post_list .= ( $shortcode_atts['display'] == 'list' ) ? '</ul>' : ( $shortcode_atts['row_container'] == 'true' ) ? '</div>' : '';
+    }
+    wp_reset_postdata();
+
+    return '<div class="container">' . $post_list . '</div>';
 }
 
-// hooks your functions into the correct filters
+// Hooks your functions into the correct filters
 function display_posttype_add_mce_button() {
-            // check user permissions
-            if ( !current_user_can( 'edit_posts' ) &&  !current_user_can( 'edit_pages' ) ) {
-                       return;
-               }
-           // check if WYSIWYG is enabled
-           if ( 'true' == get_user_option( 'rich_editing' ) ) {
-               add_filter( 'mce_external_plugins', 'display_posttype_add_tinymce_plugin' );
-               add_filter( 'mce_buttons', 'display_posttype_register_mce_button' );
-               }
-}
-add_action('admin_head', 'display_posttype_add_mce_button');
+    // Check user permissions
+    if ( ! current_user_can( 'edit_posts' ) &&  ! current_user_can( 'edit_pages' ) ) {
+        return;
+    }
 
-// register new button in the editor
+    // Check if WYSIWYG is enabled
+    if ( 'true' == get_user_option( 'rich_editing' ) ) {
+        add_filter( 'mce_external_plugins', 'display_posttype_add_tinymce_plugin' );
+        add_filter( 'mce_buttons', 'display_posttype_register_mce_button' );
+    }
+}
+add_action( 'admin_head', 'display_posttype_add_mce_button' );
+
+// Register new button in the editor
 function display_posttype_register_mce_button( $buttons ) {
-            array_push( $buttons, 'display_posttype_mce_button' );
-            return $buttons;
+    array_push( $buttons, 'display_posttype_mce_button' );
+    return $buttons;
 }
 
-
-// declare a script for the new button
+// Declare a script for the new button
 // the script will insert the shortcode on the click event
 function display_posttype_add_tinymce_plugin( $plugin_array ) {
-          $plugin_array['display_posttype_mce_button'] = get_stylesheet_directory_uri() .'/inc/shortcode/display-posttype-mce-button.js';
-          return $plugin_array;
+    $plugin_array['display_posttype_mce_button'] = get_stylesheet_directory_uri() . '/inc/shortcode/display-posttype-mce-button.js';
+    return $plugin_array;
 }
 ?>
