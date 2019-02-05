@@ -21,7 +21,7 @@ $no_blog_image = '';
                     <div class="post-thumb">
                         <a href="<?php the_permalink(); ?>">
                             <!-- <?php the_post_thumbnail( $thumbnail_size ); ?> -->
-                            <div class="latest-feature-image" style="background-image: url( '<?php echo $feature_image_url; ?>' );"></div>
+                            <div class="blog-feature-image" style="background-image: url( '<?php echo $feature_image_url; ?>' );"></div>
                         </a>
                     </div>
                     <!-- .post-thumb-->

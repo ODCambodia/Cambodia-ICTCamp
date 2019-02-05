@@ -65,8 +65,9 @@ require_once( __DIR__ . '/widgets/camp-themes.php' );
 require_once( __DIR__ . '/widgets/camp-organizers.php' );
 
 // Register Hooks
-require_once( __DIR__ . '/hooks/header.php');
-require_once( __DIR__ . '/hooks/footer.php');
+require_once( __DIR__ . '/hooks/header.php' );
+require_once( __DIR__ . '/hooks/footer.php' );
+require_once( __DIR__ . '/hooks/pagination.php' );
 require_once( __DIR__ . '/hooks/slider-selection.php' );
 
 // Register Custom Taxonomies

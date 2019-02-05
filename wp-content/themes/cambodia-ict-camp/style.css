@@ -133,7 +133,7 @@ small {
   background-color: #06323d;
 }
 
-.latest-feature-image {
+.recent-feature-image {
   height: 100px;
   background-size: cover;
   background-position: center;
@@ -262,6 +262,19 @@ small {
   width: 80%;
 }
 /* END Navbar */
+
+/* Pagination */
+.navigation.pagination .nav-links .page-numbers {
+  color: #06323d !important;
+}
+
+.navigation.pagination .nav-links .page-numbers:hover {
+  background-color: #96c942 !important;
+}
+
+.navigation.pagination .nav-links .page-numbers.current {
+  color: #fff !important;
+}
 
 /* Page Header */
 .entry-header h1 {
@@ -458,39 +471,61 @@ small {
 }
 
 .carousel-indicators {
-  left: 90%;
+  left: 50%;
   bottom: -15px;
+  text-align: center;
 }
 /* END Carousel Slider */
 
+.blog-feature-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /* Extra Small Devices */
 @media only screen and (max-width: 576px) {
-  .latest-feature-image {
+  .blog-feature-image {
+    height: 150px;
+  }
+
+  .recent-feature-image {
     height: 150px;
   }
 }
 
 /* Small Devices: Mobile Phone */
 @media only screen and (min-width: 576px) {
-  .latest-feature-image {
+  .blog-feature-image {
+    height: 200px;
+  }
+
+  .recent-feature-image {
     height: 200px;
   }
 }
 
 /* Medium Device: Tablet */
 @media (min-width: 768px) {
-  .carousel-indicators {
+  .blog-feature-image {
+    height: 300px;
+  }
+
+  carousel-indicators {
     left: 95%;
   }
 
-  .latest-feature-image {
+  .recent-feature-image {
     height: 300px;
   }
 }
 
 /* Large Devices, Desktops */
 @media only screen and (min-width : 992px) {
-  .latest-feature-image {
+  .blog-feature-image {
+    height: 200px;
+  }
+
+  .recent-feature-image {
     height: 350px;
   }
 }
