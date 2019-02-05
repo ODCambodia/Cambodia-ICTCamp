@@ -15,13 +15,13 @@ function display_custom_post_type( $atts ) {
     $shortcode_atts = shortcode_atts( array(
         'post_type'             => 'post',
         'show_thumbnail'        => true,
-        'thumbnail_size'        => 'full',
-        'show_post_title'       => false,
+        'thumbnail_size'        => array( 250, 200 ),
+        'show_post_title'       => true,
         'show_meta'             => true,
         'title_headtag'         => 'h6',
         'open_new_tab'          => true,
-        'show_excerpt'          => false,
-        'show_content'          => true,
+        'show_excerpt'          => true,
+        'show_content'          => false,
         'display'               => 'list', // inline/list
         'row_container'         => true,   // if display=inline
         'flex_box_row'          => true,   // if display=inline
