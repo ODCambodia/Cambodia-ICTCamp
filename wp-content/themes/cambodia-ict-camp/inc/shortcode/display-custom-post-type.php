@@ -14,19 +14,19 @@ function display_custom_post_type( $atts ) {
 
     $shortcode_atts = shortcode_atts( array(
         'post_type'             => 'post',
-        'show_thumbnail'        => true,
-        'thumbnail_size'        => array( 250, 200 ),
-        'show_post_title'       => true,
-        'show_meta'             => true,
+        'show_thumbnail'        => 'true',
+        'thumbnail_size'        => array(550, 500),
+        'show_post_title'       => 'true',
+        'show_meta'             => 'true',
         'title_headtag'         => 'h6',
-        'open_new_tab'          => true,
-        'show_excerpt'          => true,
-        'show_content'          => false,
-        'display'               => 'list', // inline/list
-        'row_container'         => true,   // if display=inline
-        'flex_box_row'          => true,   // if display=inline
-        'custom_link'           => true,
-        'no_link_get_permalink' => true,
+        'open_new_tab'          => 'true',
+        'show_excerpt'          => 'true',
+        'show_content'          => 'false',
+        'display'               => 'list',   // inline/list
+        'row_container'         => 'true',   // if display=inline
+        'flex_box_row'          => 'true',   // if display=inline
+        'custom_link'           => 'true',
+        'no_link_get_permalink' => 'true',
         'max_post'              => '5',
         'camp_year'             => ''
     ), $atts );
@@ -51,7 +51,7 @@ function display_custom_post_type( $atts ) {
     $custom_post = new WP_Query( $args );
 
     if ( $custom_post->have_posts() ) {
-        $flex_box_row = ( $shortcode_atts['flex_box_row'] == true ) ? 'flex-box-row' : '';
+        $flex_box_row = ( ! strcmp( $shortcode_atts['flex_box_row'], 'true' ) ) ? 'flex-box-row' : '';
         $open_new_tab = ( ! strcmp( $shortcode_atts['open_new_tab'], 'true' ) ) ? ' target="_blank"' : '';
         $post_list .= ( ! strcmp( $shortcode_atts['display'], 'list' ) ) ? '<ul>' : ( ! strcmp( $shortcode_atts['row_container'], 'true' ) ) ? '<div class="row ' . $flex_box_row . '">' : '';
 
@@ -70,8 +70,8 @@ function display_custom_post_type( $atts ) {
             $custom_link = get_post_meta( get_the_ID(), '_custom_link_value_key', true );
 
             if ( ! strcmp( $shortcode_atts['show_thumbnail'], 'true' ) ) :
-                if ( $shortcode_atts['no_link_get_permalink'] == true ) :
-                    $link = ( $shortcode_atts['custom_link'] == true ) ? $custom_link : get_permalink();
+                if ( ! strcmp( $shortcode_atts['no_link_get_permalink'], 'true' ) ) :
+                    $link = ( ! strcmp( $shortcode_atts['custom_link'], 'true' ) ) ? $custom_link : get_permalink();
                     $post_list .= '<a href="' . $link . '"' . $open_new_tab . '" >';
                     $post_list .=  $responsive_thumbnail;
                     $post_list .= '</a>';
@@ -83,8 +83,8 @@ function display_custom_post_type( $atts ) {
             if ( ! strcmp( $shortcode_atts['show_post_title'], 'true' ) ) :
                 $post_list .= '<' . $shortcode_atts['title_headtag'] . ' class="text-center">';
 
-                if ( $shortcode_atts['no_link_get_permalink'] == true ) :
-                    $link = ( $shortcode_atts['custom_link'] == true ) ? $custom_link : get_permalink();
+                if ( ! strcmp( $shortcode_atts['no_link_get_permalink'], 'true' ) ) :
+                    $link = ( ! strcmp( $shortcode_atts['custom_link'], 'true' ) ) ? $custom_link : get_permalink();
                     $post_list .= '<a href="' . $link . '"' . $open_new_tab . '">' . get_the_title() . '</a>';
                 else :
                     $post_list .= get_the_title();
@@ -101,7 +101,7 @@ function display_custom_post_type( $atts ) {
             endif;
 
             // Show Excerpt
-            if ( $shortcode_atts['show_excerpt'] == true ) : //$show_tags
+            if ( ! strcmp( $shortcode_atts['show_excerpt'], 'true' ) ) : //$show_tags
                 $post_list .= '<p>' . get_the_excerpt() . '</p>';
             endif;
 
