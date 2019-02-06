@@ -58,7 +58,12 @@ function display_custom_post_type( $atts ) {
         while ( $custom_post->have_posts() ) {
             $custom_post->the_post();
 
-            $thumbnail = get_the_post_thumbnail( get_the_ID(), $shortcode_atts['thumbnail_size'] );
+            $attributes = array(
+                'title' => __( get_the_title() ),
+                'class' => 'img-responsive'
+            );
+            $thumbnail = get_the_post_thumbnail( get_the_ID(), $shortcode_atts['thumbnail_size'], $attributes );
+
             $responsive_thumbnail = preg_replace( '/(width|height)="\d*"\s/', '', $thumbnail );
 
             $post_list .= ( ! strcmp( $shortcode_atts['display'], 'list' ) ) ? '<li>' : '<div class="col-xs-12 col-sm-4 col-md-4">';
@@ -76,7 +81,7 @@ function display_custom_post_type( $atts ) {
             endif;
 
             if ( ! strcmp( $shortcode_atts['show_post_title'], 'true' ) ) :
-                $post_list .= '<' . $shortcode_atts['title_headtag'] . '>';
+                $post_list .= '<' . $shortcode_atts['title_headtag'] . ' class="text-center">';
 
                 if ( $shortcode_atts['no_link_get_permalink'] == true ) :
                     $link = ( $shortcode_atts['custom_link'] == true ) ? $custom_link : get_permalink();
