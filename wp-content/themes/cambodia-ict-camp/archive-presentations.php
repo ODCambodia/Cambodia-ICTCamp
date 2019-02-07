@@ -58,7 +58,9 @@ global $event_star_customizer_all_values;
 
                             <div class="setcion-body">
                                 <?php if ( isset( $presentation_term->description ) ) :?>
-                                    <p class="width-80-percent"><?php _e( $presentation_term->description ); ?></p>
+                                    <p class="width-80-percent">
+                                        <?php _e( $presentation_term->description ); ?>
+                                    </p>
                                 <?php
                                 endif;
 
