@@ -11,6 +11,7 @@ $show_tags = isset( $params['show_tags'] ) ? $params["show_tags"] : null;
 $show_meta = isset($params['show_meta'] ) ? $params['show_meta'] : true;
 $show_order_number = isset( $params['show_order_number'] ) ? $params['show_order_number'] : '';
 $show_excerpt = isset( $params['show_excerpt'] ) ? $params['show_excerpt'] : false;
+$show_category_description = isset( $params['show_category_description'] ) ? $params['show_category_description'] : false;
 $order = isset( $params['order'] ) ? $params['order'] : 'publish_date';
 $extra_classes = isset( $params['extra_classes'] ) ? $params['extra_classes'] : null;
 
@@ -37,7 +38,7 @@ $no_blog_image = '';
                 ?>
             </div>
 
-            <?php if ( $show_meta ) : //$show_tags  ?>
+            <?php if ( $show_meta ) : ?>
                 <div class="posts-meta-div">
                     <?php echo_ictcamp_post_meta( get_post(), array( 'date', 'tags' ) ); ?>
                 </div>
