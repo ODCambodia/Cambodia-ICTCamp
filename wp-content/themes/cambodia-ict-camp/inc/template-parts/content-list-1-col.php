@@ -37,7 +37,7 @@ $no_blog_image = '';
                 ?>
             </div>
 
-            <?php if ($show_meta) : //$show_tags  ?>
+            <?php if ( $show_meta ) : //$show_tags  ?>
                 <div class="posts-meta-div">
                     <?php echo_ictcamp_post_meta( get_post(), array( 'date', 'tags' ) ); ?>
                 </div>
