@@ -9,7 +9,7 @@ global $event_star_customizer_all_values;
         <header class="entry-header init-animate">
             <h1 class="page-title"><?php _e( post_type_archive_title( '', false ), 'ict_camp' ); ?></h1>
             <?php
-            if( 1 == $event_star_customizer_all_values['event-star-show-breadcrumb'] ) {
+            if ( 1 == $event_star_customizer_all_values['event-star-show-breadcrumb'] ) {
                 event_star_breadcrumbs();
             }
             ?>
@@ -75,13 +75,13 @@ global $event_star_customizer_all_values;
                                     get_ictcamp_template(
                                         'content-list-1-col',
                                         array(
-                                  			'post'                         => get_post(),
-                                  			'show_meta'                    => true,
+                                            'post'                         => get_post(),
+                                            'show_meta'                    => true,
                                             'show_order_number'            => $order_number,
-                                  			'show_excerpt'                 => false,
+                                            'show_excerpt'                 => false,
                                             'custom_link'                  => $source_link,
                                             'no_custom_link_get_permalink' => false
-                                  		),
+                                        ),
                                         true
                                     );
                                     //get_template_part( 'inc/template-parts/content', 'list-1-col' );

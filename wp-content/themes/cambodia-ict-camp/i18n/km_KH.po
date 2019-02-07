@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cambodia-ict-camp\n"
-"POT-Creation-Date: 2019-01-18 14:09+0700\n"
-"PO-Revision-Date: 2019-01-18 14:09+0700\n"
+"POT-Creation-Date: 2019-02-07 17:15+0700\n"
+"PO-Revision-Date: 2019-02-07 17:16+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: km_KH\n"
@@ -49,6 +49,10 @@ msgstr "ថ្ងៃចុងក្រោយនៃកម្មវិធីកម
 msgid "The Cambodia ICT Camp was ended."
 msgstr "កម្មវិធីកម្ពុជាអាយស៊ីធីខែមបានបញ្ចប់ជាស្ថាពរ"
 
+#: inc/custom-meta-boxes/custom-link.php:7
+msgid "Custom link to"
+msgstr ""
+
 #: inc/custom-meta-boxes/facilitators/expertise.php:7
 #: inc/custom-meta-boxes/speakers/expertise.php:7
 msgid "Expertise"
@@ -93,8 +97,9 @@ msgstr ""
 #: inc/custom-post-types/donors.php:14
 #: inc/custom-post-types/facilitators.php:14
 #: inc/custom-post-types/organizers.php:14
-#: inc/custom-post-types/partners.php:14 inc/custom-post-types/sessions.php:14
-#: inc/custom-post-types/speakers.php:14
+#: inc/custom-post-types/partners.php:14
+#: inc/custom-post-types/presentations.php:14
+#: inc/custom-post-types/sessions.php:14 inc/custom-post-types/speakers.php:14
 msgid "Add New"
 msgstr ""
 
@@ -114,8 +119,9 @@ msgstr ""
 #: inc/custom-post-types/donors.php:18
 #: inc/custom-post-types/facilitators.php:18
 #: inc/custom-post-types/organizers.php:18
-#: inc/custom-post-types/partners.php:18 inc/custom-post-types/sessions.php:18
-#: inc/custom-post-types/speakers.php:18
+#: inc/custom-post-types/partners.php:18
+#: inc/custom-post-types/presentations.php:18
+#: inc/custom-post-types/sessions.php:18 inc/custom-post-types/speakers.php:18
 msgid "Not Found"
 msgstr "ព័ត៌មានពុំអាចរកបាន"
 
@@ -123,8 +129,9 @@ msgstr "ព័ត៌មានពុំអាចរកបាន"
 #: inc/custom-post-types/donors.php:19
 #: inc/custom-post-types/facilitators.php:19
 #: inc/custom-post-types/organizers.php:19
-#: inc/custom-post-types/partners.php:19 inc/custom-post-types/sessions.php:19
-#: inc/custom-post-types/speakers.php:19
+#: inc/custom-post-types/partners.php:19
+#: inc/custom-post-types/presentations.php:19
+#: inc/custom-post-types/sessions.php:19 inc/custom-post-types/speakers.php:19
 msgid "Not found in Trash"
 msgstr ""
 
@@ -134,7 +141,6 @@ msgid "announcements"
 msgstr ""
 
 #: inc/custom-post-types/donors.php:7 inc/custom-post-types/donors.php:9
-#: page-about.php:154
 msgid "Donors"
 msgstr "ម្ចាស់ជំនួយ"
 
@@ -218,7 +224,7 @@ msgstr "ស្វែងរកម្ចាស់ជំនួយ"
 #: inc/custom-post-types/organizers.php:7
 #: inc/custom-post-types/organizers.php:9
 #: inc/custom-post-types/organizers.php:23
-#: inc/custom-post-types/organizers.php:24 page-about.php:48
+#: inc/custom-post-types/organizers.php:24
 msgid "Organizers"
 msgstr "អ្នករៀបចំកម្មវិធី"
 
@@ -290,6 +296,47 @@ msgstr ""
 #: inc/custom-post-types/partners.php:17
 msgid "Search Partner"
 msgstr ""
+
+#: inc/custom-post-types/presentations.php:7
+#: inc/custom-post-types/presentations.php:9
+#: inc/custom-post-types/presentations.php:23
+#: inc/custom-post-types/presentations.php:24
+msgid "Slide Presentations"
+msgstr "បទបង្ហាញ"
+
+#: inc/custom-post-types/presentations.php:8
+msgid "Slide Presentation"
+msgstr "បទបង្ហាញ"
+
+#: inc/custom-post-types/presentations.php:10
+msgid "Parent Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:11
+msgid "All Slide Presentations"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:12
+msgid "View Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:13
+msgid "Add New Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:15
+msgid "Edit Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:16
+msgid "Update Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:17
+#, fuzzy
+#| msgid "Search Donor"
+msgid "Search Slide Presentation"
+msgstr "ស្វែងរកម្ចាស់ជំនួយ"
 
 #: inc/custom-post-types/sessions.php:7 inc/custom-post-types/sessions.php:9
 msgid "Sessions"
@@ -547,25 +594,26 @@ msgstr ""
 msgid "Edit %s"
 msgstr ""
 
-#: inc/utils-content.php:111
+#: inc/utils-content.php:117
 msgid "Leave a comment"
 msgstr "បញ្ចេញមតិ"
 
-#: inc/utils-content.php:111
+#: inc/utils-content.php:117
 msgid "1 Comment"
 msgstr ""
 
-#: inc/utils-content.php:111
+#: inc/utils-content.php:117
 msgid "% Comments"
+msgstr ""
+
+#: inc/utils-content.php:147
+#, php-format
+msgid "Error locating %s for inclusion"
 msgstr ""
 
 #: index.php:10
 msgid "Blog"
 msgstr "ប្លក់"
-
-#: page-about.php:101
-msgid "Partners"
-msgstr "ដៃគូ"
 
 #: widgets/camp-organizers.php:15
 msgid "CICT Organizer Widget"
@@ -598,6 +646,9 @@ msgstr ""
 #: widgets/camp-themes.php:17
 msgid "Display a list of all themes of the camp"
 msgstr ""
+
+#~ msgid "Partners"
+#~ msgstr "ដៃគូ"
 
 #~ msgid "Advisory Committee"
 #~ msgstr "គណៈកម្មការប្រឹក្សាយោបល់"
