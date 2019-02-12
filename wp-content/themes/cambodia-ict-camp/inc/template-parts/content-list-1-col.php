@@ -30,7 +30,7 @@ $no_blog_image = '';
                 else :
                     if ($custom_link) :
                         the_title( sprintf( '<h4 class="entry-title">
-                        <a class="txtcolor-dgreen" href="%s" rel="bookmark"><i class="fa fa-download"></i> ' . $show_order_number, esc_url( $custom_link ) ), '</a></h4>' );
+                        <a class="txtcolor-dgreen" target="_blank" href="%s" rel="bookmark"><i class="fa fa-download"></i> ' . $show_order_number, esc_url( $custom_link ) ), '</a></h4>' );
                     else :
                         the_title( sprintf( '<h4 class="entry-title">' . $show_order_number, esc_url( $custom_link ) ), '</h4>' );
                     endif;
