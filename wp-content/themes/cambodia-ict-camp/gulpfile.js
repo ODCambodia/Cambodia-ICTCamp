@@ -7,14 +7,14 @@ var sass = require( 'gulp-sass' );
 var autoprefixer = require( 'gulp-autoprefixer' );
 var sourcemaps = require( 'gulp-sourcemaps' );
 
-var cssSRC = './src/scss/style.scss';
+var cssSRC = 'src/scss/style.scss';
 var cssDIST = './dist/css/';
+var cssWatch = 'src/scss/**/*.scss';
 
-var jsSRC = './src/js/script.js';
+
+var jsSRC = 'src/js/script.js';
 var jsDIST = './dist/js/';
-
-var cssWatch = './src/scss/**/*.scss';
-var jsWatch = './src/js/**';
+var jsWatch = 'src/js/**';
 
 function css( done ) {
   gulp.src( cssSRC )
@@ -38,10 +38,13 @@ function css( done ) {
 };
 
 function js( done ) {
-  gulp.src( jsSRC )
-      .pipe(gulp.dest( jsDIST ));
+  // gulp.src( jsSRC )
+  //     .pipe( gulp.dest( jsDIST ));
   
-  done();
+  // browserify: get the modules into script.js
+  // tranform babelify [env]: compile ES6 to vanilla javascript
+  // 
+  // done();
 };
 
 function watch_files() {
