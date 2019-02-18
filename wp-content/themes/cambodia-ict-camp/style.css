@@ -5,7 +5,7 @@
   Author:       Open Development Cambodia
   Author URI:
   Template:     event-star
-  Version:      1.0.21
+  Version:      1.0.22
   License:
   License URI:
   Tags:         responsive-layout
@@ -469,7 +469,7 @@ small {
 /* Extra Small Devices */
 @media only screen and (max-width: 576px) {
   .blog-feature-image {
-    height: 150px;
+    height: 200px;
   }
 
   .recent-feature-image {
@@ -491,7 +491,7 @@ small {
 /* Medium Device: Tablet */
 @media (min-width: 768px) {
   .blog-feature-image {
-    height: 300px;
+    height: 150px;
   }
 
   carousel-indicators {
