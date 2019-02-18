@@ -23,86 +23,113 @@ global $event_star_customizer_all_values;
 <div id="content" class="site-content container clearfix">
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
-            <?php
-            if ( have_posts() ) :
-                $thumbnail_size = 'full';
+            <!--post thumbnail options-->
+            <div class="image-wrap margin-top-3-em">
+                <div class="post-thumb">
+                    <?php
+                    $thumbnail_size = 'full';
 
-                if ( has_post_thumbnail() && 'disable' != $thumbnail_size ) : ?>
-                    <!--post thumbnail options-->
-                    <div class="image-wrap margin-top-3-em">
-                        <div class="post-thumb">
-                            <?php
-                            $args = array(
-                                'numberposts' => 1
-                            );
+                    $args = [
+                        'orderby'        => 'post_date',
+                        'order'          => 'DESC',
+                        'post_status'    => 'publish',
+                        'meta_query'     => [
+                            [
+                                'key'     => '_thumbnail_id',
+                                'value'   => '',
+                                'compare' => '!='
+                            ]
+                        ],
+                        'posts_per_page' => 1
+                    ];
 
-                            $the_most_recent_posts = wp_get_recent_posts( $args );
+                    $recent_posts_with_img = new WP_Query( $args );
 
-                            foreach ( $the_most_recent_posts as $the_most_recent_post ) {
-                                $the_most_recent_feature_image_url = get_the_post_thumbnail_url( get_the_ID(), $thumbnail_size );
+                    if ( $recent_posts_with_img->have_posts() ) {
+                        while ( $recent_posts_with_img->have_posts() ) {
+                            $recent_posts_with_img->the_post();
+
+                            if ( has_post_thumbnail() ) {
+                                $recent_feature_image_url = get_the_post_thumbnail_url( get_the_ID(), $thumbnail_size );
                             }
-                            wp_reset_query();
-                            ?>
+                        }
+                        ?>
 
-                            <!-- Carousel -->
-                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                <!-- Indicators -->
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                                </ol>
+                        <!-- Carousel -->
+                        <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                            </ol>
 
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="item active">
-                                        <div class="recent-feature-image" style="background-image: url('<?php echo $the_most_recent_feature_image_url; ?>');"></div>
-                                    </div>
-
-                                    <?php
-                                    $args = array(
-                                        'offset'         => 1,
-                                        'order'          => 'DESC',
-                                        'orderby'        => 'date',
-                                        'posts_per_page' => 3
-                                    );
-
-                                    $recent_posts = new WP_Query( $args );
-
-                                    while ($recent_posts->have_posts()) {
-                                        $recent_posts->the_post();
-                                        $recent_feature_image_url = get_the_post_thumbnail_url( get_the_ID(), $thumbnail_size );
-                                        ?>
-                                        <div class="item">
-                                            <div class="recent-feature-image" style="background-image: url('<?php echo $recent_feature_image_url; ?>');"></div>
-                                        </div>
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <?php 
+                                    if ( has_post_thumbnail() ) {
+                                    ?>
+                                        <div class="recent-feature-image" style="background-image: url( '<?php echo $recent_feature_image_url; ?>' );"></div>
                                     <?php
                                     }
-                                    wp_reset_query();
                                     ?>
                                 </div>
 
-                                <!-- Controls -->
-                                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                                    <i class="fa fa-chevron-left" style="top: 50%" aria-hidden="true"></i>
-                                    <span class="sr-only">Previous</span>
-                                </a>
+                                <?php
+                                $args = [
+                                    'offset'         => 1,
+                                    'orderby'        => 'post_date',
+                                    'order'          => 'DESC',
+                                    'post_status'    => 'publish',
+                                    'meta_query'     => [
+                                        [
+                                            'key'     => '_thumbnail_id',
+                                            'value'   => '',
+                                            'compare' => '!='
+                                        ]
+                                    ],
+                                    'posts_per_page' => 3
+                                ];
 
-                                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div><!-- Carousel -->
-                        </div><!-- .post-thumb-->
-                    </div>
-                <?php
-                else :
-                    $no_blog_image = 'no-image';
-                endif;
-                // END Featured Post
-            endif;
+                                $recent_posts_with_img = new WP_Query( $args );
 
+                                while ( $recent_posts_with_img->have_posts() ) {
+                                    $recent_posts_with_img->the_post();
+
+                                    if ( has_post_thumbnail() ) {
+                                        $recent_feature_image_url = get_the_post_thumbnail_url( get_the_ID(), $thumbnail_size );
+                                        ?>
+                                        <div class="item">
+                                            <div class="recent-feature-image" style="background-image: url( '<?php echo $recent_feature_image_url; ?>' );"></div>
+                                        </div>
+                                    <?php
+                                    }
+                                }
+
+                                wp_reset_query();
+                                ?>
+                            </div>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                <i class="fa fa-chevron-left" style="top: 50%" aria-hidden="true"></i>
+                                <span class="sr-only">Previous</span>
+                            </a>
+
+                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div><!-- Carousel -->
+                    <?php
+                    } 
+                    ?>
+                </div><!-- .post-thumb-->
+            </div>
+
+            <?php
             if ( have_posts() ) :
             ?>
                 <div class="setion-body margin-top-3-em">
