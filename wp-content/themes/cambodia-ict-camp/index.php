@@ -27,7 +27,7 @@ global $event_star_customizer_all_values;
             <div class="image-wrap margin-top-3-em">
                 <div class="post-thumb">
                     <?php
-                    $thumbnail_size = 'full';
+                    $thumbnail_size = array( 200, 150 );
 
                     $args = [
                         'orderby'        => 'post_date',
