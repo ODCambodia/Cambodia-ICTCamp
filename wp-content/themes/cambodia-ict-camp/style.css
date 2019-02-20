@@ -485,7 +485,7 @@ small {
 /* Extra Small Devices */
 @media only screen and (max-width: 576px) {
   .blog-feature-image {
-    height: 200px;
+    height: 150px;
   }
 
   .recent-feature-image {
@@ -507,10 +507,10 @@ small {
 /* Medium Device: Tablet */
 @media (min-width: 768px) {
   .blog-feature-image {
-    height: 150px;
+    height: 300px;
   }
 
-  .carousel-indicators {
+  carousel-indicators {
     left: 95%;
   }
 
