@@ -24,7 +24,7 @@ function create_facilitators_custom_post_type()
         'description'         => __( 'Facilitators', 'ict_camp' ),
         'labels'              => $labels,
         'supports'            => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
-        'taxonomies'          => ['category', 'facilitator_group', 'year'],
+        'taxonomies'          => ['category', 'facilitator_group', 'camp_year'],
         'hierarchical'        => false,
         'public'              => true,
         'show_ui'             => true,

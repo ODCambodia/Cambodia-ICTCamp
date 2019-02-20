@@ -24,7 +24,7 @@ function create_speakers_custom_post_type()
         'description'         => __( 'Speakers', 'ict_camp' ),
         'labels'              => $labels,
         'supports'            => ['title', 'editor', 'excerpt', 'thumbnail'],
-        'taxonomies'          => ['category', 'year'],
+        'taxonomies'          => ['category', 'camp_year'],
         'hierarchical'        => false,
         'public'              => true,
         'show_ui'             => true,

@@ -24,7 +24,7 @@ function create_donors_custom_post_type()
         'description'         => __( 'donors', 'ict_camp' ),
         'labels'              => $labels,
         'supports'            => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
-        'taxonomies'          => ['category', 'year'],
+        'taxonomies'          => ['category', 'camp_year'],
         'hierarchical'        => false,
         'public'              => true,
         'show_ui'             => true,
