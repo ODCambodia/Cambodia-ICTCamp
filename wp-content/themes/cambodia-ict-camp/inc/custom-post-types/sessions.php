@@ -24,7 +24,7 @@ function create_sessions_custom_post_type()
         'description'         => __( 'Agenda Sessions', 'ict_camp' ),
         'labels'              => $labels,
         'supports'            => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
-        'taxonomies'          => ['category', 'session_type', 'year'],
+        'taxonomies'          => ['category', 'session_type', 'camp_year'],
         'hierarchical'        => false,
         'public'              => true,
         'show_ui'             => true,

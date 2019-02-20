@@ -4,8 +4,8 @@
   Description:  Event Star Child Theme
   Author:       Open Development Cambodia
   Author URI:
-  Template:     event-star
-  Version:      1.0.21
+  Template:     event-star 
+  Version:      1.0.23 
   License:
   License URI:
   Tags:         responsive-layout
@@ -239,6 +239,10 @@ small {
 
 .top-header ul li a:hover {
   color: #95c841 !important;
+}
+
+.width-80-percent {
+  width: 80%;
 }
 /* END Navbar */
 
