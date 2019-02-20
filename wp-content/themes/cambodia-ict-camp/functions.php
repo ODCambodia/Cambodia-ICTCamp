@@ -81,7 +81,7 @@ require_once( __DIR__ . '/inc/custom-post-types/facilitators.php' );
 require_once( __DIR__ . '/inc/custom-post-types/organizers.php' );
 require_once( __DIR__ . '/inc/custom-post-types/partners.php' );
 require_once( __DIR__ . '/inc/custom-post-types/sessions.php' );
-require_once( __DIR__ . '/inc/custom-post-types/slide-presentations.php');
+require_once( __DIR__ . '/inc/custom-post-types/presentations.php');
 require_once( __DIR__ . '/inc/custom-post-types/speakers.php' );
 
 // Register Custom Meta Boxes for Facilitator post type
@@ -98,13 +98,12 @@ require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/expertise.php' );
 require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/organization.php' );
 require_once( __DIR__ . '/inc/custom-meta-boxes/speakers/social-media-links.php' );
 
+// Register Custom Meta Boxes for all post types
+require_once( __DIR__ . '/inc/custom-meta-boxes/custom-link.php' );
+
 // Register Custom Form Fields for Taxonomy
 require_once( __DIR__ . '/inc/taxonomy-form-fields/categories/colors.php' );
 require_once( __DIR__ . '/inc/taxonomy-form-fields/categories/images.php' );
-
-// Register Custom Meta Boxes for Presentation
-require_once( __DIR__ . '/inc/custom-meta-boxes/custom-link.php' );
-//require_once( __DIR__ . '/inc/custom-meta-boxes/presentations/source-file-url.php' );
 
 // Util Content
 require_once( __DIR__ . '/inc/utils-content.php' );

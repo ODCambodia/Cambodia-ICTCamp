@@ -61,7 +61,7 @@ if(
 
                             <?php
                             $args = [
-                                'post_type' => 'slide_presentations',
+                                'post_type' => 'presentations',
                                 'category_name' => $theme->slug
                             ];
 

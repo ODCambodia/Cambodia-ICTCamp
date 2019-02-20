@@ -49,7 +49,7 @@ class Camp_Organizers_Widget extends WP_Widget
                                 <?php
                                 $attributes = [
                                     'title' => __( get_the_title() ),
-                                    'class' => 'img-responsive',
+                                    'class' => 'img-responsive'
                                 ];
 
                                 $logo = get_the_post_thumbnail( get_the_ID(), 'medium', $attributes );

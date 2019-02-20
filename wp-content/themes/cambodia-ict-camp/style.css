@@ -3,9 +3,9 @@
   Theme URI:
   Description:  Event Star Child Theme
   Author:       Open Development Cambodia
-  Author URI:
+  Author URI: 
   Template:     event-star
-  Version:      1.0.24
+  Version:      1.0.24 
   License:
   License URI:
   Tags:         responsive-layout
@@ -70,7 +70,7 @@ small {
 }
 
 .align-center {
-  margin: 0, auto;
+  margin: 0 auto;
 }
 
 #banner-title {
@@ -178,6 +178,7 @@ small {
   position: absolute;
   width: 55px;
 }
+
 .section-title-left h2:after {
   border: 1px solid rgb(117, 201, 58);
   content: "";
@@ -186,6 +187,10 @@ small {
   width: 80%;
   margin: 15px 0 20px;
   position: relative;
+}
+
+.slick-list .slick-track .single-list article.post {
+  padding-bottom: 0;
 }
 
 .sm-up-container {
@@ -241,6 +246,10 @@ small {
 
 .top-header ul li a:hover {
   color: #95c841 !important;
+}
+
+.width-80-percent {
+  width: 80%;
 }
 /* END Navbar */
 
@@ -306,7 +315,7 @@ small {
 
 /* Widgets */
 .cict-widgets {
-  padding: 15px 0;
+  padding: 0 0 15px 0;
   overflow: hidden;
 }
 
