@@ -116,7 +116,7 @@ function display_custom_post_type( $atts ) {
     }
     wp_reset_postdata();
 
-    return '<div class="container">' . $post_list . '</div>';
+    return $post_list;
 }
 
 // Hooks your functions into the correct filters
