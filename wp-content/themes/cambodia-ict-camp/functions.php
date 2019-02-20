@@ -82,7 +82,7 @@ require_once( __DIR__ . '/inc/custom-post-types/facilitators.php' );
 require_once( __DIR__ . '/inc/custom-post-types/organizers.php' );
 require_once( __DIR__ . '/inc/custom-post-types/partners.php' );
 require_once( __DIR__ . '/inc/custom-post-types/sessions.php' );
-require_once( __DIR__ . '/inc/custom-post-types/slide-presentations.php');
+require_once( __DIR__ . '/inc/custom-post-types/presentations.php');
 require_once( __DIR__ . '/inc/custom-post-types/speakers.php' );
 
 // Register Custom Meta Boxes for Facilitator post type

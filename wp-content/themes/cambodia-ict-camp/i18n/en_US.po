@@ -1,35 +1,68 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cambodia-ict-camp\n"
-"POT-Creation-Date: 2018-10-10 15:30+0700\n"
-"PO-Revision-Date: 2018-10-10 15:31+0700\n"
+"POT-Creation-Date: 2019-02-20 16:43+0700\n"
+"PO-Revision-Date: 2019-02-20 16:43+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _;_e;__;_x\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: archive-speakers.php:10 inc/custom-post-types/speakers.php:7
-#: inc/custom-post-types/speakers.php:9 inc/custom-post-types/speakers.php:23
-#: inc/custom-post-types/speakers.php:24
-msgid "Speakers"
+#: hooks/pagination.php:6
+msgid "Previous"
 msgstr ""
 
+#: hooks/pagination.php:7
+msgid "Next"
+msgstr ""
+
+#: hooks/slider-selection.php:197
+msgid "The First Day of Cambodia ICT Camp is opening now."
+msgstr ""
+
+#: hooks/slider-selection.php:202
+msgid "The Second Day of Cambodia ICT Camp is ongoing."
+msgstr ""
+
+#: hooks/slider-selection.php:207
+msgid "The Third Day of Cambodia ICT Camp is ongoing."
+msgstr ""
+
+#: hooks/slider-selection.php:212
+msgid "The Fourth Day of Cambodia ICT Camp is ongoing."
+msgstr ""
+
+#: hooks/slider-selection.php:217
+msgid "The last day of Cambodia ICT Camp is ongoing."
+msgstr ""
+
+#: hooks/slider-selection.php:222
+msgid "The Cambodia ICT Camp was ended."
+msgstr ""
+
+#: inc/custom-meta-boxes/custom-link.php:7
+msgid "Custom link to"
+msgstr ""
+
+#: inc/custom-meta-boxes/facilitators/expertise.php:7
 #: inc/custom-meta-boxes/speakers/expertise.php:7
 msgid "Expertise"
 msgstr ""
 
+#: inc/custom-meta-boxes/facilitators/organization.php:7
 #: inc/custom-meta-boxes/speakers/organization.php:7
 msgid "Organization"
 msgstr ""
 
+#: inc/custom-meta-boxes/facilitators/social-media-links.php:7
 #: inc/custom-meta-boxes/speakers/social-media-links.php:7
 msgid "Social Media Links"
 msgstr ""
@@ -60,9 +93,12 @@ msgid "Add New Announcement"
 msgstr ""
 
 #: inc/custom-post-types/announcements.php:14
-#: inc/custom-post-types/donors.php:14 inc/custom-post-types/organizers.php:14
-#: inc/custom-post-types/partners.php:14 inc/custom-post-types/sessions.php:14
-#: inc/custom-post-types/speakers.php:14
+#: inc/custom-post-types/donors.php:14
+#: inc/custom-post-types/facilitators.php:14
+#: inc/custom-post-types/organizers.php:14
+#: inc/custom-post-types/partners.php:14
+#: inc/custom-post-types/presentations.php:14
+#: inc/custom-post-types/sessions.php:14 inc/custom-post-types/speakers.php:14
 msgid "Add New"
 msgstr ""
 
@@ -79,16 +115,22 @@ msgid "Search Announcement"
 msgstr ""
 
 #: inc/custom-post-types/announcements.php:18
-#: inc/custom-post-types/donors.php:18 inc/custom-post-types/organizers.php:18
-#: inc/custom-post-types/partners.php:18 inc/custom-post-types/sessions.php:18
-#: inc/custom-post-types/speakers.php:18
+#: inc/custom-post-types/donors.php:18
+#: inc/custom-post-types/facilitators.php:18
+#: inc/custom-post-types/organizers.php:18
+#: inc/custom-post-types/partners.php:18
+#: inc/custom-post-types/presentations.php:18
+#: inc/custom-post-types/sessions.php:18 inc/custom-post-types/speakers.php:18
 msgid "Not Found"
 msgstr ""
 
 #: inc/custom-post-types/announcements.php:19
-#: inc/custom-post-types/donors.php:19 inc/custom-post-types/organizers.php:19
-#: inc/custom-post-types/partners.php:19 inc/custom-post-types/sessions.php:19
-#: inc/custom-post-types/speakers.php:19
+#: inc/custom-post-types/donors.php:19
+#: inc/custom-post-types/facilitators.php:19
+#: inc/custom-post-types/organizers.php:19
+#: inc/custom-post-types/partners.php:19
+#: inc/custom-post-types/presentations.php:19
+#: inc/custom-post-types/sessions.php:19 inc/custom-post-types/speakers.php:19
 msgid "Not found in Trash"
 msgstr ""
 
@@ -135,6 +177,45 @@ msgstr ""
 
 #: inc/custom-post-types/donors.php:23 inc/custom-post-types/donors.php:24
 msgid "donors"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:7
+#: inc/custom-post-types/facilitators.php:9
+#: inc/custom-post-types/facilitators.php:23
+#: inc/custom-post-types/facilitators.php:24
+msgid "Facilitators"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:8
+msgid "Facilitator"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:10
+msgid "Parent Facilitator"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:11
+msgid "All Facilitators"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:12
+msgid "View Facilitator"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:13
+msgid "Add New Facilitator"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:15
+msgid "Edit Facilitator"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:16
+msgid "Update Facilitator"
+msgstr ""
+
+#: inc/custom-post-types/facilitators.php:17
+msgid "Search Facilitator"
 msgstr ""
 
 #: inc/custom-post-types/organizers.php:7
@@ -213,6 +294,45 @@ msgstr ""
 msgid "Search Partner"
 msgstr ""
 
+#: inc/custom-post-types/presentations.php:7
+#: inc/custom-post-types/presentations.php:9
+#: inc/custom-post-types/presentations.php:23
+#: inc/custom-post-types/presentations.php:24
+msgid "Slide Presentations"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:8
+msgid "Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:10
+msgid "Parent Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:11
+msgid "All Slide Presentations"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:12
+msgid "View Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:13
+msgid "Add New Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:15
+msgid "Edit Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:16
+msgid "Update Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:17
+msgid "Search Slide Presentation"
+msgstr ""
+
 #: inc/custom-post-types/sessions.php:7 inc/custom-post-types/sessions.php:9
 msgid "Sessions"
 msgstr ""
@@ -257,6 +377,11 @@ msgstr ""
 msgid "Agenda Sessions"
 msgstr ""
 
+#: inc/custom-post-types/speakers.php:7 inc/custom-post-types/speakers.php:9
+#: inc/custom-post-types/speakers.php:23 inc/custom-post-types/speakers.php:24
+msgid "Speakers"
+msgstr ""
+
 #: inc/custom-post-types/speakers.php:8
 msgid "Speaker"
 msgstr ""
@@ -287,6 +412,47 @@ msgstr ""
 
 #: inc/custom-post-types/speakers.php:17
 msgid "Search Speaker"
+msgstr ""
+
+#: inc/custom-taxonomies/facilitator-groups.php:7
+#: inc/custom-taxonomies/facilitator-groups.php:17
+msgid "Groups"
+msgstr ""
+
+#: inc/custom-taxonomies/facilitator-groups.php:8
+msgid "Group"
+msgstr ""
+
+#: inc/custom-taxonomies/facilitator-groups.php:9
+msgid "Search Group"
+msgstr ""
+
+#: inc/custom-taxonomies/facilitator-groups.php:10
+msgid "All Group"
+msgstr ""
+
+#: inc/custom-taxonomies/facilitator-groups.php:11
+msgid "Parent Group"
+msgstr ""
+
+#: inc/custom-taxonomies/facilitator-groups.php:12
+msgid "Parent Group:"
+msgstr ""
+
+#: inc/custom-taxonomies/facilitator-groups.php:13
+msgid "Edit Group"
+msgstr ""
+
+#: inc/custom-taxonomies/facilitator-groups.php:14
+msgid "Update Group"
+msgstr ""
+
+#: inc/custom-taxonomies/facilitator-groups.php:15
+msgid "Add New Group"
+msgstr ""
+
+#: inc/custom-taxonomies/facilitator-groups.php:16
+msgid "New Group Name"
 msgstr ""
 
 #: inc/custom-taxonomies/session-types.php:7
@@ -330,44 +496,44 @@ msgstr ""
 msgid "New Type Name"
 msgstr ""
 
-#: inc/custom-taxonomies/years.php:7 inc/custom-taxonomies/years.php:17
-msgid "Years"
+#: inc/custom-taxonomies/years.php:7
+msgid "Years of Camp"
 msgstr ""
 
-#: inc/custom-taxonomies/years.php:8
-msgid "Year"
+#: inc/custom-taxonomies/years.php:8 inc/custom-taxonomies/years.php:17
+msgid "Year of Camp"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:9
-msgid "Search Years"
+msgid "Search Years of Camp"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:10
-msgid "All Years"
+msgid "All Years of Camp"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:11
-msgid "Parent Year"
+msgid "Parent Year of Camp"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:12
-msgid "Parent Year:"
+msgid "Parent Year of Camp:"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:13
-msgid "Edit Year"
+msgid "Edit Year of Camp"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:14
-msgid "Update Year"
+msgid "Update Year of Camp"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:15
-msgid "Add New Year"
+msgid "Add New Year of Camp"
 msgstr ""
 
 #: inc/custom-taxonomies/years.php:16
-msgid "New Year Name"
+msgid "New Year of Camp Name"
 msgstr ""
 
 #: inc/taxonomy-form-fields/categories/colors.php:13
@@ -390,24 +556,124 @@ msgstr ""
 msgid "Select a image for the theme."
 msgstr ""
 
-#: inc/template-parts/content-list-posts.php:52
-#: inc/template-parts/content-single-post.php:52
+#: inc/template-parts/---content-list-posts.php:60
+#: inc/template-parts/content-list-posts.php:56
+#: inc/template-parts/content-single-post.php:35
+#: inc/template-parts/content.php:56
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/utils-content.php:147
+#, php-format
+msgid "Error locating %s for inclusion"
 msgstr ""
 
 #: index.php:10
 msgid "Blog"
 msgstr ""
 
-#: page-themes.php:55
-msgid " #"
+#: node_modules/yargs-parser/index.js:301
+#, javascript-format
+msgid "Not enough arguments following: %s"
 msgstr ""
 
-#: widgets/camp-organizers.php:88 widgets/camp-themes.php:69
+#: node_modules/yargs-parser/index.js:449
+#, javascript-format
+msgid "Invalid JSON config file: %s"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:169
+msgid "Commands:"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:177 node_modules/yargs/lib/usage.js:407
+msgid "default:"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:179
+msgid "aliases:"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:241
+msgid "boolean"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:242
+msgid "count"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:243 node_modules/yargs/lib/usage.js:244
+msgid "string"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:245
+msgid "array"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:246
+msgid "number"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:250
+msgid "required"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:251
+msgid "choices:"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:270
+msgid "Examples:"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:385
+msgid "generated-value"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:26
+#: node_modules/yargs/lib/validation.js:49
+#, javascript-format
+msgid "Not enough non-option arguments: got %s, need at least %s"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:37
+#, javascript-format
+msgid "Too many non-option arguments: got %s, maximum of %s"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:185
+msgid "Invalid values:"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:188
+#, javascript-format
+msgid "Argument: %s, Given: %s, Choices: %s"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:218
+#, javascript-format
+msgid "Argument check failed: %s"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:283
+msgid "Implications failed:"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:313
+#, javascript-format
+msgid "Arguments %s and %s are mutually exclusive"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:332
+#, javascript-format
+msgid "Did you mean %s?"
+msgstr ""
+
+#: widgets/camp-organizers.php:84 widgets/camp-themes.php:80
 msgid "New Title"
 msgstr ""
 
-#: widgets/camp-organizers.php:93 widgets/camp-themes.php:74
+#: widgets/camp-organizers.php:89 widgets/camp-themes.php:85
 msgid "Title: "
 msgstr ""

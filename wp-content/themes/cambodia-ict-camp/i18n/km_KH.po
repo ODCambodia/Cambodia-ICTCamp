@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cambodia-ict-camp\n"
-"POT-Creation-Date: 2019-01-18 14:09+0700\n"
-"PO-Revision-Date: 2019-01-18 14:09+0700\n"
+"POT-Creation-Date: 2019-02-20 16:46+0700\n"
+"PO-Revision-Date: 2019-02-20 16:46+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: km_KH\n"
@@ -23,6 +23,14 @@ msgstr ""
 
 #: hooks/header.php:226
 msgid "Event Booking"
+msgstr ""
+
+#: hooks/pagination.php:6
+msgid "Previous"
+msgstr ""
+
+#: hooks/pagination.php:7
+msgid "Next"
 msgstr ""
 
 #: hooks/slider-selection.php:197
@@ -48,6 +56,10 @@ msgstr "ថ្ងៃចុងក្រោយនៃកម្មវិធីកម
 #: hooks/slider-selection.php:222
 msgid "The Cambodia ICT Camp was ended."
 msgstr "កម្មវិធីកម្ពុជាអាយស៊ីធីខែមបានបញ្ចប់ជាស្ថាពរ"
+
+#: inc/custom-meta-boxes/custom-link.php:7
+msgid "Custom link to"
+msgstr ""
 
 #: inc/custom-meta-boxes/facilitators/expertise.php:7
 #: inc/custom-meta-boxes/speakers/expertise.php:7
@@ -93,8 +105,9 @@ msgstr ""
 #: inc/custom-post-types/donors.php:14
 #: inc/custom-post-types/facilitators.php:14
 #: inc/custom-post-types/organizers.php:14
-#: inc/custom-post-types/partners.php:14 inc/custom-post-types/sessions.php:14
-#: inc/custom-post-types/speakers.php:14
+#: inc/custom-post-types/partners.php:14
+#: inc/custom-post-types/presentations.php:14
+#: inc/custom-post-types/sessions.php:14 inc/custom-post-types/speakers.php:14
 msgid "Add New"
 msgstr ""
 
@@ -114,8 +127,9 @@ msgstr ""
 #: inc/custom-post-types/donors.php:18
 #: inc/custom-post-types/facilitators.php:18
 #: inc/custom-post-types/organizers.php:18
-#: inc/custom-post-types/partners.php:18 inc/custom-post-types/sessions.php:18
-#: inc/custom-post-types/speakers.php:18
+#: inc/custom-post-types/partners.php:18
+#: inc/custom-post-types/presentations.php:18
+#: inc/custom-post-types/sessions.php:18 inc/custom-post-types/speakers.php:18
 msgid "Not Found"
 msgstr "ព័ត៌មានពុំអាចរកបាន"
 
@@ -123,8 +137,9 @@ msgstr "ព័ត៌មានពុំអាចរកបាន"
 #: inc/custom-post-types/donors.php:19
 #: inc/custom-post-types/facilitators.php:19
 #: inc/custom-post-types/organizers.php:19
-#: inc/custom-post-types/partners.php:19 inc/custom-post-types/sessions.php:19
-#: inc/custom-post-types/speakers.php:19
+#: inc/custom-post-types/partners.php:19
+#: inc/custom-post-types/presentations.php:19
+#: inc/custom-post-types/sessions.php:19 inc/custom-post-types/speakers.php:19
 msgid "Not found in Trash"
 msgstr ""
 
@@ -134,7 +149,6 @@ msgid "announcements"
 msgstr ""
 
 #: inc/custom-post-types/donors.php:7 inc/custom-post-types/donors.php:9
-#: page-about.php:154
 msgid "Donors"
 msgstr "ម្ចាស់ជំនួយ"
 
@@ -218,7 +232,7 @@ msgstr "ស្វែងរកម្ចាស់ជំនួយ"
 #: inc/custom-post-types/organizers.php:7
 #: inc/custom-post-types/organizers.php:9
 #: inc/custom-post-types/organizers.php:23
-#: inc/custom-post-types/organizers.php:24 page-about.php:48
+#: inc/custom-post-types/organizers.php:24
 msgid "Organizers"
 msgstr "អ្នករៀបចំកម្មវិធី"
 
@@ -290,6 +304,47 @@ msgstr ""
 #: inc/custom-post-types/partners.php:17
 msgid "Search Partner"
 msgstr ""
+
+#: inc/custom-post-types/presentations.php:7
+#: inc/custom-post-types/presentations.php:9
+#: inc/custom-post-types/presentations.php:23
+#: inc/custom-post-types/presentations.php:24
+msgid "Slide Presentations"
+msgstr "បទបង្ហាញ"
+
+#: inc/custom-post-types/presentations.php:8
+msgid "Slide Presentation"
+msgstr "បទបង្ហាញ"
+
+#: inc/custom-post-types/presentations.php:10
+msgid "Parent Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:11
+msgid "All Slide Presentations"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:12
+msgid "View Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:13
+msgid "Add New Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:15
+msgid "Edit Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:16
+msgid "Update Slide Presentation"
+msgstr ""
+
+#: inc/custom-post-types/presentations.php:17
+#, fuzzy
+#| msgid "Search Donor"
+msgid "Search Slide Presentation"
+msgstr "ស្វែងរកម្ចាស់ជំនួយ"
 
 #: inc/custom-post-types/sessions.php:7 inc/custom-post-types/sessions.php:9
 msgid "Sessions"
@@ -528,6 +583,7 @@ msgstr ""
 msgid "Select a image for the theme."
 msgstr ""
 
+#: inc/template-parts/---content-list-posts.php:60
 #: inc/template-parts/content-list-posts.php:56
 #: inc/template-parts/content-single-post.php:35
 #: inc/template-parts/content.php:56
@@ -535,6 +591,7 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
+#: inc/template-parts/---content-list-posts.php:64
 #: inc/template-parts/content-list-posts.php:60
 #: inc/template-parts/content-page.php:17
 #: inc/template-parts/content-single-post.php:39
@@ -547,25 +604,123 @@ msgstr ""
 msgid "Edit %s"
 msgstr ""
 
-#: inc/utils-content.php:111
+#: inc/utils-content.php:117
 msgid "Leave a comment"
 msgstr "បញ្ចេញមតិ"
 
-#: inc/utils-content.php:111
+#: inc/utils-content.php:117
 msgid "1 Comment"
 msgstr ""
 
-#: inc/utils-content.php:111
+#: inc/utils-content.php:117
 msgid "% Comments"
+msgstr ""
+
+#: inc/utils-content.php:147
+#, php-format
+msgid "Error locating %s for inclusion"
 msgstr ""
 
 #: index.php:10
 msgid "Blog"
 msgstr "ប្លក់"
 
-#: page-about.php:101
-msgid "Partners"
-msgstr "ដៃគូ"
+#: node_modules/yargs-parser/index.js:301
+#, javascript-format
+msgid "Not enough arguments following: %s"
+msgstr ""
+
+#: node_modules/yargs-parser/index.js:449
+#, javascript-format
+msgid "Invalid JSON config file: %s"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:169
+msgid "Commands:"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:177 node_modules/yargs/lib/usage.js:407
+msgid "default:"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:179
+msgid "aliases:"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:241
+msgid "boolean"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:242
+msgid "count"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:243 node_modules/yargs/lib/usage.js:244
+msgid "string"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:245
+msgid "array"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:246
+msgid "number"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:250
+msgid "required"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:251
+msgid "choices:"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:270
+msgid "Examples:"
+msgstr ""
+
+#: node_modules/yargs/lib/usage.js:385
+msgid "generated-value"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:26
+#: node_modules/yargs/lib/validation.js:49
+#, javascript-format
+msgid "Not enough non-option arguments: got %s, need at least %s"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:37
+#, javascript-format
+msgid "Too many non-option arguments: got %s, maximum of %s"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:185
+msgid "Invalid values:"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:188
+#, javascript-format
+msgid "Argument: %s, Given: %s, Choices: %s"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:218
+#, javascript-format
+msgid "Argument check failed: %s"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:283
+msgid "Implications failed:"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:313
+#, javascript-format
+msgid "Arguments %s and %s are mutually exclusive"
+msgstr ""
+
+#: node_modules/yargs/lib/validation.js:332
+#, javascript-format
+msgid "Did you mean %s?"
+msgstr ""
 
 #: widgets/camp-organizers.php:15
 msgid "CICT Organizer Widget"
@@ -598,6 +753,9 @@ msgstr ""
 #: widgets/camp-themes.php:17
 msgid "Display a list of all themes of the camp"
 msgstr ""
+
+#~ msgid "Partners"
+#~ msgstr "ដៃគូ"
 
 #~ msgid "Advisory Committee"
 #~ msgstr "គណៈកម្មការប្រឹក្សាយោបល់"
