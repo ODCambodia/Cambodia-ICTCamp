@@ -46,6 +46,8 @@ global $event_star_customizer_all_values;
                     $recent_posts_with_img = new WP_Query( $args );
 
                     if ( $recent_posts_with_img->have_posts() ) {
+                        $number_of_post_with_image = (int) $recent_posts_with_img->found_posts;
+
                         while ( $recent_posts_with_img->have_posts() ) {
                             $recent_posts_with_img->the_post();
 
@@ -57,13 +59,18 @@ global $event_star_customizer_all_values;
 
                         <!-- Carousel -->
                         <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                            </ol>
+                            <?php if ( 1 < $number_of_post_with_image ) : ?>
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+
+                                    <?php
+                                    for ( $i = 1; $i < $number_of_post_with_image; $i++ ) {
+                                        echo '<li data-target="#carousel-example-generic" data-slide-to="' . $i .'"></li>';
+                                    }
+                                    ?>
+                                </ol>
+                            <?php endif; ?>
 
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner" role="listbox">
@@ -113,15 +120,21 @@ global $event_star_customizer_all_values;
                             </div>
 
                             <!-- Controls -->
-                            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                                <i class="fa fa-chevron-left" style="top: 50%" aria-hidden="true"></i>
-                                <span class="sr-only">Previous</span>
-                            </a>
+                            <?php
+                            if ( 1 < $number_of_post_with_image ) :
+                            ?>
+                                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                    <i class="fa fa-chevron-left" style="top: 50%" aria-hidden="true"></i>
+                                    <span class="sr-only">Previous</span>
+                                </a>
 
-                            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                <span class="sr-only">Next</span>
-                            </a>
+                                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            <?php
+                            endif;
+                            ?>
                         </div><!-- Carousel -->
                     <?php
                     } 
