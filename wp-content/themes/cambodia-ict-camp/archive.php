@@ -38,16 +38,32 @@ global $event_star_customizer_all_values;
         <main id="main" class="site-main" role="main">
             <?php
             if ( have_posts() ) :
+                $wrap_count = 3;
+                $counter = 1;
+
                 /* Start the Loop */
                 while ( have_posts() ) : the_post();
 
-                    /*
-                     * Include the Post-Format-specific template for the content.
-                     * If you want to override this in a child theme, then include a file
-                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                     */
-                    get_template_part( 'inc/template-parts/content', get_post_format() );
+                    if ( $counter%$wrap_count == 1 ) {
+                        echo '<div class="row">';
+                    }
 
+                    $attributes = [
+                        'no_custom_link_get_permalink' => true,
+                        'post'                         => get_post(),
+                        'show_excerpt'                 => true,
+                        'show_meta'                    => true,
+                        'show_thumbnail'               => true
+                    ];
+
+                    get_ictcamp_template( 'content-grid-3-cols', $attributes, true );
+
+                    if ( $counter%$wrap_count == 0 ) {
+                        echo '</div>';
+                        echo '<div class="clearfix"></div>';
+                    }
+
+                    $counter++;
                 endwhile;
                 /**
                  * event_star_action_posts_navigation hook
@@ -68,4 +84,5 @@ global $event_star_customizer_all_values;
     get_sidebar();
     ?>
 </div><!-- #content -->
+
 <?php get_footer();
