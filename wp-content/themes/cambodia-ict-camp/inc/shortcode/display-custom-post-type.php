@@ -1,7 +1,7 @@
 <?php
 // Create shortcode name
 // [display_cpt post_type="post" show_thumbnail= true show_meta=true thumbnail_size="250, 200" show_post_title=true title_headtag ="h6" open_new_tab=false show_content=false show_excerpt=true display="inline/list" flex_box_row=true row_container=true custom_link=true no_link_get_permalink=true camp_year="" max_post="5" open_new_tab=]
-add_shortcode( 'display_cpt', 'display_custom_post_type');
+add_shortcode( 'display_cpt', 'display_custom_post_type' );
 
 /**
  * Shortcode for displaying list of custom posts in Gridview or Listview
@@ -31,9 +31,15 @@ function display_custom_post_type( $atts ) {
         'camp_year'             => ''
     ), $atts );
 
+    $post_types = $shortcode_atts['post_type'];
+
+    $post_types = explode( ',', $post_types );
+
     $args = array(
-        'post_type'      => $shortcode_atts['post_type'],
+        'post_type'      => $post_types,
         'posts_per_page' => $shortcode_atts['max_post'],
+        'orderby'        => 'name',
+        'order'          => 'DESC',
         'post_status'    => 'publish'
     );
 
@@ -51,17 +57,20 @@ function display_custom_post_type( $atts ) {
     $custom_post = new WP_Query( $args );
 
     if ( $custom_post->have_posts() ) {
+
         $flex_box_row = ( ! strcmp( $shortcode_atts['flex_box_row'], 'true' ) ) ? 'flex-box-row' : '';
         $open_new_tab = ( ! strcmp( $shortcode_atts['open_new_tab'], 'true' ) ) ? ' target="_blank"' : '';
         $post_list .= ( ! strcmp( $shortcode_atts['display'], 'list' ) ) ? '<ul>' : ( ! strcmp( $shortcode_atts['row_container'], 'true' ) ) ? '<div class="row ' . $flex_box_row . '">' : '';
 
         while ( $custom_post->have_posts() ) {
+
             $custom_post->the_post();
 
             $attributes = array(
                 'title' => __( get_the_title() ),
                 'class' => 'img-responsive'
             );
+
             $thumbnail = get_the_post_thumbnail( get_the_ID(), $shortcode_atts['thumbnail_size'], $attributes );
 
             $responsive_thumbnail = preg_replace( '/(width|height)="\d*"\s/', '', $thumbnail );
@@ -70,6 +79,7 @@ function display_custom_post_type( $atts ) {
             $custom_link = get_post_meta( get_the_ID(), '_custom_link_value_key', true );
 
             if ( ! strcmp( $shortcode_atts['show_thumbnail'], 'true' ) ) :
+
                 if ( ! strcmp( $shortcode_atts['no_link_get_permalink'], 'true' ) ) :
                     $link = ( ! strcmp( $shortcode_atts['custom_link'], 'true' ) ) ? $custom_link : get_permalink();
                     $post_list .= '<a href="' . $link . '"' . $open_new_tab . '" >';
@@ -78,6 +88,7 @@ function display_custom_post_type( $atts ) {
                 else :
                     $post_list .=  $responsive_thumbnail;
                 endif;
+
             endif;
 
             if ( ! strcmp( $shortcode_atts['show_post_title'], 'true' ) ) :
@@ -111,12 +122,13 @@ function display_custom_post_type( $atts ) {
             endif;
 
             $post_list .= ( ! strcmp( $shortcode_atts['display'], 'list' ) ) ? '</li>' : '</div>';
-        }  
+        }
+
         $post_list .= ( $shortcode_atts['display'] == 'list' ) ? '</ul>' : ( $shortcode_atts['row_container'] == 'true' ) ? '</div>' : '';
     }
     wp_reset_postdata();
 
-    return $post_list;
+    return '<div class="container">' . $post_list . '</div>';
 }
 
 // Hooks your functions into the correct filters
@@ -137,6 +149,7 @@ add_action( 'admin_head', 'display_posttype_add_mce_button' );
 // Register new button in the editor
 function display_posttype_register_mce_button( $buttons ) {
     array_push( $buttons, 'display_posttype_mce_button' );
+
     return $buttons;
 }
 
@@ -144,6 +157,6 @@ function display_posttype_register_mce_button( $buttons ) {
 // the script will insert the shortcode on the click event
 function display_posttype_add_tinymce_plugin( $plugin_array ) {
     $plugin_array['display_posttype_mce_button'] = get_stylesheet_directory_uri() . '/inc/shortcode/display-posttype-mce-button.js';
+
     return $plugin_array;
 }
-?>
