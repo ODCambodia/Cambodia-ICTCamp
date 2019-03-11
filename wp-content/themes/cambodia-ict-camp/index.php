@@ -65,7 +65,13 @@ global $event_star_customizer_all_values;
                                     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 
                                     <?php
-                                    for ( $i = 1; $i < $number_of_post_with_image; $i++ ) {
+                                    if ( 4 < $number_of_post_with_image ) {
+                                        $number_of_carousel_indicator = 4;
+                                    } else {
+                                        $number_of_carousel_indicator = $number_of_post_with_image;
+                                    }
+
+                                    for ( $i = 1; $i < $number_of_carousel_indicator; $i++ ) {
                                         echo '<li data-target="#carousel-example-generic" data-slide-to="' . $i .'"></li>';
                                     }
                                     ?>
