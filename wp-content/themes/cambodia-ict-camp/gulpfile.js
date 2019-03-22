@@ -101,11 +101,11 @@ function js( done ) {
   done();
 };
 
-// function triggerPlumber( src_file, dest_file ) {
-//   return src( src_file )
-//       .pipe( plumber() )
-//       .pipe( dest( dest_file ) );
-// }
+function triggerPlumber( src_file, dest_file ) {
+  return src( src_file )
+      .pipe( plumber() )
+      .pipe( dest( dest_file ) );
+}
 
 function images() {
   return src( imagesSRC )
@@ -116,7 +116,7 @@ function images() {
           progressive: true,
           interlaced: true,
       }) )
-      .pipe( dest( imagesDIST ) )
+      .pipe( dest( imagesDIST ) );
 }
 
 function fonts() {
@@ -128,8 +128,8 @@ function html() {
 }
 
 function watch_files() {
-  watch( cssWatch, css );
-  watch( jsWatch, series( js, reload ) );
+  watch( cssWatch, css ).on( 'change', reload );
+  watch( jsWatch, js );
 
   src( jsDIST + 'script.min.js' )
     .pipe( notify({ message: 'Gulp is Watching...' }) );

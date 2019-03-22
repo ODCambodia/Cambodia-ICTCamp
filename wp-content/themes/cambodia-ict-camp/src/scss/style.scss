@@ -3,7 +3,7 @@
   Theme URI:
   Description:  Event Star Child Theme
   Author:       Open Development Cambodia
-  Author URI:
+  Author URI: 
   Template:     event-star
   Version:      1.1.0
   License:
@@ -29,7 +29,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p, a, b, strong, ul, li, td, th, div, input, text, span, select, small {
-  font-family: inherit !important;
+  font-family: "Siemreap", "Open Sans", "Helvetica", "Arial", sans-serif !important;
   line-height: 1.5em;
 }
 
@@ -72,11 +72,15 @@ small {
 }
 
 .align-center {
-  margin: 0, auto;
+  margin: 0 auto;
 }
 
 #banner-title {
   color: #fff;
+}
+
+.no-border-bottom {
+  border-bottom: none !important;
 }
 
 .btn-primary {
@@ -86,7 +90,7 @@ small {
 
 .btn-primary:hover {
   background-color: rgba(6, 50, 61, 0.90);
-  color:$secondary-color !important;
+  color: $secondary-color !important;
   border: 1px solid #00a600;
 }
 
@@ -103,9 +107,20 @@ small {
 }
 
 .flex-box-row {
+  align-items: center;
   display: flex;
+  flex-direction: row;
   flex-flow: row wrap;
   justify-content: center;
+
+  display: -webkit-box;
+  -webkit-align-items: center;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
 }
 
 .img-responsive {
@@ -118,6 +133,12 @@ small {
 
 .inner-main-title {
   background-color: #06323d;
+}
+
+.recent-feature-image {
+  height: 100px;
+  background-size: cover;
+  background-position: center top;
 }
 
 .margin-bottom-10-px {
@@ -169,6 +190,7 @@ small {
   position: absolute;
   width: 55px;
 }
+
 .section-title-left h2:after {
   border: 1px solid rgb(117, 201, 58);
   content: "";
@@ -177,6 +199,10 @@ small {
   width: 80%;
   margin: 15px 0 20px;
   position: relative;
+}
+
+.slick-list .slick-track .single-list article.post {
+  padding-bottom: 0;
 }
 
 .sm-up-container {
@@ -233,7 +259,24 @@ small {
 .top-header ul li a:hover {
   color: #95c841 !important;
 }
+
+.width-80-percent {
+  width: 80%;
+}
 /* END Navbar */
+
+/* Pagination */
+.navigation.pagination .nav-links .page-numbers {
+  color: #06323d !important;
+}
+
+.navigation.pagination .nav-links .page-numbers:hover {
+  background-color: #96c942 !important;
+}
+
+.navigation.pagination .nav-links .page-numbers.current {
+  color: #fff !important;
+}
 
 /* Page Header */
 .entry-header h1 {
@@ -294,10 +337,9 @@ small {
   padding-right: 5px;
 }
 /* END Theme Page
-
 /* Widgets */
 .cict-widgets {
-  padding: 15px 0;
+  padding: 0 0 15px 0;
   overflow: hidden;
 }
 
@@ -383,7 +425,7 @@ small {
 
 .ui-widget-header .ui-icon {
   background-image: url($jquery-ui-icon-444444);
-} 
+}
 
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon,
@@ -419,3 +461,77 @@ small {
   background-position: -65px -16px;
 }
 /* END Jquery UI Icons */
+
+/* Carousel Slider */
+.carousel-control .fa {
+  top: 50%;
+  position: absolute;
+  z-index: 5;
+  display: inline-block;
+  margin-top: -10px;
+}
+
+.carousel-indicators {
+  left: 50%;
+  bottom: -15px;
+  text-align: center;
+}
+/* END Carousel Slider */
+
+.blog-feature-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Extra Small Devices */
+@media only screen and (max-width: 576px) {
+  .blog-feature-image {
+    height: 150px;
+  }
+
+  .recent-feature-image {
+    height: 150px;
+  }
+}
+
+/* Small Devices: Mobile Phone */
+@media only screen and (min-width: 576px) {
+  .blog-feature-image {
+    height: 200px;
+  }
+
+  .recent-feature-image {
+    height: 200px;
+  }
+}
+
+/* Medium Device: Tablet */
+@media (min-width: 768px) {
+  .blog-feature-image {
+    height: 300px;
+  }
+
+  carousel-indicators {
+    left: 95%;
+  }
+
+  .recent-feature-image {
+    height: 300px;
+  }
+}
+
+/* Large Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  .blog-feature-image {
+    height: 200px;
+  }
+
+  .recent-feature-image {
+    height: 400px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
