@@ -23,14 +23,14 @@ add_action( 'admin_enqueue_scripts', 'camp_theme_enqueue_scripts' );
 function camp_theme_enqueue_scripts()
 {
     wp_enqueue_media();
-    wp_enqueue_script( 'child-custom-script', get_stylesheet_directory_uri() . '/js/custom-script.js', ['jquery'], '1.0', true );
+    wp_enqueue_script( 'child-custom-script', get_stylesheet_directory_uri() . '/dist/js/script.min.js', ['jquery'], '1.0', true );
 }
 
 function enqueue_accordion_script()
 {
     if ( ! is_admin() && is_page_template( $template = 'template-accordion.php' ) ) {
         wp_enqueue_script( 'jquery-ui-accordion' );
-        wp_enqueue_script( 'custom-accordion', get_stylesheet_directory_uri() . '/js/accordion.js', ['jquery'] );
+        wp_enqueue_script( 'custom-accordion', get_stylesheet_directory_uri() . '/src/js/lib/jquery-ui/accordion.js', ['jquery'] );
     }
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_accordion_script' );

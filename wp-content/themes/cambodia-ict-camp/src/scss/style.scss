@@ -5,14 +5,14 @@
   Author:       Open Development Cambodia
   Author URI:
   Template:     event-star
-  Version:      1.0.19
+  Version:      1.1.0
   License:
   License URI:
   Tags:         responsive-layout
   Text Domain:  cambodia-ict-camp
  */
 
-@import 'base/variables';
+@import 'base/_variables';
 
 /* General */
 .km-KH,
@@ -378,37 +378,37 @@ small {
 
 .ui-icon,
 .ui-widget-content .ui-icon {
-  background-image: url("images/ui-icons_444444_256x240.png");
+  background-image: url($jquery-ui-icon-444444);
 }
 
 .ui-widget-header .ui-icon {
-  background-image: url("images/ui-icons_444444_256x240.png");
-}
+  background-image: url($jquery-ui-icon-444444);
+} 
 
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon,
 .ui-button:hover .ui-icon,
 .ui-button:focus .ui-icon {
-  background-image: url("images/ui-icons_555555_256x240.png");
+  background-image: url($jquery-ui-icon-555555);
 }
 
 .ui-state-active .ui-icon,
 .ui-button:active .ui-icon {
-  background-image: url("images/ui-icons_ffffff_256x240.png");
+  background-image: url($jquery-ui-icon-ffffff);
 }
 
 .ui-state-highlight .ui-icon,
 .ui-button .ui-state-highlight.ui-icon {
-  background-image: url("images/ui-icons_777620_256x240.png");
+  background-image: url($jquery-ui-icon-777620);
 }
 
 .ui-state-error .ui-icon,
 .ui-state-error-text .ui-icon {
-  background-image: url("images/ui-icons_cc0000_256x240.png");
+  background-image: url($jquery-ui-icon-cc0000);
 }
 
 .ui-button .ui-icon {
-  background-image: url("images/ui-icons_777777_256x240.png");
+  background-image: url($jquery-ui-icon-777777);
 }
 
 .ui-icon-triangle-1-e {

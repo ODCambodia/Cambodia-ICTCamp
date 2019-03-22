@@ -1,23 +1,61 @@
-var gulp = require( 'gulp' );
+// var gulp = require( 'gulp' );
+const { src, dest, task, watch, parallel, series } = require( 'gulp' );
 
-const { series } = require( 'gulp' );
+var baseURL      = 'localhost/Cambodia-ICTCamp';
 
-var rename = require( 'gulp-rename' );
-var sass = require( 'gulp-sass' );
+// common plugins
+var rename       = require( 'gulp-rename' );
+var sourcemaps   = require( 'gulp-sourcemaps' );
+var browserSync  = require( 'browser-sync' ).create();
+var reload       = browserSync.reload;
+var plumber      = require( 'gulp-plumber' );
+var notify       = require( 'gulp-notify' );
+
+// CSS plugins
+var sass         = require( 'gulp-sass' );
+var uglify       = require( 'gulp-uglify' );
 var autoprefixer = require( 'gulp-autoprefixer' );
-var sourcemaps = require( 'gulp-sourcemaps' );
 
-var cssSRC = 'src/scss/style.scss';
-var cssDIST = './dist/css/';
-var cssWatch = 'src/scss/**/*.scss';
+// JS plugins
+var browserify   = require( 'browserify' );
+var babelify     = require( 'babelify' );
+var concat       = require( 'gulp-concat' );
+var source       = require( 'vinyl-source-stream' );
+var buffer       = require( 'vinyl-buffer' );
 
+// images plugin
+var imagemin     = require( 'gulp-imagemin' );
 
-var jsSRC = 'src/js/script.js';
-var jsDIST = './dist/js/';
-var jsWatch = 'src/js/**';
+var fontsSRC     = 'src/fonts/**/*';
+var fontsDIST    = 'dist/fonts/';
+
+var htmlSRC      = 'src/**/*.html';
+var htmlDIST     = 'dist/'
+
+var cssSRC       = 'src/scss/style.scss';
+var cssDIST      = './dist/css/';
+var cssWatch     = 'src/scss/**/*.scss';
+
+var jsSRC        = 'script.js';
+var jsFolder     = 'src/js/';
+var jsLib        = jsFolder + 'lib/';
+var jsDIST       = './dist/js/';
+var jsWatch      = 'src/js/**';
+var jsFiles      = [jsSRC]; // array of all js files to check
+
+var imagesSRC    = 'src/images/**/*';
+var imagesDIST   = 'dist/images/';
+
+function browser_sync() {
+  browserSync.init({
+    proxy: baseURL,
+    injectChanges: true
+  })
+}
 
 function css( done ) {
-  gulp.src( cssSRC )
+  src( cssSRC )
+      .pipe( plumber() )
       .pipe( sourcemaps.init() )
       .pipe( sass({
         errorLogToConsole: true,
@@ -32,29 +70,79 @@ function css( done ) {
         suffix: '.min' 
       }) )
       .pipe( sourcemaps.write( './' ) )
-      .pipe( gulp.dest( cssDIST ) );
+      .pipe( dest( cssDIST ) )
 
   done();
 };
 
-function js( done ) {
-  // gulp.src( jsSRC )
-  //     .pipe( gulp.dest( jsDIST ));
-  
-  // browserify: get the modules into script.js
-  // tranform babelify [env]: compile ES6 to vanilla javascript
-  // 
-  // done();
-};
-
-function watch_files() {
-  gulp.watch( cssWatch, css );
-  gulp.watch( jsWatch, js );
+function js_concat() {
+  return src( 'src/js/lib/*.js' )
+      .pipe( plumber() )
+      .pipe( concat( 'script.js' ) )
+      .pipe( dest( 'src/js/' ) );
 }
 
-gulp.task( 'css', css );
-gulp.task( 'js', js );
+function js( done ) {
+  jsFiles.map( function( entry ) {
+    return browserify({
+        entries: [jsFolder + entry]
+      })
+      .transform( babelify, { presets: ['env'] } )
+      .bundle()
+      .pipe( plumber() )
+      .pipe( source( entry ) )
+      .pipe( rename({ extname: '.min.js' }) )
+      .pipe( buffer() )
+      .pipe( sourcemaps.init({ loadMaps: true }) )
+      .pipe( uglify() )
+      .pipe( sourcemaps.write( './' ) )
+      .pipe( dest( jsDIST ) )
+    })
+  done();
+};
 
-gulp.task( 'default', gulp.parallel( css, js ) );
+// function triggerPlumber( src_file, dest_file ) {
+//   return src( src_file )
+//       .pipe( plumber() )
+//       .pipe( dest( dest_file ) );
+// }
 
-gulp.task( 'watch', watch_files );
+function images() {
+  return src( imagesSRC )
+      .pipe( plumber() )
+      .pipe( dest( imagesDIST ) )
+      .pipe( imagemin({
+          optimizationLevel: 3,
+          progressive: true,
+          interlaced: true,
+      }) )
+      .pipe( dest( imagesDIST ) )
+}
+
+function fonts() {
+  return triggerPlumber( fontsSRC, fontsDEST );
+}
+
+function html() {
+  return triggerPlumber( htmlSRC, htmlDEST );
+}
+
+function watch_files() {
+  watch( cssWatch, css );
+  watch( jsWatch, series( js, reload ) );
+
+  src( jsDIST + 'script.min.js' )
+    .pipe( notify({ message: 'Gulp is Watching...' }) );
+}
+
+task( 'browser-sync', browser_sync );
+task( 'css', css );
+task( 'concat', js_concat );
+task( 'js', js );
+task( 'images', images );
+task( 'fonts', fonts );
+task( 'html', html );
+
+task( 'default', parallel( css, images, series( js_concat, js ) ) );
+
+task( 'watch', parallel( browser_sync, watch_files ) );
