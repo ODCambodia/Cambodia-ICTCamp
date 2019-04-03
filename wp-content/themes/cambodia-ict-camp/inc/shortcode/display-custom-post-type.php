@@ -1,6 +1,6 @@
 <?php
 // Create shortcode name
-// [display_cpt post_type="post" show_thumbnail= true show_meta=true thumbnail_size="250, 200" show_post_title=true title_headtag ="h6" open_new_tab=false show_content=false show_excerpt=true display="inline/list" flex_box_row=true row_container=true custom_link=true no_link_get_permalink=true camp_year="" max_post="5" open_new_tab=]
+// [display_cpt post_type="post" show_thumbnail= true show_meta=true thumbnail_size="250, 200" show_post_title=true title_headtag="h6" item_per_row="1" open_new_tab=false show_content=false show_excerpt=true display="inline/list" flex_box_row=true row_container=true custom_link=true no_link_get_permalink=true camp_year="" max_post="5" camp_year="2018"]
 add_shortcode( 'display_cpt', 'display_custom_post_type' );
 
 /**
@@ -19,6 +19,7 @@ function display_custom_post_type( $atts ) {
         'show_post_title'       => 'true',
         'show_meta'             => 'true',
         'title_headtag'         => 'h6',
+        'item_per_row'          => '1',
         'open_new_tab'          => 'true',
         'show_excerpt'          => 'true',
         'show_content'          => 'false',
@@ -43,28 +44,27 @@ function display_custom_post_type( $atts ) {
         'post_status'    => 'publish'
     );
 
-    if ( $shortcode_atts['camp_year'] ) {
-         $args['tax_query'] = array(
-            array(
-                'taxonomy' => 'camp_year',
-                'field'    => 'slug',
-                'terms'    => $shortcode_atts['camp_year']
-            )
-        );
-    }
+    $camp_year = $shortcode_atts['camp_year']? $shortcode_atts['camp_year'] : date( 'Y' );
+    $args['tax_query'] = array(
+        array(
+            'taxonomy' => 'camp_year',
+            'field'    => 'slug',
+            'terms'    => $camp_year
+        )
+    );
 
     $post_list = '';
-    $custom_post = new WP_Query( $args );
+    $custom_posts = new WP_Query( $args );
 
-    if ( $custom_post->have_posts() ) {
+    if ( $custom_posts->have_posts() ) {
 
         $flex_box_row = ( ! strcmp( $shortcode_atts['flex_box_row'], 'true' ) ) ? 'flex-box-row' : '';
         $open_new_tab = ( ! strcmp( $shortcode_atts['open_new_tab'], 'true' ) ) ? ' target="_blank"' : '';
         $post_list .= ( ! strcmp( $shortcode_atts['display'], 'list' ) ) ? '<ul>' : ( ! strcmp( $shortcode_atts['row_container'], 'true' ) ) ? '<div class="row ' . $flex_box_row . '">' : '';
 
-        while ( $custom_post->have_posts() ) {
+        while ( $custom_posts->have_posts() ) {
 
-            $custom_post->the_post();
+            $custom_posts->the_post();
 
             $attributes = array(
                 'title' => __( get_the_title() ),
@@ -75,7 +75,10 @@ function display_custom_post_type( $atts ) {
 
             $responsive_thumbnail = preg_replace( '/(width|height)="\d*"\s/', '', $thumbnail );
 
-            $post_list .= ( ! strcmp( $shortcode_atts['display'], 'list' ) ) ? '<li>' : '<div class="col-xs-12 col-sm-4 col-md-4">';
+            $item_per_row = ( int ) $shortcode_atts['item_per_row']; 
+            $col_number = 12/$item_per_row;
+
+            $post_list .= ( ! strcmp( $shortcode_atts['display'], 'list' ) ) ? '<li>' : '<div class="col-xs-12 col-sm-' . $col_number . '">';
             $custom_link = get_post_meta( get_the_ID(), '_custom_link_value_key', true );
 
             if ( ! strcmp( $shortcode_atts['show_thumbnail'], 'true' ) ) :
@@ -128,7 +131,7 @@ function display_custom_post_type( $atts ) {
     }
     wp_reset_postdata();
 
-    return '<div class="container">' . $post_list . '</div>';
+    return $post_list;
 }
 
 // Hooks your functions into the correct filters
