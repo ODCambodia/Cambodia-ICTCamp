@@ -44,12 +44,7 @@ function display_custom_post_type( $atts ) {
         'post_status'    => 'publish'
     );
 
-    if ( $shortcode_atts['camp_year'] ) {
-        $camp_year = $shortcode_atts['camp_year'];
-    } else {
-        $camp_year = date( 'Y' );
-    }
-
+    $camp_year = $shortcode_atts['camp_year']? $shortcode_atts['camp_year'] : date( 'Y' );
     $args['tax_query'] = array(
         array(
             'taxonomy' => 'camp_year',
