@@ -65,6 +65,7 @@ require_once( __DIR__ . '/widgets/camp-themes.php' );
 require_once( __DIR__ . '/widgets/camp-organizers.php' );
 
 // Register Hooks
+require_once( __DIR__ . '/hooks/excerpts.php' );
 require_once( __DIR__ . '/hooks/header.php' );
 require_once( __DIR__ . '/hooks/footer.php' );
 require_once( __DIR__ . '/hooks/pagination.php' );
@@ -114,3 +115,48 @@ require_once( __DIR__ . '/inc/localize-manager.php' );
 
 // Shortcode
 require_once( __DIR__ . '/inc/shortcode/display-custom-post-type.php' );
+
+/**
+ * Custom trim excerpt with Khmer text support, using regular expression. Khmer
+ * text must contain zero-width spaces (ZWSP); otherwise, this code can not
+ * detect the word boundaries. There is another way to do it with ICU library,
+ * but it needs some server configuartions which is not usually available in
+ * most shared hosting.
+ *
+ * @author Tep Sovichet (http://sovichet.info)
+ * @param  string $text
+ * @return mixed
+ */
+function trim_excerpt_khmer( $text )
+{
+    $raw_excerpt = $text;
+
+    if ( '' == $text ) {
+        $original_content = wp_strip_all_tags( get_the_content( '' ) );
+
+        $text = $original_content;
+        $text = strip_shortcodes( $text );
+        $text = apply_filters( 'the_content', $text );
+        $text = str_replace(']]', ']]&gt', $text);
+
+        $excerpt_length = apply_filters( 'excerpt_length', 42 );
+        $excerpt_more = apply_filters( 'excerpt_more', ' ', '[&hellip;]' );
+
+        $text = wp_trim_words( $text, $excerpt_length, '' );
+
+        $regex = "/[$-\/:-?{-~!\"^_`[\]\w\d\xE1\x9E\x80-\xE1\x9F\xBF]+[\xE2\x80\x8B \xE1\x9F\x94\xE1\x9F\x95]?/u";
+        preg_match_all( $regex, $text, $matches );
+
+        $sliced = array_slice( $matches[0], 0, $excerpt_length );
+        $text = implode( '', $sliced );
+
+        if ( strlen( $text ) < strlen( $original_content ) ) {
+            $text .= $excerpt_more;
+        }
+    }
+
+    return apply_filters( 'trim_excerpt_khmer', $text, $raw_excerpt );
+}
+
+remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
+add_filter( 'get_the_excerpt', 'trim_excerpt_khmer' );
