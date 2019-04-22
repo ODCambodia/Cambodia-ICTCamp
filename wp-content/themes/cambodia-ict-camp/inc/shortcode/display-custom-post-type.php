@@ -58,7 +58,7 @@ function display_custom_post_type( $atts ) {
 
     if ( $custom_posts->have_posts() ) {
 
-        $flex_box_row = ( ! strcmp( $shortcode_atts['flex_box_row'], 'true' ) ) ? 'flex-box-row' : '';
+        $flex_box_row = ( ! strcmp( $shortcode_atts['flex_box_row'], 'true' ) ) ? 'flex-box-row align-items-center' : '';
         $open_new_tab = ( ! strcmp( $shortcode_atts['open_new_tab'], 'true' ) ) ? ' target="_blank"' : '';
         $post_list .= ( ! strcmp( $shortcode_atts['display'], 'list' ) ) ? '<ul>' : ( ! strcmp( $shortcode_atts['row_container'], 'true' ) ) ? '<div class="row ' . $flex_box_row . '">' : '';
 

@@ -44,7 +44,7 @@ class Camp_Themes_Widget extends WP_Widget
                 }
                 ?>
 
-                <div class="flex-box-row">
+                <div class="flex-box-row align-items-center">
                     <?php
                     foreach( $themes as $theme ) {
                         $theme_image = get_term_meta( $theme->term_id, '_category_image_value_key', true );
