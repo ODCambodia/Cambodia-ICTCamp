@@ -5,7 +5,7 @@
   Author:       Open Development Cambodia
   Author URI: 
   Template:     event-star
-  Version:      1.0.26
+  Version:      1.0.27
   License:
   License URI:
   Tags:         responsive-layout
@@ -73,6 +73,11 @@ small {
   margin: 0 auto;
 }
 
+.align-items-center {
+  align-items: center;
+  -webkit-align-items: center;
+}
+
 #banner-title {
   color: #fff;
 }
@@ -105,17 +110,13 @@ small {
 }
 
 .flex-box-row {
-  align-items: center;
   display: flex;
   flex-direction: row;
   flex-flow: row wrap;
   justify-content: center;
-
   display: -webkit-box;
-  -webkit-align-items: center;
   -webkit-flex-direction: row;
   -webkit-justify-content: center;
-
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
